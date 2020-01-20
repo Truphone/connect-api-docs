@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SIM Resource &mdash; Truphone Connect 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Notification Preferences Resource" href="notification_preferences.html" />
+    <link rel="prev" title="Product Resource" href="product.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truphone Connect
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conventions.html">Conventions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Storefront</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="order.html">Order Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="product.html">Product Resource</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SIM Management</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SIM Resource</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sim-details">SIM details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sim-subscriptions">SIM Subscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sim-notification-preferences-not-implemented">SIM notification preferences [NOT IMPLEMENTED]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#register-for-notifications-not-implemented">Register for notifications [NOT IMPLEMENTED]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unregister-from-notifications-not-implemented">Unregister from notifications [NOT IMPLEMENTED]</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notification_preferences.html">Notification Preferences Resource</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Customer Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="subscription.html">Subscription Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customer.html">Customer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truphone Connect</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>SIM Resource</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/sim.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sim-resource">
+<h1>SIM Resource<a class="headerlink" href="#sim-resource" title="Permalink to this headline">¶</a></h1>
+<p>A Truphone network profile.</p>
+<p><strong>Properties</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Property Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">iccid</td>
+<td align="center">The SIM profile ICCID</td>
+</tr>
+<tr>
+<td align="center">matching_id</td>
+<td align="center">The profile activation code (eSIM only)</td>
+</tr>
+<tr>
+<td align="center">profile_status</td>
+<td align="center">The install status of the profile (eSIM only)</td>
+</tr>
+</tbody>
+</table><p><strong>Possible values for <code class="docutils literal notranslate"><span class="pre">profile_status</span></code></strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Status</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Released</td>
+<td align="center">Ready to be reinstalled by the customer</td>
+</tr>
+<tr>
+<td align="center">Downloaded</td>
+<td align="center">Downloaded in eUICC of customer device</td>
+</tr>
+<tr>
+<td align="center">Installed</td>
+<td align="center">Installed in eUICC of customer device</td>
+</tr>
+<tr>
+<td align="center">Unavailable</td>
+<td align="center">Deleted from eUICC of customer device</td>
+</tr>
+</tbody>
+</table><div class="section" id="sim-details">
+<h2>SIM details<a class="headerlink" href="#sim-details" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code><ul>
+<li>[Deprecated] <code class="docutils literal notranslate"><span class="pre">v1/status/sim/{iccid}</span></code></li>
+</ul>
+</li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+</ul>
+<p><strong>Example Request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/sim/8944474600000109251 <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;iccid&quot;</span><span class="o">:</span> <span class="s2">&quot;8944474600000063847&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;matching_id&quot;</span><span class="o">:</span> <span class="s2">&quot;O-17QF0-MJVBIN&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;profile_status&quot;</span><span class="o">:</span> <span class="s2">&quot;Released&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sim-subscriptions">
+<h2>SIM Subscriptions<a class="headerlink" href="#sim-subscriptions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/subscriptions</span></code><ul>
+<li>[Deprecated] <code class="docutils literal notranslate"><span class="pre">v1/status/subscriptions?iccid={iccid}</span></code></li>
+</ul>
+</li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+</ul>
+<p><strong>Example request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/sim/8944474600000109251/subscriptions <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;Njc1NzY1NzY1ZDIK&quot;</span><span class="p">,</span>
+    <span class="nx">initialBalance</span><span class="o">:</span> <span class="s2">&quot;314572800&quot;</span><span class="p">,</span>
+    <span class="nx">spentBalance</span><span class="o">:</span> <span class="s2">&quot;314572800&quot;</span><span class="p">,</span>
+    <span class="nx">activationDate</span><span class="o">:</span> <span class="s2">&quot;2019-08-01T09:09:33Z&quot;</span><span class="p">,</span>
+    <span class="nx">expirationDate</span><span class="o">:</span> <span class="s2">&quot;2019-08-02T09:09:33Z&quot;</span><span class="p">,</span>
+    <span class="nx">product</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;MzA5MjE3ODMwOTEyCg==&quot;</span><span class="p">,</span>
+      <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span>
+    <span class="p">},</span>
+    <span class="nx">autoRenewFirstSubscriptionId</span><span class="o">:</span> <span class="s2">&quot;MzEyMzMwOTIxNzgzZDIK&quot;</span>
+  <span class="p">}</span>
+  <span class="c1">// more subscriptions</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sim-notification-preferences-not-implemented">
+<h2>SIM notification preferences [NOT IMPLEMENTED]<a class="headerlink" href="#sim-notification-preferences-not-implemented" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/notification_preferences</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+</ul>
+<p><strong>Example request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/sim/8944474600000109251/notification_preferences <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;SUBSCRITPION_END&quot;</span>
+    <span class="nx">webhook_url</span><span class="o">:</span> <span class="s2">&quot;http://acme-flights.com/notifications/handler&quot;</span>
+  <span class="p">}</span>
+  <span class="c1">// more active notification subscriptions</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="register-for-notifications-not-implemented">
+<h2>Register for notifications [NOT IMPLEMENTED]<a class="headerlink" href="#register-for-notifications-not-implemented" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/notification_preferences/{type}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li>PARAMETERS:</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Parameter Name</th>
+<th align="center">Description</th>
+<th align="center">Required</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">webhook_url</td>
+<td align="center">A webhook url to call. Currently the only supported notification supported</td>
+<td align="center">no</td>
+<td align="center">--</td>
+</tr>
+</tbody>
+</table><p><strong>Example request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
+  https://services.truphone.com/esim/v1/sim/8944474600000109251/notification_preferences/SUBSCRIPTION_END <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+   -d <span class="s1">&#39;{</span>
+<span class="s1">       &quot;webhook_url&quot;: http://acme-flights.com/notifications/handler</span>
+<span class="s1">   }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unregister-from-notifications-not-implemented">
+<h2>Unregister from notifications [NOT IMPLEMENTED]<a class="headerlink" href="#unregister-from-notifications-not-implemented" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/notification_preferences/{type}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></li>
+</ul>
+<p><strong>Example request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="se">\</span>
+  https://services.truphone.com/esim/v1/sim/8944474600000109251/notification_preferences/SUBSCRIPTION_END <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="notification_preferences.html" class="btn btn-neutral float-right" title="Notification Preferences Resource" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="product.html" class="btn btn-neutral float-left" title="Product Resource" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Truphone
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

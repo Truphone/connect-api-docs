@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Order Resource &mdash; Truphone Connect 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Product Resource" href="product.html" />
+    <link rel="prev" title="Conventions" href="../conventions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truphone Connect
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conventions.html">Conventions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Storefront</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Order Resource</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#new-esim">New eSIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topup">Topup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-parameters">Input parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">New eSIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aditional-rules-and-validations">Aditional rules and validations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-request">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#response">Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#response-codes">Response codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-codes">Error codes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Topup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Aditional rules and validations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#request">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Response codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Error codes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bulk-activation">Bulk Activation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Aditional rules and validations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Response codes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#order-status">Order status</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Response codes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="product.html">Product Resource</a></li>
+</ul>
+<p class="caption"><span class="caption-text">SIM Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sim.html">SIM Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notification_preferences.html">Notification Preferences Resource</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Customer Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="subscription.html">Subscription Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customer.html">Customer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truphone Connect</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Order Resource</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/order.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="order-resource">
+<h1>Order Resource<a class="headerlink" href="#order-resource" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>Base URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></li>
+</ul>
+<div class="section" id="new-esim">
+<h2>New eSIM<a class="headerlink" href="#new-esim" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="topup">
+<h2>Topup<a class="headerlink" href="#topup" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="input-parameters">
+<h2>Input parameters<a class="headerlink" href="#input-parameters" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Parameter Name</th>
+<th align="center">Mandatory</th>
+<th align="center">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">operationType</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">countryCode</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">subscriptions</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">subscriptions.id</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">subscriptions.type</td>
+<td align="center">no</td>
+<td align="center">REGULAR</td>
+</tr>
+<tr>
+<td align="center">subscriptions.activationDate</td>
+<td align="center">no</td>
+<td align="center">Current timestamp</td>
+</tr>
+<tr>
+<td align="center">subscriptions.autoRenew</td>
+<td align="center">no</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">subscriptions.dataValue</td>
+<td align="center">no</td>
+<td align="center">Allowance data value</td>
+</tr>
+<tr>
+<td align="center">subscriptions.dataUnit</td>
+<td align="center">no</td>
+<td align="center">Allowance data unit</td>
+</tr>
+<tr>
+<td align="center">subscriptions.price</td>
+<td align="center">no</td>
+<td align="center">Allowance price</td>
+</tr>
+<tr>
+<td align="center">subscriptions.currency</td>
+<td align="center">no</td>
+<td align="center">Allowance currency</td>
+</tr>
+<tr>
+<td align="center">device</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">device.type</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">device.model</td>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">device.id</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">device.uicc</td>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">device.imei</td>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">customer</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">customer.email</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">customer.firstName</td>
+<td align="center">no</td>
+<td align="center">Equals to the email value</td>
+</tr>
+<tr>
+<td align="center">customer.lastName</td>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">customer.language</td>
+<td align="center">no</td>
+<td align="center">EN</td>
+</tr>
+<tr>
+<td align="center">customer.countryOfResidence</td>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">esim</td>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">esim.iccid</td>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id1">
+<h2>New eSIM<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The customer does not own neither an eSIM nor a data plan subscription. Calling the order endpoint with this configuration will provision a new eSIM/ICCID and add a data plan to the provisioned eSIM. If the customer does not exist, it will also be created.</p>
+</div>
+<div class="section" id="aditional-rules-and-validations">
+<h2>Aditional rules and validations<a class="headerlink" href="#aditional-rules-and-validations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">NEW_ESIM</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
+<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values: <code class="docutils literal notranslate"><span class="pre">iot</span></code>, <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></li>
+</ul>
+<div class="section" id="example-request">
+<h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
+  https://services.truphone.com/esim/v1/order <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span> <span class="se">\</span>
+  -d <span class="s1">&#39;{</span>
+<span class="s1">      	&quot;input&quot;: {</span>
+<span class="s1">            &quot;operationType&quot;: &quot;NEW_ESIM&quot;,</span>
+<span class="s1">            &quot;countryCode&quot;: &quot;PT&quot;,</span>
+<span class="s1">            &quot;customer&quot;: {</span>
+<span class="s1">                &quot;email&quot;: &quot;john@doe.com&quot;,</span>
+<span class="s1">                &quot;countryOfResidence&quot;: &quot;US&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;device&quot;: {</span>
+<span class="s1">                &quot;id&quot;: &quot;123456789&quot;,</span>
+<span class="s1">                &quot;model&quot;: &quot;iPhone&quot;,</span>
+<span class="s1">                &quot;type&quot;: &quot;ios&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">      	    &quot;subscriptions&quot;: [{</span>
+<span class="s1">      	        &quot;id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
+<span class="s1">      	        &quot;activationDate&quot;: &quot;2019-09-13T12:00:00Z&quot;,</span>
+<span class="s1">      	        &quot;price&quot;: 10,</span>
+<span class="s1">      	        &quot;currency&quot;: &quot;USD&quot;</span>
+<span class="s1">      	    }]</span>
+<span class="s1">      	}</span>
+<span class="s1">      }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="response">
+<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;externalId&quot;</span><span class="p">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACCEPTED&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The externalId identifies the order on truphone’s end and should be used to check the status and output of the order by the client.  This will always be unique to each order.</p>
+</div>
+<div class="section" id="response-codes">
+<h3>Response codes<a class="headerlink" href="#response-codes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">HTTP Status code</th>
+<th align="center">Error message code</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">201</td>
+<td align="center"></td>
+<td align="center">Order created successfully</td>
+</tr>
+<tr>
+<td align="center">400</td>
+<td align="center">INVALID_REQUEST_PARAMS</td>
+<td align="center">Bad input parameters</td>
+</tr>
+<tr>
+<td align="center">422</td>
+<td align="center">PRODUCT_NOT_FOUND</td>
+<td align="center">Product was not found for given id</td>
+</tr>
+<tr>
+<td align="center">500</td>
+<td align="center">INTERNAL_ERROR</td>
+<td align="center">There was a error trying to create the order</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="error-codes">
+<h3>Error codes<a class="headerlink" href="#error-codes" title="Permalink to this headline">¶</a></h3>
+<p>| Error code                | Description                                     |
+| :———————–: | :———————————————: |
+| PRODUCT_NOT_FOUND         | The product was not found for given id          |</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Topup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>The customer already owns an eSIM and wants to perform a topup operation.</p>
+</div>
+<div class="section" id="id3">
+<h2>Aditional rules and validations<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">TOPUP</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">TOPUP_ACTIVATION</span></code> (deprecated)</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
+<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></li>
+</ul>
+<p>In order to call this endpoint, both the <code class="docutils literal notranslate"><span class="pre">customer.email</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> nodes are mandatory and must match each other, otherwise the topup won’t be performed:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">esim</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> are mandatory</li>
+<li><code class="docutils literal notranslate"><span class="pre">customer.email</span></code> - the email used to order the first eSIM;</li>
+<li><code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> - the iccid obtained when the first eSIM was ordered.</li>
+</ul>
+<div class="section" id="request">
+<h3>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
+  https://services.truphone.com/esim/v1/order <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span> <span class="se">\</span>
+  -d <span class="s1">&#39;{</span>
+<span class="s1">      	&quot;input&quot;: {</span>
+<span class="s1">            &quot;operationType&quot;: &quot;TOPUP_ACTIVATION&quot;,</span>
+<span class="s1">            &quot;countryCode&quot;: &quot;PT&quot;,</span>
+<span class="s1">            &quot;customer&quot;: {</span>
+<span class="s1">                &quot;email&quot;: &quot;john@doe.com&quot;,</span>
+<span class="s1">                &quot;countryOfResidence&quot;: &quot;US&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;device&quot;: {</span>
+<span class="s1">                &quot;id&quot;: &quot;123456789&quot;,</span>
+<span class="s1">                &quot;model&quot;: &quot;iPhone&quot;,</span>
+<span class="s1">                &quot;type&quot;: &quot;ios&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;subscriptions&quot;: [{</span>
+<span class="s1">      	        &quot;id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
+<span class="s1">      	        &quot;activationDate&quot;: &quot;2019-09-13T12:00:00Z&quot;,</span>
+<span class="s1">      	        &quot;price&quot;: 10,</span>
+<span class="s1">      	        &quot;currency&quot;: &quot;USD&quot;</span>
+<span class="s1">      	    }],</span>
+<span class="s1">      	    &quot;esim&quot;: {</span>
+<span class="s1">      	        &quot;iccid&quot;: &quot;123456789&quot;</span>
+<span class="s1">      	    }</span>
+<span class="s1">      	}</span>
+<span class="s1">      }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Response<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;externalId&quot;</span><span class="p">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACCEPTED&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The externalId identifies the order on truphone’s end and should be used to check the status and output of the order by the client.</p>
+</div>
+<div class="section" id="id5">
+<h3>Response codes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>| HTTP Status code | Error message code           | Description                                  |
+| :————–: | :————————–: | :——————————————: |<br />| 201              |                              | Order created successfully                   |
+| 400              | INVALID_REQUEST_PARAMS       | Bad input parameters                         |<br />| 422              | PRODUCT_NOT_FOUND            | Product was not found for given id           |<br />| 422              | EMAIL_AND_ICCID_DO_NOT_MATCH | Email and ICCID do not match each other      |<br />| 422              | CUSTOMER_MUST_EXIST          | Does not exist a customer for given email    |<br />| 500              | INTERNAL_ERROR               | There was a error trying to create the order |</p>
+</div>
+<div class="section" id="id6">
+<h3>Error codes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>| Error code                   | Description                                     |
+| :————————–: | :———————————————: |
+| PRODUCT_NOT_FOUND            | The product was not found for given id          |
+| EMAIL_AND_ICCID_DO_NOT_MATCH | Email and ICCID do not match each other         |
+| CUSTOMER_MUST_EXIST          | Does not exist a customer for given email       |</p>
+</div>
+</div>
+<div class="section" id="bulk-activation">
+<h2>Bulk Activation<a class="headerlink" href="#bulk-activation" title="Permalink to this headline">¶</a></h2>
+<p>The customer already owns an eSIM and wants to perform a bulk activation .
+On a single request it’s possible to have multiple subscriptions, each one with an unique product to multiple ICCID’s.
+If the customer does not exist, it will also be created.</p>
+<p>Take in consideration if one input parameter is wrong, the order for all subscriptions is canceled.</p>
+<div class="section" id="id7">
+<h3>Aditional rules and validations<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">BULK_ACTIVATION</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the client</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the client</li>
+<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values: <code class="docutils literal notranslate"><span class="pre">iot</span></code>, <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>Example Request<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
+  https://services.truphone.com/esim/v1/order <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span> <span class="se">\</span>
+  -d <span class="s1">&#39;{</span>
+<span class="s1">          &quot;input&quot;: {</span>
+<span class="s1">              &quot;countryCode&quot;: &quot;PT&quot;,</span>
+<span class="s1">              &quot;operationType&quot; : &quot;BULK_ACTIVATION&quot;,</span>
+<span class="s1">              &quot;customer&quot;: {</span>
+<span class="s1">              	&quot;type&quot; : &quot;PERSONAL&quot;,</span>
+<span class="s1">              	&quot;countryOfResidence&quot; : &quot;PT&quot;,</span>
+<span class="s1">                  &quot;email&quot;: &quot;test_customer_e2e@gmail.com&quot;,</span>
+<span class="s1">                  &quot;firstName&quot; : &quot;tests&quot;,</span>
+<span class="s1">                  &quot;lastName&quot; : &quot;truphone&quot;,</span>
+<span class="s1">                  &quot;language&quot; : &quot;PT&quot;</span>
+<span class="s1">              },</span>
+<span class="s1">              &quot;device&quot;: {</span>
+<span class="s1">                  &quot;id&quot;: &quot;123456789&quot;,</span>
+<span class="s1">                  &quot;model&quot;: &quot;iPhone&quot;,</span>
+<span class="s1">                  &quot;type&quot;: &quot;ios&quot;,</span>
+<span class="s1">                  &quot;imei&quot; : &quot;1234&quot;</span>
+<span class="s1">              },</span>
+<span class="s1">              &quot;subscriptions&quot;: [</span>
+<span class="s1">                  {</span>
+<span class="s1">                  	&quot;iccid&quot; : [&quot;8944474600000101811, 8944474600000101811&quot;],</span>
+<span class="s1">                  	&quot;id&quot; : &quot;a3mM0000000Dcmr&quot;,</span>
+<span class="s1">                    &quot;activationDate&quot; : &quot;2019-12-28T12:00:00Z&quot;</span>
+<span class="s1">                  },</span>
+<span class="s1">                  {</span>
+<span class="s1">                  	&quot;iccid&quot; : [&quot;8944474600000101811, 8944474600000101811&quot;],</span>
+<span class="s1">                  	&quot;id&quot; : &quot;a3mM0000000Dcmw&quot;,</span>
+<span class="s1">                    &quot;activationDate&quot; : &quot;2019-12-28T12:00:00Z&quot;</span>
+<span class="s1">                  }</span>
+<span class="s1">              ],</span>
+<span class="s1">              &quot;payment&quot; : {</span>
+<span class="s1">              	&quot;token&quot; : &quot;1234&quot;</span>
+<span class="s1">              }</span>
+<span class="s1">          }</span>
+<span class="s1">      }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Response<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;externalId&quot;</span><span class="p">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACCEPTED&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The externalId identifies the order on truphone’s end and should be used to check the status and output of the order by the client.  This will always be unique to each order.</p>
+</div>
+<div class="section" id="id10">
+<h3>Response codes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>| HTTP Status code | Error message code         | Description                                  |
+| :————–: | :————————: | :——————————————: |<br />| 201              |                            | Order created successfully                   |
+| 400              | INVALID_REQUEST_PARAMS     | Bad input parameters                         |<br />| 422              | PRODUCT_NOT_FOUND          | Product was not found for given id           |<br />| 500              | INTERNAL_ERROR             | There was a error trying to create the order |</p>
+</div>
+</div>
+<div class="section" id="order-status">
+<h2>Order status<a class="headerlink" href="#order-status" title="Permalink to this headline">¶</a></h2>
+<p>The customer created an order and is waiting for it to complete.</p>
+<ul class="simple">
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/order/{orderId}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+</ul>
+<div class="section" id="id11">
+<h3>Request<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/order/3a6acf89-1ccf-4611-9424-453930f57ef1 <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>Response<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;externalId&quot;</span><span class="p">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;COMPLETED&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;output&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;matchingId&quot;</span><span class="p">:</span> <span class="s2">&quot;M-123DSA-AS&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;smdpUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;rsp.truphone.com&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When completed, the order contains the <code class="docutils literal notranslate"><span class="pre">output</span></code> field with the data that is relevant for eSIM installation and subsequent account status queries</p>
+</div>
+<div class="section" id="id13">
+<h3>Response codes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>| HTTP Status code | Error message code | Description                               |
+| :————–: | :—————-: | :—————————————: |<br />| 200              |                    | Order information was retriever           |
+| 404              | ORDER_NOT_FOUND    | Order was not found for the giver orderId |</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="product.html" class="btn btn-neutral float-right" title="Product Resource" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../conventions.html" class="btn btn-neutral float-left" title="Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Truphone
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

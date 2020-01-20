@@ -1,0 +1,58 @@
+.. truphone connect documentation master file, created by
+   sphinx-quickstart on Thu Jan 16 14:56:03 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Introduction
+========================================
+
+Welcomt to Truphone connect developer documentation. These documents outline instructions for using the API, such as the authentication process, test and production environments, user roles and how to use each different available endpoint/resource, including example requests and possible responses.
+
+Before you start
+################
+
+All operations are private and protected under a specific role, which is granted when subscribing the API. Different roles have access to different operations, so before starting to code your app, be sure to check what is your client/application's authorization role. Current avaliable roles are:
+
+- Reseller - `RESELLER`
+- Account Manager - `ACCOUNT_MANAGER`
+
+For more details about each specific role, check the :doc:`roles` page.
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: General
+   :name: general
+
+   authentication
+   roles
+   environments
+   conventions
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Storefront
+   :name: storefront
+
+   reference/order
+   reference/product
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: SIM Management
+   :name: simnmanagement
+
+   reference/sim
+   reference/notification_preferences
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Customer Management
+   :name: customermanagement
+
+   reference/subscription
+   reference/customer

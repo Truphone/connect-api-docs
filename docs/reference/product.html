@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Product Resource &mdash; Truphone Connect 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SIM Resource" href="sim.html" />
+    <link rel="prev" title="Order Resource" href="order.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truphone Connect
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conventions.html">Conventions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Storefront</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="order.html">Order Resource</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Product Resource</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#product-list">Product list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#product-details-not-implemented">Product details [NOT IMPLEMENTED]</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">SIM Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sim.html">SIM Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notification_preferences.html">Notification Preferences Resource</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Customer Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="subscription.html">Subscription Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customer.html">Customer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truphone Connect</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Product Resource</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/product.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="product-resource">
+<h1>Product Resource<a class="headerlink" href="#product-resource" title="Permalink to this headline">¶</a></h1>
+<p>A sellable connectivity unit</p>
+<p><strong>Properties</strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Property Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">Identifier</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">Name</td>
+</tr>
+<tr>
+<td align="center">description</td>
+<td align="center">Description</td>
+</tr>
+<tr>
+<td align="center">period</td>
+<td align="center">Product duration</td>
+</tr>
+<tr>
+<td align="center">data.value</td>
+<td align="center">Data capacity</td>
+</tr>
+<tr>
+<td align="center">data.unit</td>
+<td align="center">Data unit</td>
+</tr>
+<tr>
+<td align="center">footprint</td>
+<td align="center">Countries where the product works</td>
+</tr>
+<tr>
+<td align="center">active_countries</td>
+<td align="center">Countries where the product is sold</td>
+</tr>
+<tr>
+<td align="center">pricing.\$CURRENCY</td>
+<td align="center">Product Price per currency</td>
+</tr>
+</tbody>
+</table><div class="section" id="product-list">
+<h2>Product list<a class="headerlink" href="#product-list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">/v1/product</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li>PARAMETERS:</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Parameter Name</th>
+<th align="center">Description</th>
+<th align="center">Required</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">currency</td>
+<td align="center">The currency in which the price is presented</td>
+<td align="center">no</td>
+<td align="center">EUR</td>
+</tr>
+</tbody>
+</table><p><strong>Example request</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/products?currency<span class="o">=</span>USD <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;a3m*********gIAK&quot;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+    <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+    <span class="nx">period</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">value</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nx">unit</span><span class="o">:</span> <span class="s2">&quot;GB&quot;</span>
+    <span class="p">},</span>
+    <span class="nx">footprint</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;AG&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="s2">&quot;VN&quot;</span><span class="p">],</span>
+    <span class="nx">activeCountries</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">],</span>
+    <span class="nx">pricing</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">USD</span><span class="o">:</span> <span class="mf">42.0</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="c1">// .. more products</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="product-details-not-implemented">
+<h2>Product details [NOT IMPLEMENTED]<a class="headerlink" href="#product-details-not-implemented" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">/v1/product/{id}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li>PARAMETERS:</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Parameter Name</th>
+<th align="center">Description</th>
+<th align="center">Required</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">currency</td>
+<td align="center">The currency in which the price is presented</td>
+<td align="center">no</td>
+<td align="center">EUR</td>
+</tr>
+</tbody>
+</table><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/products/ZHNhZGFzZGFz/?currency<span class="o">=</span>USD <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;a3m*********gIAK&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;period&quot;</span><span class="o">:</span><span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span>
+        <span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="s2">&quot;GB&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;footprint&quot;</span><span class="o">:</span><span class="p">[</span>
+        <span class="s2">&quot;AG&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;VN&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;activeCountries&quot;</span><span class="o">:</span><span class="p">[</span>
+        <span class="s2">&quot;ALL&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;pricing&quot;</span><span class="o">:</span><span class="p">{</span>
+        <span class="s2">&quot;USD&quot;</span><span class="o">:</span><span class="mf">42.0</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sim.html" class="btn btn-neutral float-right" title="SIM Resource" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="order.html" class="btn btn-neutral float-left" title="Order Resource" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Truphone
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
