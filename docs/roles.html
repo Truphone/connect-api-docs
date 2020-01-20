@@ -173,18 +173,19 @@
 <h1>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="reseller">
 <h2><code class="docutils literal notranslate"><span class="pre">RESELLER</span></code><a class="headerlink" href="#reseller" title="Permalink to this headline">¶</a></h2>
-<p>An API client application <strong>outside the context of an end customer</strong>, which resells Truphone connectivity. This role is restricted to connectivity related operations like listing available products, submitting new orders and checking sim subscription/usage data. Clients with a <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code> role will typically use the API to connectivity store/management pages in contexts not exclusive to connectivity. Example: Bob purchases an eSIM with a 3GB data plan from the ACME Air company website, which presented him with this option as a plus product at the end of the flight purchase journey. Bob can use the ACME Air company website or a dedicated app to check his eSIM Data usage, and will later be billed by ACME Air company. Bob has no direct relation with Truphone.</p>
+<p>An API client application <strong>outside the context of an end customer</strong>, which resells Truphone connectivity. This role is restricted to connectivity related operations like listing available products, submitting new orders and checking sim subscription/usage data. Clients with a <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code> role will typically use the API to connectivity store/management pages in contexts not exclusive to connectivity.</p>
 <p><strong>Entitled API resources</strong>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">products</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sim</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notifications</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="account-manager">
 <h2><code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code><a class="headerlink" href="#account-manager" title="Permalink to this headline">¶</a></h2>
-<p>An API client application, which can authenticate <strong>on behalf of an end customer</strong>, This role allows the application to manage connectivity and customer related data. Clients with an <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code> role typically will develop applications where users can purchase connectivity and register their accounts with Truphone, for managing their profile information like email, name, billing address etc. Example: Alice purchases a connectet camera from the ACME IoT Camera Store. When later using the camera for the first time, Later on, Alice creates an account in the ACME IoT Connectivity Portal, activates her camera’s eSIM, and adds a 3GB data plan to it. Alice is a Truphone customer, and therefore will be billed by Truphone.</p>
+<p>An API client application, which can authenticate <strong>on behalf of an end customer</strong>, This role allows the application to manage connectivity and customer related data. Clients with an <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code> role typically will develop applications where users can purchase connectivity and register their accounts with Truphone, for managing their profile information like email, name, billing address etc.</p>
 <p><strong>Entitled API resources</strong>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></li>
