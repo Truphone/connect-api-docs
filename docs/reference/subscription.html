@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Subscription Resource &mdash; Truphone Connect 1.0 documentation</title>
+  <title>Subscription Resource &mdash; Truphone Connect API 1.0 documentation</title>
   
 
   
@@ -50,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Truphone Connect
+            <a href="../index.html" class="icon icon-home"> Truphone Connect API
           
 
           
@@ -120,7 +120,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Truphone Connect</a>
+          <a href="../index.html">Truphone Connect API</a>
         
       </nav>
 
@@ -252,9 +252,9 @@
 </table><div class="section" id="subscription-details-not-implemented">
 <h2>Subscription details [NOT IMPLEMENTED]<a class="headerlink" href="#subscription-details-not-implemented" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <p><strong>Example request</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
@@ -286,9 +286,9 @@
 <div class="section" id="subscription-details-update-not-implemented">
 <h2>Subscription details update [NOT IMPLEMENTED]<a class="headerlink" href="#subscription-details-update-not-implemented" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></p></li>
 </ul>
 <p>Update the properties of a given subscription. currently only supports toggling the auto renew state.</p>
 <p><strong>Example request</strong></p>
@@ -307,12 +307,13 @@
 <div class="section" id="subscription-activation">
 <h2>Subscription activation<a class="headerlink" href="#subscription-activation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code><ul>
-<li>[Deprecated] <code class="docutils literal notranslate"><span class="pre">v1/status/subscription/{subscriptionId}/activate</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></p>
+<ul>
+<li><p>[Deprecated] <code class="docutils literal notranslate"><span class="pre">v1/status/subscription/{subscriptionId}/activate</span></code></p></li>
 </ul>
 </li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <p><strong>Example request</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>

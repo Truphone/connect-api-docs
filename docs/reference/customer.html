@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Customer &mdash; Truphone Connect 1.0 documentation</title>
+  <title>Customer &mdash; Truphone Connect API 1.0 documentation</title>
   
 
   
@@ -49,7 +49,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Truphone Connect
+            <a href="../index.html" class="icon icon-home"> Truphone Connect API
           
 
           
@@ -167,7 +167,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Truphone Connect</a>
+          <a href="../index.html">Truphone Connect API</a>
         
       </nav>
 
@@ -225,9 +225,9 @@
 <div class="section" id="creating-a-new-customer">
 <h2>Creating a new customer<a class="headerlink" href="#creating-a-new-customer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="input-parameters">
 <h3>Input parameters<a class="headerlink" href="#input-parameters" title="Permalink to this headline">¶</a></h3>
@@ -315,11 +315,12 @@
 <div class="section" id="additional-rules-and-validations">
 <h3>Additional rules and validations<a class="headerlink" href="#additional-rules-and-validations" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter must have one of the following values: <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code>.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">type</span></code> equals to <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code> then the input parameters are the same as <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> plus:<ul>
-<li>companyName</li>
-<li>companyNumber</li>
-<li>jobTitle</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter must have one of the following values: <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">type</span></code> equals to <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code> then the input parameters are the same as <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> plus:</p>
+<ul>
+<li><p>companyName</p></li>
+<li><p>companyNumber</p></li>
+<li><p>jobTitle</p></li>
 </ul>
 </li>
 </ul>
@@ -454,9 +455,9 @@
 <div class="section" id="retrieving-customer-details">
 <h2>Retrieving customer details<a class="headerlink" href="#retrieving-customer-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="id1">
 <h3>Input parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -549,9 +550,9 @@
 <div class="section" id="updating-customer-details">
 <h2>Updating customer details<a class="headerlink" href="#updating-customer-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{id}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{id}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></p></li>
 </ul>
 <div class="section" id="id4">
 <h3>Input parameters<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
@@ -641,11 +642,12 @@
 <div class="section" id="id5">
 <h2>Additional rules and validations<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter must have one of the following values: <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code>.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">type</span></code> equals to <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code> then the input parameters are the same as <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> plus:<ul>
-<li>companyName</li>
-<li>companyNumber</li>
-<li>jobTitle</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter must have one of the following values: <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">type</span></code> equals to <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code> then the input parameters are the same as <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> plus:</p>
+<ul>
+<li><p>companyName</p></li>
+<li><p>companyNumber</p></li>
+<li><p>jobTitle</p></li>
 </ul>
 </li>
 </ul>
@@ -753,9 +755,9 @@
 <div class="section" id="get-available-payment-methods">
 <h2>Get available payment methods<a class="headerlink" href="#get-available-payment-methods" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="id10">
 <h3>Example request<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
@@ -811,9 +813,9 @@
 <div class="section" id="add-a-payment-method">
 <h2>Add a Payment Method<a class="headerlink" href="#add-a-payment-method" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="id12">
 <h3>Input parameters<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
@@ -918,9 +920,9 @@
 <div class="section" id="delete-a-payment-method">
 <h2>Delete a Payment Method<a class="headerlink" href="#delete-a-payment-method" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method/{paymenMethodId}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method/{paymenMethodId}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></li>
 </ul>
 <div class="section" id="id16">
 <h3>Example request<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>

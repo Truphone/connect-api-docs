@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Order Resource &mdash; Truphone Connect 1.0 documentation</title>
+  <title>Order Resource &mdash; Truphone Connect API 1.0 documentation</title>
   
 
   
@@ -50,7 +50,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Truphone Connect
+            <a href="../index.html" class="icon icon-home"> Truphone Connect API
           
 
           
@@ -149,7 +149,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Truphone Connect</a>
+          <a href="../index.html">Truphone Connect API</a>
         
       </nav>
 
@@ -202,8 +202,8 @@
   <div class="section" id="order-resource">
 <h1>Order Resource<a class="headerlink" href="#order-resource" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>Base URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>Base URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></p></li>
 </ul>
 <div class="section" id="new-esim">
 <h2>New eSIM<a class="headerlink" href="#new-esim" title="Permalink to this headline">¶</a></h2>
@@ -356,12 +356,12 @@
 <div class="section" id="aditional-rules-and-validations">
 <h2>Aditional rules and validations<a class="headerlink" href="#aditional-rules-and-validations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">NEW_ESIM</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values: <code class="docutils literal notranslate"><span class="pre">iot</span></code>, <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">NEW_ESIM</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values: <code class="docutils literal notranslate"><span class="pre">iot</span></code>, <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></p></li>
 </ul>
 <div class="section" id="example-request">
 <h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
@@ -452,18 +452,18 @@
 <div class="section" id="id3">
 <h2>Aditional rules and validations<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">TOPUP</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">TOPUP_ACTIVATION</span></code> (deprecated)</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">TOPUP</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">TOPUP_ACTIVATION</span></code> (deprecated)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></p></li>
 </ul>
 <p>In order to call this endpoint, both the <code class="docutils literal notranslate"><span class="pre">customer.email</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> nodes are mandatory and must match each other, otherwise the topup won’t be performed:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">esim</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> are mandatory</li>
-<li><code class="docutils literal notranslate"><span class="pre">customer.email</span></code> - the email used to order the first eSIM;</li>
-<li><code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> - the iccid obtained when the first eSIM was ordered.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">esim</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> are mandatory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">customer.email</span></code> - the email used to order the first eSIM;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> - the iccid obtained when the first eSIM was ordered.</p></li>
 </ul>
 <div class="section" id="request">
 <h3>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
@@ -534,12 +534,12 @@ If the customer does not exist, it will also be created.</p>
 <div class="section" id="id7">
 <h3>Aditional rules and validations<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">BULK_ACTIVATION</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the client</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the client</li>
-<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values: <code class="docutils literal notranslate"><span class="pre">iot</span></code>, <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">BULK_ACTIVATION</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the client</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the client</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values: <code class="docutils literal notranslate"><span class="pre">iot</span></code>, <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="id8">
@@ -609,8 +609,8 @@ If the customer does not exist, it will also be created.</p>
 <h2>Order status<a class="headerlink" href="#order-status" title="Permalink to this headline">¶</a></h2>
 <p>The customer created an order and is waiting for it to complete.</p>
 <ul class="simple">
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/order/{orderId}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/order/{orderId}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="id11">
 <h3>Request<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>

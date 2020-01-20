@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'Truphone Connect'
+project = u'Truphone Connect API'
 copyright = u'2020, Truphone'
 author = u'Truphone'
 
