@@ -342,9 +342,9 @@ curl -X GET \
     "token": "1238",
     "name": "John Doe",
     "type": "VISA",
-    "lastDigits": "1234",
-    "expiryMonth": "12",
-    "expiryYear": "1234",
+    "last_digits": "1234",
+    "expiry_month": "12",
+    "expiry_year": "1234",
     "gateway": "CYBERSOURCE"
   }
 ]
@@ -370,9 +370,9 @@ curl -X GET \
 |     token      |    yes    |               |
 |      name      |    no     |               |
 |      type      |    yes    |               |
-|   lastDigits   |    yes    |               |
-|  expiryMonth   |    yes    |               |
-|   expiryYear   |    yes    |               |
+|  last_digits   |    yes    |               |
+|  expiry_month  |    yes    |               |
+|  expiry_year   |    yes    |               |
 |    gateway     |    yes    |               |
 
 ### Example request
@@ -388,10 +388,10 @@ curl -X POST \
             "token" : "1238",
             "name" : "John Doe",
             "type" : "VISA",
-            "lastDigits" : "1234",
-            "expiryMonth" : "12",
-            "expiryYear" : "1234",
-            "gateway" : "CYBERSOURCE"
+            "last_digits" : "1234",
+            "expiry_month" : "12",
+            "expiry_year" : "1234",
+            "gateway" : "TRUPHONE"
        }'
 ```
 
