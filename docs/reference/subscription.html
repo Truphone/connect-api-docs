@@ -82,6 +82,7 @@
             
               <p class="caption"><span class="caption-text">General</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../deployments.html">Deployment Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
@@ -100,9 +101,19 @@
 <p class="caption"><span class="caption-text">Customer Management</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Subscription Resource</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#subscription-details-not-implemented">Subscription details [NOT IMPLEMENTED]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#subscription-details-update-not-implemented">Subscription details update [NOT IMPLEMENTED]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#subscription-activation">Subscription activation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#subscription-details-not-implemented">Subscription details [NOT IMPLEMENTED]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-request">Example request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-response">Example response**</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#subscription-details-update-not-implemented">Subscription details update [NOT IMPLEMENTED]</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Example request</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#subscription-activation">Subscription activation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Example request</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="customer.html">Customer</a></li>
@@ -172,7 +183,7 @@
             
   <div class="section" id="subscription-resource">
 <h1>Subscription Resource<a class="headerlink" href="#subscription-resource" title="Permalink to this headline">¶</a></h1>
-<p>A data allowance</p>
+<p>A data plan subscription</p>
 <p><strong>Properties</strong></p>
 <table border="1" class="docutils">
 <thead>
@@ -256,7 +267,8 @@
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
-<p><strong>Example request</strong></p>
+<div class="section" id="example-request">
+<h3>Example request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
   https://services.truphone.com/esim/v1/subscription/MzEyMzMwOTIxNzgzZDIK <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -265,7 +277,9 @@
    -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
 </pre></div>
 </div>
-<p><strong>Example response</strong></p>
+</div>
+<div class="section" id="example-response">
+<h3>Example response**<a class="headerlink" href="#example-response" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
     <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;Njc1NzY1NzY1ZDIK&quot;</span><span class="p">,</span>
@@ -283,6 +297,7 @@
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="subscription-details-update-not-implemented">
 <h2>Subscription details update [NOT IMPLEMENTED]<a class="headerlink" href="#subscription-details-update-not-implemented" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -291,7 +306,8 @@
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></li>
 </ul>
 <p>Update the properties of a given subscription. currently only supports toggling the auto renew state.</p>
-<p><strong>Example request</strong></p>
+<div class="section" id="id1">
+<h3>Example request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="se">\</span>
   https://services.truphone.com/esim/v1/subscription/Njc1NzY1NzY1ZDIK <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -304,6 +320,7 @@
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="subscription-activation">
 <h2>Subscription activation<a class="headerlink" href="#subscription-activation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -314,7 +331,8 @@
 </li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
 </ul>
-<p><strong>Example request</strong></p>
+<div class="section" id="id2">
+<h3>Example request<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
   https://services.truphone.com/esim/v1/subscription/Njc1NzY1NzY1ZDIK/activate <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -322,6 +340,7 @@
    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

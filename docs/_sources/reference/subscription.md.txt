@@ -1,6 +1,6 @@
 # Subscription Resource
 
-A data allowance
+A data plan subscription
 
 **Properties**
 
@@ -32,7 +32,7 @@ A data allowance
 - URL: `v1/subscription/{subscriptionId}`
 - METHOD: `GET`
 
-**Example request**
+### Example request
 
 ```bash
 curl -X GET \
@@ -43,7 +43,7 @@ curl -X GET \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
 ```
 
-**Example response**
+### Example response**
 
 ```javascript
 {
@@ -70,7 +70,7 @@ curl -X GET \
 
 Update the properties of a given subscription. currently only supports toggling the auto renew state.
 
-**Example request**
+### Example request
 
 ```bash
 curl -X PATCH \
@@ -91,7 +91,7 @@ curl -X PATCH \
   - [Deprecated] `v1/status/subscription/{subscriptionId}/activate`
 - METHOD: `POST`
 
-**Example request**
+### Example request
 
 ```bash
 curl -X POST \
