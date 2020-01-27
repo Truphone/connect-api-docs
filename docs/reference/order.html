@@ -83,6 +83,7 @@
               <p class="caption"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../deployments.html">Deployment Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ratelimits.html">Rate limits and quotas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
@@ -100,7 +101,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#topping-up-an-existing-esim">Topping up an existing eSIM</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Rules and validations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Example Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#response">Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-an-order-s-status">Checking an order’s status</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Example Response</a></li>
 </ul>
 </li>
 </ul>
@@ -302,7 +308,6 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The externalId identifies the order on truphone’s end and should be used to check the status and output of the order by the client. This will always be unique to each order.</p>
 </div>
 </div>
 <div class="section" id="topping-up-an-existing-esim">
@@ -365,15 +370,47 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="response">
-<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Example Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;externalId&quot;</span><span class="o">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
   <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;ACCEPTED&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The externalId identifies the order on truphone’s end and should be used to check the status and output of the order by the client.</p>
+</div>
+</div>
+<div class="section" id="checking-an-order-s-status">
+<h2>Checking an order’s status<a class="headerlink" href="#checking-an-order-s-status" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/order/{orderId}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+</ul>
+<div class="section" id="id4">
+<h3>Example Request<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/order/3a6acf89-1ccf-4611-9424-453930f57ef1 <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Example Response<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;externalId&quot;</span><span class="p">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;COMPLETED&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;output&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;matchingId&quot;</span><span class="p">:</span> <span class="s2">&quot;M-123DSA-AS&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;smdpUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;rsp.truphone.com&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

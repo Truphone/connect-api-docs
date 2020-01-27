@@ -31,6 +31,7 @@ For more details about each specific role, check the :doc:`roles` page.
    :name: general
 
    deployments
+   ratelimits
    authentication
    roles
    environments

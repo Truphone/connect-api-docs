@@ -22,6 +22,7 @@ A purchase order for data plans and eSIMs
 |    FAILED     |      Order Failed      |
 |  FULFILLING   | Order still processing |
 
+
 ## Ordering a new eSIM
 
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
@@ -78,8 +79,6 @@ curl -X POST \
   "status": "ACCEPTED"
 }
 ```
-
-The externalId identifies the order on truphone's end and should be used to check the status and output of the order by the client. This will always be unique to each order.
 
 
 ## Topping up an existing eSIM
@@ -139,7 +138,7 @@ curl -X POST \
       }'
 ```
 
-### Response
+### Example Response
 
 ```javascript
 {
@@ -148,4 +147,32 @@ curl -X POST \
 }
 ```
 
-The externalId identifies the order on truphone's end and should be used to check the status and output of the order by the client.
+
+## Checking an order's status
+
+- Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
+- URL: `v1/order/{orderId}`
+- METHOD: `GET`
+
+### Example Request
+```bash
+curl -X GET \
+  https://services.truphone.com/esim/v1/order/3a6acf89-1ccf-4611-9424-453930f57ef1 \
+   -H "Authorization: Bearer $ACCESS_TOKEN" \
+   -H 'Cache-Control: no-cache' \
+   -H 'Content-Type: application/json' \
+   -H 'X-Correlation-ID: unique-id-from-requester-123'
+```
+
+### Example Response
+```json
+{
+  "externalId": "3a6acf89-1ccf-4611-9424-453930f57ef1",
+  "status": "COMPLETED",
+  "output": {
+      "iccid": "1234567890",
+      "matchingId": "M-123DSA-AS",
+      "smdpUrl": "rsp.truphone.com"
+  }
+}
+```
