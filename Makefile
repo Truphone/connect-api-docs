@@ -15,6 +15,7 @@ help:
 
 # Generate version for github pages
 github:
+	rm -rf build/html
 	@make html
 	@cp -a build/html/. ./docs
 

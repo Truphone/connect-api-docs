@@ -255,7 +255,7 @@
 <ul class="simple">
 <li>If the customer does not exist it will be created</li>
 <li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">NEW_ESIM</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.product_id</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">subscriptions.allowanceId</span></code> (deprecated) - Needs to be an id that belongs to the product catalog of the customer</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
@@ -284,7 +284,7 @@
 <span class="s1">                &quot;type&quot;: &quot;ios&quot;</span>
 <span class="s1">            },</span>
 <span class="s1">      	    &quot;subscriptions&quot;: [{</span>
-<span class="s1">      	        &quot;id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
+<span class="s1">      	        &quot;product_id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
 <span class="s1">      	        &quot;activationDate&quot;: &quot;2019-09-13T12:00:00Z&quot;,</span>
 <span class="s1">      	        &quot;price&quot;: 10,</span>
 <span class="s1">      	        &quot;currency&quot;: &quot;USD&quot;</span>
@@ -317,7 +317,7 @@
 <ul class="simple">
 <li>The customer must already exist</li>
 <li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">TOPUP</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">TOPUP_ACTIVATION</span></code> (deprecated)</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.id</span></code> - Needs to be an id that belongs to the product catalog of the customer</li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.product_id</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">subscriptions.allowanceId</span></code> (deprecated) - Needs to be an id that belongs to the product catalog of the customer</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
@@ -352,7 +352,7 @@
 <span class="s1">                &quot;type&quot;: &quot;ios&quot;</span>
 <span class="s1">            },</span>
 <span class="s1">            &quot;subscriptions&quot;: [{</span>
-<span class="s1">      	        &quot;id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
+<span class="s1">      	        &quot;product_id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
 <span class="s1">      	        &quot;activationDate&quot;: &quot;2019-09-13T12:00:00Z&quot;,</span>
 <span class="s1">      	        &quot;price&quot;: 10,</span>
 <span class="s1">      	        &quot;currency&quot;: &quot;USD&quot;</span>

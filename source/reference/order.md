@@ -32,7 +32,7 @@ A purchase order for data plans and eSIMs
 
 - If the customer does not exist it will be created
 - `operationType` - Needs to be `NEW_ESIM`
-- `subscriptions.id` - Needs to be an id that belongs to the product catalog of the customer
+- `subscriptions.product_id` (preferred) or `subscriptions.allowanceId` (deprecated) - Needs to be an id that belongs to the product catalog of the customer
 - `subscriptions.activationDate` - Can not be a date in the past
 - `subscriptions.price` - If is sent, it must be sent in pair with `subscriptions.currency`
 - `subscriptions.currency` - If is sent, it must be sent in pair with `subscriptions.price` and needs to be one of the currencies supported by the customer
@@ -61,7 +61,7 @@ curl -X POST \
                 "type": "ios"
             },
       	    "subscriptions": [{
-      	        "id": "a3u3z000000PZBhAAO",
+      	        "product_id": "a3u3z000000PZBhAAO",
       	        "activationDate": "2019-09-13T12:00:00Z",
       	        "price": 10,
       	        "currency": "USD"
@@ -92,7 +92,7 @@ The externalId identifies the order on truphone's end and should be used to chec
 
 - The customer must already exist
 - `operationType` - Needs to be `TOPUP` (preferred) or `TOPUP_ACTIVATION` (deprecated)
-- `subscriptions.id` - Needs to be an id that belongs to the product catalog of the customer
+- `subscriptions.product_id` (preferred) or `subscriptions.allowanceId` (deprecated) - Needs to be an id that belongs to the product catalog of the customer
 - `subscriptions.activationDate` - Can not be a date in the past
 - `subscriptions.price` - If is sent, it must be sent in pair with `subscriptions.currency`
 - `subscriptions.currency` - If is sent, it must be sent in pair with `subscriptions.price` and needs to be one of the currencies supported by the customer
@@ -127,7 +127,7 @@ curl -X POST \
                 "type": "ios"
             },
             "subscriptions": [{
-      	        "id": "a3u3z000000PZBhAAO",
+      	        "product_id": "a3u3z000000PZBhAAO",
       	        "activationDate": "2019-09-13T12:00:00Z",
       	        "price": 10,
       	        "currency": "USD"
