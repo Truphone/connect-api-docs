@@ -1,6 +1,35 @@
 # Customer
 
-## Customer Resource
+A Truphone connectivity end user
+
+**Properties**
+
+|   Property Name    |                Description                |
+| :----------------: | :---------------------------------------: |
+|       email        |               Email address               |
+|        type        |   Customer type (BUSSINESS or PERSONAL)   |
+|     firstName      |                First Name                 |
+|      lastName      |                 Last Name                 |
+|      language      |                 Language                  |
+| countryOfResidence |           Country of Residence            |
+|    phoneNumber     |               Phone Number                |
+|  defaultCurrency   |            Preferred Currency             |
+|   billingAddress   | Billing Address (see Address Properties)  |
+|  shippingAddress   | Shipping Address (see Address Properties) |
+|    companyName     |    Company name for BUSINESS customers    |
+|   companyNumber    |  Employee number for BUSINESS customers   |
+|      jobTitle      |     Job title for BUSINESS customers      |
+
+**Address Properties**
+
+| Property Name  |   Description    |
+| :------------: | :--------------: |
+| streetAddress1 | Street Address 1 |
+| streetAddress2 | Street Address 2 |
+|      city      |       City       |
+|     state      |      State       |
+|    postCode    |    Post Code     |
+|    country     |     Country      |
 
 ## Creating a new customer
 
@@ -8,74 +37,7 @@
 - URL: `v1/customer`
 - METHOD: `POST`
 
-### Input parameters
-
-|   Parameter Name   |  Mandatory   | Default Value |
-| :----------------: | :----------: | :-----------: |
-|       email        |     yes      |               |
-|        type        |     yes      |   PERSONAL    |
-|     firstName      |      no      |               |
-|      lastName      |      no      |               |
-|      language      |      no      |      EN       |
-| countryOfResidence | configurable |               |
-|    phoneNumber     |      no      |               |
-|  defaultCurrency   |      no      |               |
-|      verified      |      no      |               |
-|   billingAddress   |      no      |               |
-|  shippingAddress   |      no      |               |
-|    companyName     |  dependable  |               |
-|   companyNumber    |  dependable  |               |
-|      jobTitle      |  dependable  |               |
-
-### Additional rules and validations
-
-- The `type` parameter must have one of the following values: `PERSONAL` or `BUSINESS`.
-- If `type` equals to `BUSINESS` then the input parameters are the same as `PERSONAL` plus:
-  - companyName
-  - companyNumber
-  - jobTitle
-
-### Example request
-
-#### Personal
-
-```bash
-curl -X POST \
-  https://services.truphone.com/esim/v1/customer \
-  -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -H 'X-Correlation-ID: unique-id-from-requester-123' \
-  -d '{
-        "email": "john@doe.com",
-        "firstName": "John",
-        "lastName": "Doe",
-        "countryOfResidence": "US",
-        "language": "EN",
-        "phoneNumber": "0044102938120",
-        "defaultCurrency": "EUR",
-        "type": "PERSONAL",
-        "verified": true,
-        "billingAddress" : {
-          "streetAddress1" : "Rua das flores",
-          "streetAddress2" : "Primeiro Esquerdo",
-          "city": "Lisboa",
-          "state": "Lisboa",
-          "postCode": "1234-567",
-          "country": "Portugal"
-        },
-        "shippingAddress" : {
-          "streetAddress1" : "Rua das flores",
-          "streetAddress2" : "Primeiro Esquerdo",
-          "city": "Lisboa",
-          "state": "Lisboa",
-          "postCode": "1234-567",
-          "country": "Portugal"
-        }
-      }'
-```
-
-#### Business
+### Example Request
 
 ```bash
 curl -X POST \
@@ -93,42 +55,29 @@ curl -X POST \
         "phoneNumber": "0044102938120",
         "defaultCurrency": "EUR",
         "type": "BUSINESS",
-        "verified": true,
         "companyName": "TruExample",
         "companyNumber": "123456789",
         "jobTitle": "Software Engineer",
         "billingAddress" : {
-          "streetAddress1" : "Rua das flores",
-          "streetAddress2" : "Primeiro Esquerdo",
-          "city": "Lisboa",
-          "state": "Lisboa",
-          "postCode": "1234-567",
-          "country": "Portugal"
+          "streetAddress1" : "25 Cobbleton Square Appartments",
+          "streetAddress2" : "Cupertino",
+          "city": "San Jose",
+          "state": "California",
+          "postCode": "12345",
+          "country": "United States"
         },
         "shippingAddress" : {
-          "streetAddress1" : "Rua das flores",
-          "streetAddress2" : "Primeiro Esquerdo",
-          "city": "Lisboa",
-          "state": "Lisboa",
-          "postCode": "1234-567",
-          "country": "Portugal"
-        }
+          "streetAddress1" : "25 Cobbleton Square Appartments",
+          "streetAddress2" : "Cupertino",
+          "city": "San Jose",
+          "state": "California",
+          "postCode": "12345",
+          "country": "United States"
+        },
       }'
 ```
 
-### Response codes
 
-| HTTP Status code |    Error message code     |          Description          |
-| :--------------: | :-----------------------: | :---------------------------: |
-|       201        |                           | Customer created successfully |
-|       400        |  INVALID_REQUEST_PARAMS   |     Bad input parameters      |
-|       422        | UNABLE_TO_CREATE_CUSTOMER |   Unable to create customer   |
-
-### Error codes
-
-|        Error code         |        Description        |
-| :-----------------------: | :-----------------------: |
-| UNABLE_TO_CREATE_CUSTOMER | Email already registered. |
 
 ## Retrieving customer details
 
@@ -142,21 +91,22 @@ curl -X POST \
 | :------------: | :-------: | :-----------: |
 |     email      |    yes    |               |
 
-### Example request
+### Example Request
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/customer?email=tests.contoso@email.com
+  https://services.truphone.com/esim/v1/customer?email=john@doe.com
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
 ```
 
-### Response Body
+### Example Response
 
 ```json
 {
+  "id": "29asdaA3801b4789asdA235=",
   "email": "john@doe.com",
   "firstName": "John",
   "lastName": "Doe",
@@ -165,35 +115,29 @@ curl -X GET \
   "phoneNumber": "0044102938120",
   "defaultCurrency": "EUR",
   "type": "BUSINESS",
-  "verified": true,
   "companyName": "TruExample",
   "companyNumber": "123456789",
   "jobTitle": "Software Engineer",
   "billingAddress": {
-    "streetAddress1": "Rua das flores",
-    "streetAddress2": "Primeiro Esquerdo",
-    "city": "Lisboa",
-    "state": "Lisboa",
-    "postCode": "1234-567",
-    "country": "Portugal"
+    "streetAddress1": "25 Cobbleton Square Appartments",
+    "streetAddress2": "Cupertino",
+    "city": "San Jose",
+    "state": "California",
+    "postCode": "12345",
+    "country": "United States"
   },
   "shippingAddress": {
-    "streetAddress1": "Rua das flores",
-    "streetAddress2": "Primeiro Esquerdo",
-    "city": "Lisboa",
-    "state": "Lisboa",
-    "postCode": "1234-567",
-    "country": "Portugal"
+    "streetAddress1": "25 Cobbleton Square Appartments",
+    "streetAddress2": "Cupertino",
+    "city": "San Jose",
+    "state": "California",
+    "postCode": "12345",
+    "country": "United States"
   }
-}
+}`
 ```
 
-### Response codes
 
-| HTTP Status code | Error message code |       Description       |
-| :--------------: | :----------------: | :---------------------: |
-|       200        |                    |     Customer found      |
-|       404        | CUSTOMER_NOT_FOUND | Customer does not exist |
 
 ## Updating customer details
 
@@ -205,22 +149,22 @@ curl -X GET \
 
 All fields are optional. Not sending a field will not change its value, and sending `null` values will delete the corresponding fields.
 
-|   Parameter Name   |  Mandatory   | Default Value |
-| :----------------: | :----------: | :-----------: |
-|       email        |     yes      |               |
-|        type        |     yes      |   PERSONAL    |
-|     firstName      |      no      |               |
-|      lastName      |      no      |               |
-|      language      |      no      |      EN       |
-| countryOfResidence | configurable |               |
-|    phoneNumber     |      no      |               |
-|  defaultCurrency   |      no      |               |
-|      verified      |      no      |               |
-|   billingAddress   |      no      |               |
-|  shippingAddress   |      no      |               |
-|    companyName     |  dependable  |               |
-|   companyNumber    |  dependable  |               |
-|      jobTitle      |  dependable  |               |
+|   Parameter Name   | Mandatory | Default Value |
+| :----------------: | :-------: | :-----------: |
+|       email        |    no     |               |
+|        type        |    no     |               |
+|     firstName      |    no     |               |
+|      lastName      |    no     |               |
+|      language      |    no     |               |
+| countryOfResidence |    no     |               |
+|    phoneNumber     |    no     |               |
+|  defaultCurrency   |    no     |               |
+|      verified      |    no     |               |
+|   billingAddress   |    no     |               |
+|  shippingAddress   |    no     |               |
+|    companyName     |    no     |               |
+|   companyNumber    |    no     |               |
+|      jobTitle      |    no     |               |
 
 ## Additional rules and validations
 

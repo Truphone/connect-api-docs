@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Customer" href="customer.html" />
-    <link rel="prev" title="Notification Preferences Resource" href="notification_preferences.html" /> 
+    <link rel="next" title="Notification Preferences Resource" href="notification_preferences.html" />
+    <link rel="prev" title="SIM Resource" href="sim.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,34 +89,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../conventions.html">Conventions</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Storefront</span></p>
-<ul>
+<p class="caption"><span class="caption-text">Connectivity Management</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="order.html">Order Resource</a></li>
 <li class="toctree-l1"><a class="reference internal" href="product.html">Product Resource</a></li>
-</ul>
-<p class="caption"><span class="caption-text">SIM Management</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="sim.html">SIM Resource</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notification_preferences.html">Notification Preferences Resource</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Customer Management</span></p>
-<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Subscription Resource</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#subscription-details-not-implemented">Subscription details [NOT IMPLEMENTED]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subscription-details">Subscription details</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-request">Example request</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-response">Example response**</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#subscription-details-update-not-implemented">Subscription details update [NOT IMPLEMENTED]</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#update-subscription-details">Update subscription details</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Example request</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#subscription-activation">Subscription activation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#activate-subscriptions">Activate subscriptions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Example request</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="notification_preferences.html">Notification Preferences Resource</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Customer Management</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="customer.html">Customer</a></li>
 </ul>
 
@@ -261,8 +258,8 @@
 <td align="center">Subscription expired because expiry date has passed</td>
 </tr>
 </tbody>
-</table><div class="section" id="subscription-details-not-implemented">
-<h2>Subscription details [NOT IMPLEMENTED]<a class="headerlink" href="#subscription-details-not-implemented" title="Permalink to this headline">¶</a></h2>
+</table><div class="section" id="subscription-details">
+<h2>Subscription details<a class="headerlink" href="#subscription-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></li>
@@ -299,8 +296,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="subscription-details-update-not-implemented">
-<h2>Subscription details update [NOT IMPLEMENTED]<a class="headerlink" href="#subscription-details-update-not-implemented" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="update-subscription-details">
+<h2>Update subscription details<a class="headerlink" href="#update-subscription-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></li>
@@ -322,8 +319,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="subscription-activation">
-<h2>Subscription activation<a class="headerlink" href="#subscription-activation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="activate-subscriptions">
+<h2>Activate subscriptions<a class="headerlink" href="#activate-subscriptions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code><ul>
@@ -354,10 +351,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="customer.html" class="btn btn-neutral float-right" title="Customer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="notification_preferences.html" class="btn btn-neutral float-right" title="Notification Preferences Resource" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="notification_preferences.html" class="btn btn-neutral float-left" title="Notification Preferences Resource" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sim.html" class="btn btn-neutral float-left" title="SIM Resource" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

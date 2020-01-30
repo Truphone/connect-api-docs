@@ -40,26 +40,19 @@ For more details about each specific role, check the :doc:`roles` page.
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Storefront
-   :name: storefront
+   :caption: Connectivity Management
+   :name: connectivity
 
-   reference/order
+   reference/orders
    reference/product
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-   :caption: SIM Management
-   :name: simnmanagement
-
    reference/sim
+   reference/subscription
    reference/notification_preferences
 
 .. toctree::
    :hidden:
    :maxdepth: 2
    :caption: Customer Management
-   :name: customermanagement
+   :name: customer
 
-   reference/subscription
    reference/customer

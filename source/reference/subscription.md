@@ -26,7 +26,7 @@ A data plan subscription
 |    ACTIVE     |            Subscription is still active             |
 |    EXPIRED    | Subscription expired because expiry date has passed |
 
-## Subscription details [NOT IMPLEMENTED]
+## Subscription details
 
 - Allowed roles: `ACCOUNT_MANAGER`
 - URL: `v1/subscription/{subscriptionId}`
@@ -62,7 +62,7 @@ curl -X GET \
 }
 ```
 
-## Subscription details update [NOT IMPLEMENTED]
+## Update subscription details
 
 - Allowed roles: `ACCOUNT_MANAGER`
 - URL: `v1/subscription/{subscriptionId}/activate`
@@ -84,7 +84,7 @@ curl -X PATCH \
    }'
 ```
 
-## Subscription activation
+## Activate subscriptions
 
 - Allowed roles: `ACCOUNT_MANAGER`
 - URL: `v1/subscription/{subscriptionId}/activate`
