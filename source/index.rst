@@ -26,7 +26,7 @@ For more details about each specific role, check the :doc:`roles` page.
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: General
    :name: general
 
@@ -39,19 +39,19 @@ For more details about each specific role, check the :doc:`roles` page.
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Connectivity Management
    :name: connectivity
 
    reference/orders
-   reference/product
-   reference/sim
-   reference/subscription
-   reference/notification_preferences
+   reference/products
+   reference/sims
+   reference/subscriptions
+   reference/notifications
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Customer Management
    :name: customer
 

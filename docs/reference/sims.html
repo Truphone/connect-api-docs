@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Subscription Resource" href="subscription.html" />
-    <link rel="prev" title="Product Resource" href="product.html" /> 
+    <link rel="next" title="Subscriptions" href="subscriptions.html" />
+    <link rel="prev" title="Products" href="products.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,9 +92,12 @@
 <p class="caption"><span class="caption-text">Connectivity Management</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="orders.html">Orders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="product.html">Product Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SIM</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#sim-resource">SIM Resource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sim-resource">SIM Resource</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#properties">Properties</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#get-sim-details">Get SIM details</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-request">Example Request</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-response">Example Response</a></li>
@@ -117,7 +120,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="subscription.html">Subscription Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subscriptions.html">Subscriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Customer Management</span></p>
@@ -174,7 +177,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/sim.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/reference/sims.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -192,7 +195,8 @@
 <div class="section" id="sim-resource">
 <h2>SIM Resource<a class="headerlink" href="#sim-resource" title="Permalink to this headline">¶</a></h2>
 <p>A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile related information as well as subscriber specific information. The SIM is usually tied to an individual and a device. It is a requirement to purchase any type of connectivity.</p>
-<p><strong>SIM Properties</strong></p>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -241,10 +245,11 @@
 </tr>
 </tbody>
 </table></div>
+</div>
 <div class="section" id="get-sim-details">
 <h2>Get SIM details<a class="headerlink" href="#get-sim-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL:<ul>
 <li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">v1/status/sim?iccid={iccid}</span></code> [Deprecated]</li>
@@ -281,7 +286,7 @@
 <div class="section" id="get-sim-preferences-not-implemented">
 <h2>Get SIM Preferences [NOT IMPLEMENTED]<a class="headerlink" href="#get-sim-preferences-not-implemented" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
@@ -320,9 +325,9 @@
 </div>
 <div class="section" id="register-for-notifications-not-implemented">
 <h2>Register for notifications [NOT IMPLEMENTED]<a class="headerlink" href="#register-for-notifications-not-implemented" title="Permalink to this headline">¶</a></h2>
-<p>Currently, the only form of notification we support is through webhooks. Each SIM can be registerd for receiving the different types of notification individually. For information on the notification format, check the <a class="reference internal" href="notifications.html"><span class="doc">notifications</span></a> document</p>
+<p>Currently, the only form of notification we support is through webhooks. Each SIM can be registerd for receiving the different types of notifications individually. For information on the notification format, check the <a class="reference internal" href="notifications.html"><span class="doc">notifications</span></a> document</p>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
 </ul>
@@ -370,7 +375,7 @@
 <div class="section" id="unregister-from-notifications-not-implemented">
 <h2>Unregister from notifications [NOT IMPLEMENTED]<a class="headerlink" href="#unregister-from-notifications-not-implemented" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/notification_preferences/{type}</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></li>
 </ul>
@@ -396,10 +401,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="subscription.html" class="btn btn-neutral float-right" title="Subscription Resource" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="subscriptions.html" class="btn btn-neutral float-right" title="Subscriptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="product.html" class="btn btn-neutral float-left" title="Product Resource" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="products.html" class="btn btn-neutral float-left" title="Products" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

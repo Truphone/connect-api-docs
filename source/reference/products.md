@@ -1,8 +1,12 @@
-# Product Resource
+# Products
 
-A sellable connectivity unit
+## Product resource
 
-**Properties**
+A sellable/purchaseable connectivity unit. Each API client is entitled to its own product catalog. Typical connectivity storefronts are built by requesting the list of products available and then placing an [order](orders.md) with the desired product ids.
+
+Currently, the product catalog of an API client typically changes by requesting Truphone directly, which can eventually happen outside the app development loop. Moreover, due to compatibility reasons, the product id format might change in the future and therefore, developers are discouraged from caching the results of requests to this endpoint.
+
+### Properties
 
 |   Property Name    |             Description             |
 | :----------------: | :---------------------------------: |
@@ -16,18 +20,19 @@ A sellable connectivity unit
 |  active_countries  | Countries where the product is sold |
 | pricing.\$CURRENCY |     Product Price per currency      |
 
-## Product list
+## Get the Product Catalog
 
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `/v1/product`
 - METHOD: `GET`
-- PARAMETERS:
+
+### Parameters
 
 | Parameter Name |                 Description                  | Required | Default |
 | :------------: | :------------------------------------------: | :------: | :-----: |
 |    currency    | The currency in which the price is presented |    no    |   EUR   |
 
-**Example request**
+### Example Request
 
 ```bash
 curl -X GET \
@@ -38,39 +43,41 @@ curl -X GET \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
 ```
 
-**Example response**
+### Example Response
 
-```javascript
+```json
 [
   {
-    id: "a3m*********gIAK",
-    name: "PrePaid Data 3GB 30-Day",
-    description: "PrePaid Data 3GB 30-Day",
-    period: 30,
-    data: {
-      value: 3,
-      unit: "GB"
+    "id": "a3m*********gIAK",
+    "name": "PrePaid Data 3GB 30-Day",
+    "description": "PrePaid Data 3GB 30-Day",
+    "period": 30,
+    "data": {
+      "value": 3,
+      "unit": "GB"
     },
-    footprint: ["AG", "...", "VN"],
-    activeCountries: ["ALL"],
-    pricing: {
-      USD: 42.0
+    "footprint": ["AG", "...", "VN"],
+    "activeCountries": ["ALL"],
+    "pricing": {
+      "USD": 42.0
     }
   }
-  // .. more products
-];
+]
 ```
 
-## Product details [NOT IMPLEMENTED]
+## Get the Product's Details
 
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `/v1/product/{id}`
 - METHOD: `GET`
-- PARAMETERS:
+
+### Parameters
 
 | Parameter Name |                 Description                  | Required | Default |
 | :------------: | :------------------------------------------: | :------: | :-----: |
 |    currency    | The currency in which the price is presented |    no    |   EUR   |
+
+### Example Request
 
 ```bash
 curl -X GET \
@@ -81,28 +88,22 @@ curl -X GET \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
 ```
 
-**Example response**
+### Example Response
 
-```javascript
+```json
 {
-    "id":"a3m*********gIAK",
-    "name":"PrePaid Data 3GB 30-Day",
-    "description":"PrePaid Data 3GB 30-Day",
-    "period":30,
-    "data":{
-        "value":3,
-        "unit":"GB"
-    },
-    "footprint":[
-        "AG",
-        "...",
-        "VN"
-    ],
-    "activeCountries":[
-        "ALL"
-    ],
-    "pricing":{
-        "USD":42.0
-    },
+  "id": "a3m*********gIAK",
+  "name": "PrePaid Data 3GB 30-Day",
+  "description": "PrePaid Data 3GB 30-Day",
+  "period": 30,
+  "data": {
+    "value": 3,
+    "unit": "GB"
+  },
+  "footprint": ["AG", "...", "VN"],
+  "activeCountries": ["ALL"],
+  "pricing": {
+    "USD": 42.0
+  }
 }
 ```

@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Notifications &mdash; Truphone Connect API 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Customer" href="customer.html" />
+    <link rel="prev" title="Subscriptions" href="subscriptions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truphone Connect API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../deployments.html">Deployment Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ratelimits.html">Rate limits and quotas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conventions.html">Conventions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Connectivity Management</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sims.html">SIM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subscriptions.html">Subscriptions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Notifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#receiving-webhook-notifications">Receiving Webhook Notifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage-threshold">Usage Threshold</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-request-payload">Example Request Payload</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#subscription-end">Subscription End</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Example Request Payload</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#auto-renew">Auto Renew</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Example Request Payload</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Customer Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="customer.html">Customer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truphone Connect API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Notifications</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/notifications.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="notifications">
+<h1>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h1>
+<p>The Connect API supports sending several types of notifications when significant events happen in the backend. In order to be able to receive notifications, the end customer must first set his notification preferences. Currently all of the notifications are associated with the SIM, and therefore, subscription is made via the <a class="reference internal" href="sims.html"><span class="doc">sim</span></a> resource.</p>
+<div class="section" id="receiving-webhook-notifications">
+<h2>Receiving Webhook Notifications<a class="headerlink" href="#receiving-webhook-notifications" title="Permalink to this headline">¶</a></h2>
+<p>In order to handle webhook notifications, API clients will need to implement an endpoint that supports <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests with the payloads described below:</p>
+<div class="section" id="usage-threshold">
+<h3>Usage Threshold<a class="headerlink" href="#usage-threshold" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Property Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">Identifier</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">Notification type</td>
+</tr>
+<tr>
+<td align="center">iccid</td>
+<td align="center">SIM Profile ICCID</td>
+</tr>
+<tr>
+<td align="center">subscription_id</td>
+<td align="center">subscription_id</td>
+</tr>
+<tr>
+<td align="center">threshold</td>
+<td align="center">Data capacity</td>
+</tr>
+</tbody>
+</table><div class="section" id="example-request-payload">
+<h4>Example Request Payload<a class="headerlink" href="#example-request-payload" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1234-56789&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SUBSCRIPTION_END&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;893000000002391231&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;subscription_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ZHNhc2Rhc2Q=&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="subscription-end">
+<h3>Subscription End<a class="headerlink" href="#subscription-end" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Property Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">Identifier</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">Notification type</td>
+</tr>
+<tr>
+<td align="center">iccid</td>
+<td align="center">SIM Profile ICCID</td>
+</tr>
+<tr>
+<td align="center">subscription_id</td>
+<td align="center">subscription_id</td>
+</tr>
+</tbody>
+</table><div class="section" id="id1">
+<h4>Example Request Payload<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1234-56789&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;USAGE_THRESHOLD&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;893000000002391231&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;subscription_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ZHNhc2Rhc2Q=&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;threshold&quot;</span><span class="p">:</span> <span class="mi">80</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="auto-renew">
+<h3>Auto Renew<a class="headerlink" href="#auto-renew" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Property Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">id</td>
+<td align="center">Identifier</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">Notification type</td>
+</tr>
+<tr>
+<td align="center">iccid</td>
+<td align="center">SIM Profile ICCID</td>
+</tr>
+<tr>
+<td align="center">subscription_id</td>
+<td align="center">subscription_id</td>
+</tr>
+<tr>
+<td align="center">new_subscription_id</td>
+<td align="center">new_subscription_id</td>
+</tr>
+</tbody>
+</table><div class="section" id="id2">
+<h4>Example Request Payload<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1234-56789&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AUTO_RENEW&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;893000000002391231&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;subscription_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ZHNhc2Rhc2Q=&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;auto_renew_subscription_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ZHNhc2Rhc2kjhkhQ=&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="customer.html" class="btn btn-neutral float-right" title="Customer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="subscriptions.html" class="btn btn-neutral float-left" title="Subscriptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Truphone
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

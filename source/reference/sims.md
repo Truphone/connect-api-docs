@@ -4,7 +4,7 @@
 
 A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile related information as well as subscriber specific information. The SIM is usually tied to an individual and a device. It is a requirement to purchase any type of connectivity.
 
-**SIM Properties**
+### Properties
 
 | Property Name  |                  Description                  |
 | :------------: | :-------------------------------------------: |
@@ -23,7 +23,7 @@ A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile relate
 
 ## Get SIM details
 
-- Allowed roles: `ACCOUNT_MANAGER`
+- Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL:
   - `v1/sim/{iccid}`
   - `v1/status/sim?iccid={iccid}` [Deprecated]
@@ -56,7 +56,7 @@ SIM profiles/subscribers allow configuration of specific preferences which enabl
 
 ## Get SIM Preferences [NOT IMPLEMENTED]
 
-- Allowed roles: `ACCOUNT_MANAGER`
+- Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `v1/sim/{iccid}/preferences`
 - METHOD: `GET`
 
@@ -94,9 +94,9 @@ curl -X GET \
 
 ## Register for notifications [NOT IMPLEMENTED]
 
-Currently, the only form of notification we support is through webhooks. Each SIM can be registerd for receiving the different types of notification individually. For information on the notification format, check the [notifications](notifications.md) document
+Currently, the only form of notification we support is through webhooks. Each SIM can be registerd for receiving the different types of notifications individually. For information on the notification format, check the [notifications](notifications.md) document
 
-- Allowed roles: `ACCOUNT_MANAGER`
+- Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `v1/sim/{iccid}/preferences/notifications/{type}`
 - METHOD: `POST`
 
@@ -123,7 +123,7 @@ curl -X POST \
 
 ## Unregister from notifications [NOT IMPLEMENTED]
 
-- Allowed roles: `ACCOUNT_MANAGER`
+- Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `v1/sim/{iccid}/notification_preferences/{type}`
 - METHOD: `DELETE`
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Product Resource &mdash; Truphone Connect API 1.0 documentation</title>
+  <title>Products &mdash; Truphone Connect API 1.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SIM" href="sim.html" />
+    <link rel="next" title="SIM" href="sims.html" />
     <link rel="prev" title="Orders" href="orders.html" /> 
 </head>
 
@@ -92,13 +92,27 @@
 <p class="caption"><span class="caption-text">Connectivity Management</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="orders.html">Orders</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Product Resource</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#product-list">Product list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#product-details-not-implemented">Product details [NOT IMPLEMENTED]</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Products</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#product-resource">Product resource</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#properties">Properties</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sim.html">SIM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="subscription.html">Subscription Resource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-product-catalog">Get the Product Catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-request">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-response">Example Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-product-s-details">Get the Product’s Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sims.html">SIM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subscriptions.html">Subscriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Customer Management</span></p>
@@ -149,13 +163,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Product Resource</li>
+      <li>Products</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/reference/product.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/reference/products.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -168,10 +182,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="product-resource">
-<h1>Product Resource<a class="headerlink" href="#product-resource" title="Permalink to this headline">¶</a></h1>
-<p>A sellable connectivity unit</p>
-<p><strong>Properties</strong></p>
+  <div class="section" id="products">
+<h1>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="product-resource">
+<h2>Product resource<a class="headerlink" href="#product-resource" title="Permalink to this headline">¶</a></h2>
+<p>A sellable/purchaseable connectivity unit. Each API client is entitled to its own product catalog. Typical connectivity storefronts are built by requesting the list of products available and then placing an <a class="reference internal" href="orders.html"><span class="doc">order</span></a> with the desired product ids.</p>
+<p>Currently, the product catalog of an API client typically changes by requesting Truphone directly, which can eventually happen outside the app development loop. Moreover, due to compatibility reasons, the product id format might change in the future and therefore, developers are discouraged from caching the results of requests to this endpoint.</p>
+<div class="section" id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -217,14 +235,17 @@
 <td align="center">Product Price per currency</td>
 </tr>
 </tbody>
-</table><div class="section" id="product-list">
-<h2>Product list<a class="headerlink" href="#product-list" title="Permalink to this headline">¶</a></h2>
+</table></div>
+</div>
+<div class="section" id="get-the-product-catalog">
+<h2>Get the Product Catalog<a class="headerlink" href="#get-the-product-catalog" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">/v1/product</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
-<li>PARAMETERS:</li>
 </ul>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -242,7 +263,9 @@
 <td align="center">EUR</td>
 </tr>
 </tbody>
-</table><p><strong>Example request</strong></p>
+</table></div>
+<div class="section" id="example-request">
+<h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
   https://services.truphone.com/esim/v1/products?currency<span class="o">=</span>USD <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -251,36 +274,39 @@
    -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
 </pre></div>
 </div>
-<p><strong>Example response</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+</div>
+<div class="section" id="example-response">
+<h3>Example Response<a class="headerlink" href="#example-response" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;a3m*********gIAK&quot;</span><span class="p">,</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
-    <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
-    <span class="nx">period</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">value</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nx">unit</span><span class="o">:</span> <span class="s2">&quot;GB&quot;</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3m*********gIAK&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span>
     <span class="p">},</span>
-    <span class="nx">footprint</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;AG&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="s2">&quot;VN&quot;</span><span class="p">],</span>
-    <span class="nx">activeCountries</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">],</span>
-    <span class="nx">pricing</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">USD</span><span class="o">:</span> <span class="mf">42.0</span>
+    <span class="nt">&quot;footprint&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;AG&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="s2">&quot;VN&quot;</span><span class="p">],</span>
+    <span class="nt">&quot;activeCountries&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">],</span>
+    <span class="nt">&quot;pricing&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;USD&quot;</span><span class="p">:</span> <span class="mf">42.0</span>
     <span class="p">}</span>
   <span class="p">}</span>
-  <span class="c1">// .. more products</span>
-<span class="p">];</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="product-details-not-implemented">
-<h2>Product details [NOT IMPLEMENTED]<a class="headerlink" href="#product-details-not-implemented" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="get-the-product-s-details">
+<h2>Get the Product’s Details<a class="headerlink" href="#get-the-product-s-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">/v1/product/{id}</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
-<li>PARAMETERS:</li>
 </ul>
+<div class="section" id="id1">
+<h3>Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -298,7 +324,10 @@
 <td align="center">EUR</td>
 </tr>
 </tbody>
-</table><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+</table></div>
+<div class="section" id="id2">
+<h3>Example Request<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
   https://services.truphone.com/esim/v1/products/ZHNhZGFzZGFz/?currency<span class="o">=</span>USD <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
@@ -306,29 +335,26 @@
    -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
 </pre></div>
 </div>
-<p><strong>Example response</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;a3m*********gIAK&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;period&quot;</span><span class="o">:</span><span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;data&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span>
-        <span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="s2">&quot;GB&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;footprint&quot;</span><span class="o">:</span><span class="p">[</span>
-        <span class="s2">&quot;AG&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;VN&quot;</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;activeCountries&quot;</span><span class="o">:</span><span class="p">[</span>
-        <span class="s2">&quot;ALL&quot;</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;pricing&quot;</span><span class="o">:</span><span class="p">{</span>
-        <span class="s2">&quot;USD&quot;</span><span class="o">:</span><span class="mf">42.0</span>
-    <span class="p">},</span>
+</div>
+<div class="section" id="id3">
+<h3>Example Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3m*********gIAK&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;PrePaid Data 3GB 30-Day&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;footprint&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;AG&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="s2">&quot;VN&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;activeCountries&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ALL&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;pricing&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;USD&quot;</span><span class="p">:</span> <span class="mf">42.0</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -341,7 +367,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sim.html" class="btn btn-neutral float-right" title="SIM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sims.html" class="btn btn-neutral float-right" title="SIM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="orders.html" class="btn btn-neutral float-left" title="Orders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
