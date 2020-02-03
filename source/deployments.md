@@ -4,7 +4,7 @@ Dates and changelog for major API releases. New versions are made available in t
 
 ## 5.4.0 - Product catalog update
 
-- Estimated date: 5th February 10:00 UTC
+- Estimated date: 10th February 10:00 UTC
 - Downtime: 0
 - Retocompatible: yes
 - Changes:
@@ -17,7 +17,7 @@ Dates and changelog for major API releases. New versions are made available in t
 
 ## 5.5.0 - IoT Features
 
-- Estimated date: 14th February 10:00 UTC
+- Estimated date: 17th February 10:00 UTC
 - Downtime: 0
 - Retocompatible: yes
 - Changes:
@@ -25,7 +25,7 @@ Dates and changelog for major API releases. New versions are made available in t
 
 ## 5.6.0 - Auto renew and subscriptions
 
-- Estimated date: 28th February 10:00 UTC
+- Estimated date: 2nd March 10:00 UTC
 - Downtime: 0
 - Retocompatible: yes
 - Changes:
