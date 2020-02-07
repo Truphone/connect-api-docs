@@ -4,7 +4,7 @@ Dates and changelog for major API releases. New versions are made available in t
 
 ## 5.4.0 - Product catalog update
 
-- Estimated date: 10th February 10:00 UTC
+- Estimated date: 13th February 10:00 UTC
 - Downtime: 0
 - Retocompatible: yes
 - Changes:
