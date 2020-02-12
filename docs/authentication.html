@@ -85,8 +85,15 @@
 <li class="toctree-l1"><a class="reference internal" href="deployments.html">Deployment Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ratelimits.html">Rate limits and quotas</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#example-using-postman">Example using Postman</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-using-curl">Example using cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#obtaining-and-using-an-access-token">Obtaining and using an access token</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-using-postman">Example using Postman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-using-curl">Example using cURL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#refreshing-the-access-token-with-a-refresh-token">Refreshing the access token with a refresh token</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Example using cURL</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roles.html">Roles</a></li>
@@ -171,8 +178,10 @@
   <div class="section" id="authentication">
 <h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
 <p>The Truphone Connect API uses OAuth2 Client Credentials authentication type to authenticate request. You can get authentication tokens using the following url: <code class="docutils literal notranslate"><span class="pre">https://${ENVIRONMENT_HOST}/auth/realms/tru-staff/protocol/openid-connect/token</span></code>. Please be aware that these tokens have a limited duration so you need to include refresh logic in the client code, so that the token gets refreshed automatically without breaking the user experience.</p>
+<div class="section" id="obtaining-and-using-an-access-token">
+<h2>Obtaining and using an access token<a class="headerlink" href="#obtaining-and-using-an-access-token" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-using-postman">
-<h2>Example using Postman<a class="headerlink" href="#example-using-postman" title="Permalink to this headline">¶</a></h2>
+<h3>Example using Postman<a class="headerlink" href="#example-using-postman" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Create a new request</li>
 <li>In the Authorization tab, set type to OAuth 2.0 and hit Get New Access Token</li>
@@ -189,7 +198,7 @@
 </ul>
 </div>
 <div class="section" id="example-using-curl">
-<h2>Example using cURL<a class="headerlink" href="#example-using-curl" title="Permalink to this headline">¶</a></h2>
+<h3>Example using cURL<a class="headerlink" href="#example-using-curl" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">ACCESS_TOKEN</span><span class="o">=</span><span class="sb">`</span>curl -s --data <span class="se">\</span>
     <span class="s2">&quot;grant_type=client_credentials&amp;client_id=truphone&amp;client_secret=xxxxxx-xxxx-43f3-9fba-85686d72c1c0&quot;</span> <span class="se">\</span>
     https://services.truphone.com/auth/realms/tru-staff/protocol/openid-connect/token <span class="se">\</span>
@@ -199,6 +208,23 @@ $ <span class="nb">echo</span> <span class="nv">$ACCESS_TOKEN</span>        <spa
 
 $ curl -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> https://services.truphone.com/esim/...
 </pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="refreshing-the-access-token-with-a-refresh-token">
+<h2>Refreshing the access token with a refresh token<a class="headerlink" href="#refreshing-the-access-token-with-a-refresh-token" title="Permalink to this headline">¶</a></h2>
+<p>To refresh the access token, you can use the refresh token. The refresh token is obtained on the first call to obtain the access token (described previously). After that you can use it as shown on the following example:</p>
+<div class="section" id="id1">
+<h3>Example using cURL<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">ACCESS_TOKEN</span><span class="o">=</span><span class="sb">`</span>curl -s --data <span class="se">\</span>
+    <span class="s2">&quot;grant_type=refresh_token&amp;refresh_token=&lt;your_refresh_token&gt;k&amp;client_id=truphone&amp;client_secret=xxxxxx-xxxx-43f3-9fba-85686d72c1c0&quot;</span> <span class="se">\</span>
+    https://services-bit.truphone.com/auth/realms/tru-staff/protocol/openid-connect/token <span class="se">\</span>
+    <span class="p">|</span> sed <span class="s1">&#39;s/.*access_token&quot;:&quot;\([^&quot;]*\).*/\1/&#39;</span><span class="sb">`</span>
+    
+$ <span class="nb">echo</span> <span class="nv">$ACCESS_TOKEN</span>        <span class="c1"># view the access token</span>
+</pre></div>
+</div>
+<p>This call will give you an access token and a refresh token. The refresh token will be valid for 30 minutes.</p>
 </div>
 </div>
 </div>
