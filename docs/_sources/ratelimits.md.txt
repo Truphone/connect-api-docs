@@ -8,6 +8,6 @@ We throttle endpoints by application (client id): 3 requests per second
 
 ## Quotas
 
-Each partner is entitled to a max quota of 5000 requests per day.
+Each partner is entitled to a max quota of 10000 requests per day.
 
 
