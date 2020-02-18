@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Authentication &mdash; Truphone Connect API 1.0 documentation</title>
+  <title>Authentication &mdash; Connect 1.0 documentation</title>
   
 
   
@@ -50,9 +50,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Truphone Connect API
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -82,7 +85,8 @@
             
               <p class="caption"><span class="caption-text">General</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="deployments.html">Deployment Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upcomingreleases.html">Upcoming releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ratelimits.html">Rate limits and quotas</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#obtaining-and-using-an-access-token">Obtaining and using an access token</a><ul>
@@ -125,7 +129,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Truphone Connect API</a>
+          <a href="index.html">Connect</a>
         
       </nav>
 
@@ -162,7 +166,9 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/authentication.md.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/Truphone/connect-api-docs/blob/master/source/authentication.md" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -183,18 +189,19 @@
 <div class="section" id="example-using-postman">
 <h3>Example using Postman<a class="headerlink" href="#example-using-postman" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Create a new request</li>
-<li>In the Authorization tab, set type to OAuth 2.0 and hit Get New Access Token</li>
-<li>In the form, make sure you have these values:<ul>
-<li>Grant Type: Client Credentials</li>
-<li>Access Token URL: https://services.truphone.com/auth/realms/tru-staff/protocol/openid-connect/token</li>
-<li>Client ID: clientID [^1]</li>
-<li>Client secret: clientSecret [^1]</li>
+<li><p>Create a new request</p></li>
+<li><p>In the Authorization tab, set type to OAuth 2.0 and hit Get New Access Token</p></li>
+<li><p>In the form, make sure you have these values:</p>
+<ul>
+<li><p>Grant Type: Client Credentials</p></li>
+<li><p>Access Token URL: https://services.truphone.com/auth/realms/tru-staff/protocol/openid-connect/token</p></li>
+<li><p>Client ID: clientID [^1]</p></li>
+<li><p>Client secret: clientSecret [^1]</p></li>
 </ul>
 </li>
-<li>Hit Request Token and then Use Token</li>
-<li>Query the API away, the generated token should be valid for 5 minutes
-[^1]: Given by Truphone</li>
+<li><p>Hit Request Token and then Use Token</p></li>
+<li><p>Query the API away, the generated token should be valid for 5 minutes
+[^1]: Given by Truphone</p></li>
 </ul>
 </div>
 <div class="section" id="example-using-curl">

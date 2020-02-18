@@ -11,7 +11,7 @@ Welcome to the Truphone Connect API developer documentation. These documents out
 Upcoming changes
 ################
 
-Major milestones and breaking changes will be carried out according to the schedule in the :doc:`deployments` page. New versions are made available in the staging environment 2 weeks in advance to allow partners to test their integrations.
+Major milestones and breaking changes will be carried out according to the schedule in the :doc:`upcomingreleases` page. New versions are made available in the staging environment 2 weeks in advance to allow partners to test their integrations.
 
 Before you start
 ################
@@ -30,7 +30,8 @@ For more details about each specific role, check the :doc:`roles` page.
    :caption: General
    :name: general
 
-   deployments
+   releasenotes
+   upcomingreleases
    ratelimits
    authentication
    roles

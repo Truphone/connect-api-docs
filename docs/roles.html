@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Roles &mdash; Truphone Connect API 1.0 documentation</title>
+  <title>Roles &mdash; Connect 1.0 documentation</title>
   
 
   
@@ -50,9 +50,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Truphone Connect API
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -82,7 +85,8 @@
             
               <p class="caption"><span class="caption-text">General</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="deployments.html">Deployment Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upcomingreleases.html">Upcoming releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ratelimits.html">Rate limits and quotas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Roles</a><ul>
@@ -118,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Truphone Connect API</a>
+          <a href="index.html">Connect</a>
         
       </nav>
 
@@ -155,7 +159,9 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/roles.md.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/Truphone/connect-api-docs/blob/master/source/roles.md" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -175,11 +181,11 @@
 <p>An API client application <strong>outside the context of an end customer</strong>, which resells Truphone connectivity. This role is restricted to connectivity related operations like listing available products, submitting new orders and checking sim subscription/usage data. Clients with a <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code> role will typically use the API to connectivity store/management pages in contexts not exclusive to connectivity.</p>
 <p><strong>Entitled API resources</strong>:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">order</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">products</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">sim</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">notifications</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">products</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sim</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notifications</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="account-manager">
@@ -187,12 +193,12 @@
 <p>An API client application, which can authenticate <strong>on behalf of an end customer</strong>, This role allows the application to manage connectivity and customer related data. Clients with an <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code> role typically will develop applications where users can purchase connectivity and register their accounts with Truphone, for managing their profile information like email, name, billing address etc.</p>
 <p><strong>Entitled API resources</strong>:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">order</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">products</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">sim</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">customer</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">notifications</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">products</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sim</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">customer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notifications</span></code></p></li>
 </ul>
 </div>
 </div>
