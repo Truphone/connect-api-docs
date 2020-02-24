@@ -255,14 +255,13 @@
 <div class="section" id="get-sim-details">
 <h2>Get SIM details<a class="headerlink" href="#get-sim-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">v1/status/sim?iccid={iccid}</span></code> [Deprecated]</p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">v1/status/sim?iccid={iccid}</span></code> [Deprecated]</li>
 </ul>
 </li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
 <div class="section" id="example-request">
 <h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
@@ -293,9 +292,9 @@
 <div class="section" id="get-sim-preferences-not-implemented">
 <h2>Get SIM Preferences [NOT IMPLEMENTED]<a class="headerlink" href="#get-sim-preferences-not-implemented" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences</span></code></p></li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
 <div class="section" id="id1">
 <h3>Example Request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -334,9 +333,9 @@
 <h2>Register for notifications [NOT IMPLEMENTED]<a class="headerlink" href="#register-for-notifications-not-implemented" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the only form of notification we support is through webhooks. Each SIM can be registerd for receiving the different types of notifications individually. For information on the notification format, check the <a class="reference internal" href="notifications.html"><span class="doc">notifications</span></a> document</p>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></p></li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
 </ul>
 <div class="section" id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
@@ -382,9 +381,9 @@
 <div class="section" id="unregister-from-notifications-not-implemented">
 <h2>Unregister from notifications [NOT IMPLEMENTED]<a class="headerlink" href="#unregister-from-notifications-not-implemented" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/notification_preferences/{type}</span></code></p></li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/notification_preferences/{type}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></li>
 </ul>
 <div class="section" id="id4">
 <h3>Example request<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>

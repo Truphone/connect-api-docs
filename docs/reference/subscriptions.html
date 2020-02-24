@@ -281,9 +281,9 @@
 <div class="section" id="get-the-subscription-details">
 <h2>Get the Subscription Details<a class="headerlink" href="#get-the-subscription-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></p></li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
 <div class="section" id="example-request">
 <h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
@@ -320,9 +320,9 @@
 <h2>Update the Subscription Details<a class="headerlink" href="#update-the-subscription-details" title="Permalink to this headline">¶</a></h2>
 <p>Update the properties of a given subscription. Currently only supports toggling the auto renew state.</p>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></p></li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></li>
 </ul>
 <div class="section" id="id1">
 <h3>Example Request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -343,14 +343,13 @@
 <h2>Activate Subscriptions<a class="headerlink" href="#activate-subscriptions" title="Permalink to this headline">¶</a></h2>
 <p>Orders can be placed for plans with activation dates in the future. The end user has the option to override those dates by activating a plan. This will change the activation date to now() and the plan will become active shortly after this endpoint being called</p>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">v1/status/subscription/{subscriptionId}/activate</span></code> [Deprecated]</p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">v1/status/subscription/{subscriptionId}/activate</span></code> [Deprecated]</li>
 </ul>
 </li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
 </ul>
 <div class="section" id="id2">
 <h3>Example request<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -367,14 +366,13 @@
 <div class="section" id="get-sim-subscriptions">
 <h2>Get SIM Subscriptions<a class="headerlink" href="#get-sim-subscriptions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
-<li><p>URL:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/subscriptions</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">v1/status/subscriptions?iccid={iccid}</span></code> [Deprecated]</p></li>
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/subscriptions</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">v1/status/subscriptions?iccid={iccid}</span></code> [Deprecated]</li>
 </ul>
 </li>
-<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
 <div class="section" id="id3">
 <h3>Example Request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
