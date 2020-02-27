@@ -2,17 +2,9 @@
 
 Estimated dates and changelog for major API releases. New versions are made available in the staging environment 2 weeks in advance to allow partners to test their integrations. "Estimated dates" will change to "Confirmed dates" 2 days before deployment if the deployment is to proceed.
 
-## 5.5.0 - Small BugFix
-
-- Estimated date: 27th February 10:00 UTC
-- Downtime: 0
-- Retocompatible: yes
-- Changes:
-  - product_id is wrongly throwing a required deprecated parameter (allowanceId)
-
 ## 5.6.0 - Customer Management, Auto Renew and Notifications
 
-- Estimated date: 2nd March 10:00 UTC
+- Estimated date: 15th March 10:00 UTC
 - Downtime: 0
 - Retocompatible: yes
 - Changes:

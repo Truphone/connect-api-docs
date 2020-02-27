@@ -41,7 +41,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 |          device.model          |                  Device Model                   |      no      |
 |          device.make           |                   Device Make                   |      no      |
 |         subscriptions          |          List of products to purchase           |     yes      |
-|   subscriptions[].allowanceId  |          Id of the product to purchase          |     yes      |
+|   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |
 |     subscriptions[].price      |      Price for which the product was sold       |      no      |
 |    subscriptions[].curremcy    |     Currency for which the product was sold     |      no      |
@@ -49,7 +49,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 ### Rules and validations
 
 - If the customer does not exist it will be created
-- `subscriptions.allowanceId` - Needs to be an id that belongs to the product catalog of the customer
+- `subscriptions.product_id` - Needs to be an id that belongs to the product catalog of the customer
 - `subscriptions.activationDate` - Can not be a date in the past
 - `subscriptions.price` - If is sent, it must be sent in pair with `subscriptions.currency`
 - `subscriptions.currency` - If is sent, it must be sent in pair with `subscriptions.price` and needs to be one of the currencies supported by the customer
@@ -77,7 +77,7 @@ curl -X POST \
                 "type": "ios"
             },
       	    "subscriptions": [{
-      	        "allowanceId": "a3u3z000000PZBhAAO",
+      	        "product_id": "a3u3z000000PZBhAAO",
       	        "activationDate": "2019-09-13T12:00:00Z",
       	        "price": 10,
       	        "currency": "USD"
@@ -117,7 +117,7 @@ The customer already has a Truphone SIM. Topping up will add connectivity plans 
 |          device.model          |                  Device Model                   |      no      |         |
 |          device.make           |                   Device Make                   |      no      |         |
 |         subscriptions          |          List of products to purchase           |     yes      |         |
-|   subscriptions[].allowanceId  |          Id of the product to purchase          |     yes      |         |
+|   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |         |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |         |
 |     subscriptions[].price      |      Price for which the product was sold       |      no      |         |
 |    subscriptions[].curremcy    |     Currency for which the product was sold     |      no      |         |
@@ -128,7 +128,7 @@ The customer already has a Truphone SIM. Topping up will add connectivity plans 
 
 - The customer must already exist
 - `operationType` - Needs to be `TOPUP` (preferred) or `TOPUP_ACTIVATION` (deprecated)
-- `subscriptions.allowanceId` - Needs to be an id that belongs to the product catalog of the customer
+- `subscriptions.product_id` - Needs to be an id belonging to the product catalog of the customer
 - `subscriptions.activationDate` - Can not be a date in the past
 - `subscriptions.price` - If is sent, it must be sent in pair with `subscriptions.currency`
 - `subscriptions.currency` - If is sent, it must be sent in pair with `subscriptions.price` and needs to be one of the currencies supported by the customer
@@ -163,7 +163,7 @@ curl -X POST \
                 "type": "ios"
             },
             "subscriptions": [{
-      	        "allowanceId": "a3u3z000000PZBhAAO",
+      	        "product_id": "a3u3z000000PZBhAAO",
       	        "activationDate": "2019-09-13T12:00:00Z",
       	        "price": 10,
       	        "currency": "USD"
