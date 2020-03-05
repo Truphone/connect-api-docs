@@ -4,7 +4,7 @@ Estimated dates and changelog for major API releases. New versions are made avai
 
 ## 5.6.0 - Notifications
 
-- Estimated date: 15th March 10:00 UTC
+- Estimated date: 16th March 10:00 UTC
 - Downtime: 0
 - Retocompatible: yes
 - Changes:
