@@ -54,7 +54,7 @@ curl -X GET \
 
 SIM profiles/subscribers allow configuration of specific preferences which enable/disable features during the connectivity lifecycle. Currently, the only preference we support is registering/unregistering for usage and auto renew notifications.
 
-## Get SIM Preferences [NOT IMPLEMENTED]
+## Get SIM Preferences
 
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `v1/sim/{iccid}/preferences`
@@ -92,7 +92,7 @@ curl -X GET \
 }
 ```
 
-## Register for notifications [NOT IMPLEMENTED]
+## Register for notifications
 
 Currently, the only form of notification we support is through webhooks. Each SIM can be registerd for receiving the different types of notifications individually. For information on the notification format, check the [notifications](notifications.md) document
 
@@ -121,7 +121,7 @@ curl -X POST \
    }'
 ```
 
-## Unregister from notifications [NOT IMPLEMENTED]
+## Unregister from notifications
 
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `v1/sim/{iccid}/notification_preferences/{type}`
