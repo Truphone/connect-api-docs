@@ -107,17 +107,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#example-response">Example Response</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#update-the-subscription-details">Update the Subscription Details</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Example Request</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#activate-subscriptions">Activate Subscriptions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Example request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Example request</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#get-sim-subscriptions">Get SIM Subscriptions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Example Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Example Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example Response</a></li>
 </ul>
 </li>
 </ul>
@@ -244,14 +240,6 @@
 <td align="center">product.name</td>
 <td align="center">The original product name</td>
 </tr>
-<tr>
-<td align="center">autoRenewFirstSubscriptionId</td>
-<td align="center">The previous subscription, if this one is an auto renew</td>
-</tr>
-<tr>
-<td align="center">auto_renew</td>
-<td align="center">Whether this subscription has auto renew active or not</td>
-</tr>
 </tbody>
 </table><p><strong>Possible values for <code class="docutils literal notranslate"><span class="pre">status</span></code></strong></p>
 <table border="1" class="docutils">
@@ -307,33 +295,8 @@
   <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;MzA5MjE3ODMwOTEyCg==&quot;</span><span class="p">,</span>
     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;autoRenewFirstSubscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;MzEyMzMwOTIxNzgzZDIK&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="update-the-subscription-details">
-<h2>Update the Subscription Details<a class="headerlink" href="#update-the-subscription-details" title="Permalink to this headline">¶</a></h2>
-<p>Update the properties of a given subscription. Currently only supports toggling the auto renew state.</p>
-<ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></li>
-</ul>
-<div class="section" id="id1">
-<h3>Example Request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="se">\</span>
-  https://services.truphone.com/esim/v1/subscription/Njc1NzY1NzY1ZDIK <span class="se">\</span>
-   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
-   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
-   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
-   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
-   -d <span class="s1">&#39;{</span>
-<span class="s1">     &quot;auto_renew&quot; : true</span>
-<span class="s1">   }&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -350,8 +313,8 @@
 </li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
 </ul>
-<div class="section" id="id2">
-<h3>Example request<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Example request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
   https://services.truphone.com/esim/v1/subscription/Njc1NzY1NzY1ZDIK/activate <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -373,8 +336,8 @@
 </li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
-<div class="section" id="id3">
-<h3>Example Request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Example Request<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
   https://services.truphone.com/esim/v1/sim/8944474600000109251/subscriptions <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -384,8 +347,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>Example Response<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Example Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
@@ -397,8 +360,7 @@
     <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;MzA5MjE3ODMwOTEyCg==&quot;</span><span class="p">,</span>
       <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;autoRenewFirstSubscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;MzEyMzMwOTIxNzgzZDIK&quot;</span>
+    <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>

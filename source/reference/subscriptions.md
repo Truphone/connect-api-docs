@@ -17,8 +17,6 @@ A connectivity plan subscription, associated to a Truphone SIM/Subscriber. In or
 |         createdDate          |   The date whe the subscription was first created (ISO 8601)    |
 |          product.id          |                     The original product id                     |
 |         product.name         |                    The original product name                    |
-| autoRenewFirstSubscriptionId |     The previous subscription, if this one is an auto renew     |
-|          auto_renew          |     Whether this subscription has auto renew active or not      |
 
 **Possible values for `status`**
 
@@ -58,32 +56,8 @@ curl -X GET \
   "product": {
     "id": "MzA5MjE3ODMwOTEyCg==",
     "name": "Prepaid data 30GB"
-  },
-  "autoRenewFirstSubscriptionId": "MzEyMzMwOTIxNzgzZDIK",
-  "auto_renew": true
+  }
 }
-```
-
-## Update the Subscription Details
-
-Update the properties of a given subscription. Currently only supports toggling the auto renew state.
-
-- Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
-- URL: `v1/subscription/{subscriptionId}/activate`
-- METHOD: `PATCH`
-
-### Example Request
-
-```bash
-curl -X PATCH \
-  https://services.truphone.com/esim/v1/subscription/Njc1NzY1NzY1ZDIK \
-   -H "Authorization: Bearer $ACCESS_TOKEN" \
-   -H 'Cache-Control: no-cache' \
-   -H 'Content-Type: application/json' \
-   -H 'X-Correlation-ID: unique-id-from-requester-123'
-   -d '{
-     "auto_renew" : true
-   }'
 ```
 
 ## Activate Subscriptions
@@ -140,8 +114,7 @@ curl -X GET \
     "product": {
       "id": "MzA5MjE3ODMwOTEyCg==",
       "name": "Prepaid data 30GB"
-    },
-    "autoRenewFirstSubscriptionId": "MzEyMzMwOTIxNzgzZDIK"
+    }
   }
 ]
 ```
