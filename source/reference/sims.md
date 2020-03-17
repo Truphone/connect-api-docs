@@ -52,7 +52,7 @@ curl -X GET \
 
 ## SIM Preferences Resource
 
-SIM profiles/subscribers allow configuration of specific preferences which enable/disable features during the connectivity lifecycle. Currently, the only preference we support is registering/unregistering for usage and auto renew notifications.
+SIM profiles/subscribers allow configuration of specific preferences which enable/disable features during the connectivity lifecycle. Currently, the only preference we support is registering/unregistering for usage and depletion notifications.
 
 ## Get SIM Preferences
 
@@ -83,10 +83,6 @@ curl -X GET \
     {
       "type": "USAGE_THRESHOLD",
       "webhook_url": "http://acme-flights.com/notifications/handler"
-    },
-    {
-      "type": "AUTO_RENEW",
-      "webhook_url": "http://acme-flights.com/notifications/handler"
     }
   ]
 }
@@ -102,10 +98,10 @@ Currently, the only form of notification we support is through webhooks. Each SI
 
 ### Parameters
 
-| Parameter Name |                         Description                          | Required | Default |
-| :------------: | :----------------------------------------------------------: | :------: | :-----: |
-|      type      | The type of notification to subscribe to, must be one of the following values: SUBSCRITPION_END, USAGE_THRESHOLD, or AUTO_RENEW |   yes    |   --    |
-|  webhook_url   |                    A webhook url to call                     |   yes    |   --    |
+| Parameter Name |                                                   Description                                                    | Required | Default |
+| :------------: | :--------------------------------------------------------------------------------------------------------------: | :------: | :-----: |
+|      type      | The type of notification to subscribe to, must be one of the following values: SUBSCRITPION_END, USAGE_THRESHOLD |   yes    |   --    |
+|  webhook_url   |                                              A webhook url to call                                               |   yes    |   --    |
 
 ### Example request
 
