@@ -36,7 +36,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 |       customer.lastName        |            End customer's last name             | configurable |
 |  customer.countryOfResidence   |       End customer's country of residence       | configurable |
 |             device             | Device where the subscription will be installed |     yes      |
-|          device.type           |            `ios`, `android` or `iot`            |      no      |
+|          device.type           |            `ios`, `android` or `iot`            |      yes      |
 |           device.id            |        Unique identifier for the device         |     yes      |
 |          device.model          |                  Device Model                   |      no      |
 |          device.make           |                   Device Make                   |      no      |

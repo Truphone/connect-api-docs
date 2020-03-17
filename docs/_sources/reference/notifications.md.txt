@@ -8,6 +8,8 @@ In order to handle webhook notifications, API clients will need to implement an 
 
 ### Usage Threshold
 
+Usage Threshold Notification is currently being sent at 80% plan depletion
+
 |  Property Name  |    Description    |
 | :-------------: | :---------------: |
 |       id        |    Identifier     |
@@ -21,13 +23,15 @@ In order to handle webhook notifications, API clients will need to implement an 
 ```json
 {
   "id": "1234-56789",
-  "type": "SUBSCRIPTION_END",
+  "type": "USAGE_THRESHOLD",
   "iccid": "893000000002391231",
   "subscription_id": "ZHNhc2Rhc2Q="
 }
 ```
 
 ### Subscription End
+
+Subscription end notification is currently being sent when plan expires by time or by data depletion
 
 |  Property Name  |    Description    |
 | :-------------: | :---------------: |
@@ -41,31 +45,9 @@ In order to handle webhook notifications, API clients will need to implement an 
 ```json
 {
   "id": "1234-56789",
-  "type": "USAGE_THRESHOLD",
+  "type": "SUBSCRIPTION_END",
   "iccid": "893000000002391231",
   "subscription_id": "ZHNhc2Rhc2Q=",
   "threshold": 80
-}
-```
-
-### Auto Renew
-
-|    Property Name    |     Description     |
-| :-----------------: | :-----------------: |
-|         id          |     Identifier      |
-|        type         |  Notification type  |
-|        iccid        |  SIM Profile ICCID  |
-|   subscription_id   |   subscription_id   |
-| new_subscription_id | new_subscription_id |
-
-#### Example Request Payload
-
-```json
-{
-  "id": "1234-56789",
-  "type": "AUTO_RENEW",
-  "iccid": "893000000002391231",
-  "subscription_id": "ZHNhc2Rhc2Q=",
-  "auto_renew_subscription_id": "ZHNhc2Rhc2kjhkhQ="
 }
 ```

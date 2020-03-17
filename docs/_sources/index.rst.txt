@@ -31,7 +31,6 @@ For more details about each specific role, check the :doc:`roles` page.
    :name: general
 
    releasenotes
-   upcomingreleases
    ratelimits
    authentication
    roles

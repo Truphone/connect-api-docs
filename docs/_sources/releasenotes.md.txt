@@ -1,5 +1,13 @@
 # Release Notes
 
+## 5.6.0 - 17th March 10:00 UTC
+
+- Changes:
+  - Support for plan expiry and 80% usage notifications.
+- Notes:
+  - Check [`sim`](reference/sims.md) and [`notifications`](reference/notifications.md) for usage instructions
+
+
 ## 5.5.0 - 27th February 10:00 UTC
 
 - Changes:
