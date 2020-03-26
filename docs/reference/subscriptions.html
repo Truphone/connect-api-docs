@@ -116,6 +116,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3">Example Response</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#get-sim-subscriptions-by-filtering">Get SIM Subscriptions by filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Example Response</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notifications.html">Notifications</a></li>
@@ -362,6 +367,135 @@
       <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span>
     <span class="p">}</span>
   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-sim-subscriptions-by-filtering">
+<h2>Get SIM Subscriptions by filtering<a class="headerlink" href="#get-sim-subscriptions-by-filtering" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">v1/subscriptions</span></code></li>
+</ul>
+</li>
+<li>Allowed filters (in the form of query parameters):<ul>
+<li>iccid</li>
+<li>email</li>
+<li>product-id</li>
+<li>before (date in the format yyyy-MM-dd’T’HH:mm:ssZ)</li>
+<li>after (date in the format yyyy-MM-dd’T’HH:mm:ssZ)</li>
+<li>size (for pagination purposes)</li>
+<li>page (for pagination purposes)</li>
+</ul>
+</li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+</ul>
+<div class="section" id="id4">
+<h3>Example Request<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
+  https://services.truphone.com/esim/v1/subscriptions?before<span class="o">=</span><span class="m">2020</span>-04-24T15:39:02.002Z<span class="p">&amp;</span><span class="nv">size</span><span class="o">=</span><span class="m">10</span><span class="p">&amp;</span><span class="nv">page</span><span class="o">=</span><span class="m">2</span> <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Example Response<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3pM0000000npCoIAI&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;901672804&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quotaId&quot;</span><span class="p">:</span> <span class="s2">&quot;901672804&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01T12:00:00Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-16T12:00:00Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;msisdn&quot;</span><span class="p">:</span> <span class="s2">&quot;447559451024448&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8944478600000244484&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;a3mM0000000dglEIAQ&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;1GB 15-Day - Truphoneinternal - Tier2 Data Bundle&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-19T15:51:41Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;TRUPHONEINTERNAL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;imei&quot;</span><span class="p">:</span> <span class="s2">&quot;123456778&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;autoRenew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3pM0000000nqCEIAY&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673109&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quotaId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673109&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:55:46Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-08T12:55:46Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;msisdn&quot;</span><span class="p">:</span> <span class="s2">&quot;447559451024659&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8944478600000246596&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;a3mM0000000dglEIAQ&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;1GB 15-Day - Truphoneinternal - Tier2 Data Bundle&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:55:54Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;TRUPHONEINTERNAL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;imei&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;autoRenew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3pM0000000nqCJIAY&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673110&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quotaId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673110&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:58:17Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-08T12:58:17Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;msisdn&quot;</span><span class="p">:</span> <span class="s2">&quot;447559451024660&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8944478600000246604&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;a3mM0000000dglEIAQ&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;1GB 15-Day - Truphoneinternal - Tier2 Data Bundle&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:58:21Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;TRUPHONEINTERNAL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;imei&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;autoRenew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3pM0000000nqCOIAY&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673111&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quotaId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673111&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T13:00:07Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-08T13:00:07Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;msisdn&quot;</span><span class="p">:</span> <span class="s2">&quot;447559451024659&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8944478600000246596&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;a3mM0000000dglEIAQ&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;1GB 15-Day - Truphoneinternal - Tier2 Data Bundle&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T13:00:09Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;TRUPHONEINTERNAL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;imei&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;autoRenew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3pM0000000nqSTIAY&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673304&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quotaId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673304&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-25T16:39:42Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-09T16:39:42Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;msisdn&quot;</span><span class="p">:</span> <span class="s2">&quot;447559451024748&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8944478600000247487&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;a3mM0000000dglEIAQ&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;1GB 15-Day - Truphoneinternal - Tier2 Data Bundle&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-25T16:39:47Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;TRUPHONEINTERNAL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;imei&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;autoRenew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;a3pM0000000nqSiIAI&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subscriptionId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673307&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quotaId&quot;</span><span class="p">:</span> <span class="s2">&quot;901673307&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-25T17:46:09Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-09T17:46:09Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;msisdn&quot;</span><span class="p">:</span> <span class="s2">&quot;447559451024747&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8944478600000247479&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;a3mM0000000dglEIAQ&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;allowanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;1GB 15-Day - Truphoneinternal - Tier2 Data Bundle&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-25T17:46:13Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;clientId&quot;</span><span class="p">:</span> <span class="s2">&quot;TRUPHONEINTERNAL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;imei&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;autoRenew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+    <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
