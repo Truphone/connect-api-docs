@@ -137,6 +137,7 @@ curl -X GET \
     - `X-Previous-Page` (url of the previous page. Only present if there is a previous page)
     - `X-Next-Page` (url of the next page. Only present if there is a next page)
 
+
 ### Example Request
 
 ```bash
