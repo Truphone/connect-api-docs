@@ -125,17 +125,17 @@ curl -X GET \
 - URL:
     - `v1/subscription`
 - Allowed filters (in the form of query parameters):
-    - iccid
-    - email
-    - product-id
-    - before (date in the format yyyy-MM-dd'T'HH:mm:ssZ)
-    - after (date in the format yyyy-MM-dd'T'HH:mm:ssZ)
-    - size (for pagination purposes)
-    - page (for pagination purposes)
+    - `iccid`
+    - `email`
+    - `product-id`
+    - `before` (date in the format yyyy-MM-dd'T'HH:mm:ssZ)
+    - `after` (date in the format yyyy-MM-dd'T'HH:mm:ssZ)
+    - `size` (for pagination purposes)
+    - `page` (for pagination purposes)
 - METHOD: `GET`
 - Response might have the following headers:
-    - X-Previous-Page (url of the previous page. Only present if there is a previous page)
-    - X-Next-Page (url of the next page. Only present if there is a next page)
+    - `X-Previous-Page` (url of the previous page. Only present if there is a previous page)
+    - `X-Next-Page` (url of the next page. Only present if there is a next page)
 
 ### Example Request
 
