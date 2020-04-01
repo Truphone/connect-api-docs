@@ -44,7 +44,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 |   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |
 |     subscriptions[].price      |      Price for which the product was sold       |      no      |
-|    subscriptions[].curremcy    |     Currency for which the product was sold     |      no      |
+|    subscriptions[].currency    |     Currency for which the product was sold     |      no      |
 
 ### Rules and validations
 
@@ -121,7 +121,7 @@ A Truphone SIM was already provided. Topping up will add connectivity plans to t
 |   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |         |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |         |
 |     subscriptions[].price      |      Price for which the product was sold       |      no      |         |
-|    subscriptions[].curremcy    |     Currency for which the product was sold     |      no      |         |
+|    subscriptions[].currency    |     Currency for which the product was sold     |      no      |         |
 |              esim              |     The eSIM to which add the subscription      |     yes      |         |
 |           esim.iccid           |    The iccid corresponding to the subscriber    |     yes      |         |
 
