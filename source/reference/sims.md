@@ -98,10 +98,10 @@ Currently, the only form of notification we support is through webhooks. Each SI
 
 ### Parameters
 
-| Parameter Name |                                                   Description                                                    | Required | Default |
-| :------------: | :--------------------------------------------------------------------------------------------------------------: | :------: | :-----: |
-|      type      | The type of notification to subscribe to, must be one of the following values: SUBSCRITPION_END, USAGE_THRESHOLD |   yes    |   --    |
-|  webhook_url   |                                              A webhook url to call                                               |   yes    |   --    |
+| Parameter Name |                                                     Description                                                      | Required | Default |
+| :------------: | :------------------------------------------------------------------------------------------------------------------: | :------: | :-----: |
+|      type      | The type of notification to subscribe to.<br>Must be one of the following:<br> `SUBSCRITPION_END`, `USAGE_THRESHOLD` |   yes    |   --    |
+|  webhook_url   |                                                A webhook url to call                                                 |   yes    |   --    |
 
 ### Example request
 
