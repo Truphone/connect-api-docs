@@ -42,7 +42,7 @@
     - [Receive notifications](#https://truphone.github.io/connect-api-docs/reference/notifications.html)
 
 
-## 5.5.0 - 27th February 10:00 UTC
+## 5.5.0
 
 - **Staging release date**: 3rd March 2020
 - **Production release date**: 17h March 2020
@@ -53,7 +53,7 @@
   - General API stability improvements and bugfixes 
 
 
-## 5.4.0 - 13th February 14:00 UTC
+## 5.4.0
 
 - **Staging release date**: 4th February 2020
 - **Production release date**: 13th February 2020
