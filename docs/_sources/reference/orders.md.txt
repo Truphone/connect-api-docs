@@ -45,7 +45,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 |   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |
 |     subscriptions[].price      |      Price for which the product was sold       |      no      |
-|    subscriptions[].curremcy    |     Currency for which the product was sold     |      no      |
+|    subscriptions[].currency    |     Currency for which the product was sold     |      no      |
 
 ### Rules and validations
 
@@ -54,6 +54,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 - `subscriptions.activationDate` - Can not be a date in the past
 - `subscriptions.price` - If is sent, it must be sent in pair with `subscriptions.currency`
 - `subscriptions.currency` - If is sent, it must be sent in pair with `subscriptions.price` and needs to be one of the currencies supported by the customer
+- `device.type` - Can vary between the three above specified but must respect the contract 
 
 ### Example Request
 
@@ -99,7 +100,7 @@ curl -X POST \
 
 ## Purchase a Top-Up
 
-The customer already has a Truphone SIM. Topping up will add connectivity plans to this SIM
+A Truphone SIM was already provided. Topping up will add connectivity plans to this SIM
 
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL: `v1/order`
@@ -111,8 +112,8 @@ The customer already has a Truphone SIM. Topping up will add connectivity plans 
 | :----------------------------: | :---------------------------------------------: | :----------: | :-----: |
 |         operationType          |                 Must be `TOPUP`                 |     yes      |         |
 |          countryCode           |     Country where the order is being placed     | configurable |         |
-|            customer            | End customer who is purchasing the subscription |     yes      |         |
-|         customer.email         |       End customer's email or identifier        |     yes      |         |
+|            customer            | End customer who is purchasing the subscription |     no      |         |
+|         customer.email         |       End customer's email or identifier        |     no      |         |
 |             device             | Device where the subscription will be installed |     yes      |         |
 |          device.type           |            `ios`, `android` or `iot`            |      no      |         |
 |           device.id            |        Unique identifier for the device         |     yes      |         |
@@ -122,24 +123,23 @@ The customer already has a Truphone SIM. Topping up will add connectivity plans 
 |   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |         |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |         |
 |     subscriptions[].price      |      Price for which the product was sold       |      no      |         |
-|    subscriptions[].curremcy    |     Currency for which the product was sold     |      no      |         |
+|    subscriptions[].currency    |     Currency for which the product was sold     |      no      |         |
 |              esim              |     The eSIM to which add the subscription      |     yes      |         |
 |           esim.iccid           |    The iccid corresponding to the subscriber    |     yes      |         |
 
 ### Rules and validations
 
-- The customer must already exist
 - `operationType` - Needs to be `TOPUP` (preferred) or `TOPUP_ACTIVATION` (deprecated)
 - `subscriptions.product_id` - Needs to be an id belonging to the product catalog of the customer
 - `subscriptions.activationDate` - Can not be a date in the past
 - `subscriptions.price` - If is sent, it must be sent in pair with `subscriptions.currency`
-- `subscriptions.currency` - If is sent, it must be sent in pair with `subscriptions.price` and needs to be one of the currencies supported by the customer
-- `device.type` - Must be one of the following values `ios` or `android`
+- `subscriptions.currency` - If is sent, it must be sent in pair with `subscriptions.price` and needs to be one of the currencies supported by the client
+- `device.type` - Can vary between the three above specified but must respect the contract 
+- `customer` - Deprecated (Can be sent but it's not necessary)
 
-In order to call this endpoint, both the `customer.email` and `esim.iccid` nodes are mandatory and the customer must be entitled to that esim, otherwise the topup won't be performed:
+In order to call this endpoint, `esim.iccid` node is mandatory, otherwise the topup won't be performed:
 
 - `esim` and `esim.iccid` are mandatory
-- `customer.email` - the email used to order the first eSIM;
 - `esim.iccid` - the iccid obtained when the first eSIM was ordered.
 
 ### Example Request
@@ -155,10 +155,6 @@ curl -X POST \
       	"input": {
             "operationType": "TOPUP_ACTIVATION",
             "countryCode": "PT",
-            "customer": {
-                "email": "john@doe.com",
-                "countryOfResidence": "US"
-            },
             "device": {
                 "id": "123456789",
                 "model": "iPhone",

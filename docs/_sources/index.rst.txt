@@ -8,11 +8,6 @@ Introduction
 
 Welcome to the Truphone Connect API developer documentation. These documents outline instructions for using the API, such as the authentication process, test and production environments, user roles and how to use each different available endpoint/resource, including example requests and possible responses.
 
-Upcoming changes
-################
-
-Major milestones and breaking changes will be carried out according to the schedule in the :doc:`upcomingreleases` page. New versions are made available in the staging environment 2 weeks in advance to allow partners to test their integrations.
-
 Before you start
 ################
 

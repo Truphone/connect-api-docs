@@ -344,7 +344,7 @@
 <td align="center">no</td>
 </tr>
 <tr>
-<td align="center">subscriptions[].curremcy</td>
+<td align="center">subscriptions[].currency</td>
 <td align="center">Currency for which the product was sold</td>
 <td align="center">no</td>
 </tr>
@@ -358,6 +358,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
+<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Can vary between the three above specified but must respect the contract</li>
 </ul>
 </div>
 <div class="section" id="example-request">
@@ -405,7 +406,7 @@
 </div>
 <div class="section" id="purchase-a-top-up">
 <h2>Purchase a Top-Up<a class="headerlink" href="#purchase-a-top-up" title="Permalink to this headline">¶</a></h2>
-<p>The customer already has a Truphone SIM. Topping up will add connectivity plans to this SIM</p>
+<p>A Truphone SIM was already provided. Topping up will add connectivity plans to this SIM</p>
 <ul class="simple">
 <li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></li>
@@ -438,13 +439,13 @@
 <tr>
 <td align="center">customer</td>
 <td align="center">End customer who is purchasing the subscription</td>
-<td align="center">yes</td>
+<td align="center">no</td>
 <td align="center"></td>
 </tr>
 <tr>
 <td align="center">customer.email</td>
 <td align="center">End customer's email or identifier</td>
-<td align="center">yes</td>
+<td align="center">no</td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -502,7 +503,7 @@
 <td align="center"></td>
 </tr>
 <tr>
-<td align="center">subscriptions[].curremcy</td>
+<td align="center">subscriptions[].currency</td>
 <td align="center">Currency for which the product was sold</td>
 <td align="center">no</td>
 <td align="center"></td>
@@ -524,18 +525,17 @@
 <div class="section" id="id2">
 <h3>Rules and validations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>The customer must already exist</li>
 <li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">TOPUP</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">TOPUP_ACTIVATION</span></code> (deprecated)</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.product_id</span></code> - Needs to be an id belonging to the product catalog of the customer</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
 <li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Must be one of the following values <code class="docutils literal notranslate"><span class="pre">ios</span></code> or <code class="docutils literal notranslate"><span class="pre">android</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the client</li>
+<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Can vary between the three above specified but must respect the contract</li>
+<li><code class="docutils literal notranslate"><span class="pre">customer</span></code> - Deprecated (Can be sent but it’s not necessary)</li>
 </ul>
-<p>In order to call this endpoint, both the <code class="docutils literal notranslate"><span class="pre">customer.email</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> nodes are mandatory and the customer must be entitled to that esim, otherwise the topup won’t be performed:</p>
+<p>In order to call this endpoint, <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> node is mandatory, otherwise the topup won’t be performed:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">esim</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> are mandatory</li>
-<li><code class="docutils literal notranslate"><span class="pre">customer.email</span></code> - the email used to order the first eSIM;</li>
 <li><code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> - the iccid obtained when the first eSIM was ordered.</li>
 </ul>
 </div>
@@ -551,10 +551,6 @@
 <span class="s1">      	&quot;input&quot;: {</span>
 <span class="s1">            &quot;operationType&quot;: &quot;TOPUP_ACTIVATION&quot;,</span>
 <span class="s1">            &quot;countryCode&quot;: &quot;PT&quot;,</span>
-<span class="s1">            &quot;customer&quot;: {</span>
-<span class="s1">                &quot;email&quot;: &quot;john@doe.com&quot;,</span>
-<span class="s1">                &quot;countryOfResidence&quot;: &quot;US&quot;</span>
-<span class="s1">            },</span>
 <span class="s1">            &quot;device&quot;: {</span>
 <span class="s1">                &quot;id&quot;: &quot;123456789&quot;,</span>
 <span class="s1">                &quot;model&quot;: &quot;iPhone&quot;,</span>
