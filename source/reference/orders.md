@@ -58,7 +58,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 
 ```bash
 curl -X POST \
-  https://services.truphone.com/esim/v1/order \
+  https://services.truphone.com/connect-api/v1/order \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -144,7 +144,7 @@ In order to call this endpoint, both the `customer.email` and `esim.iccid` nodes
 
 ```bash
 curl -X POST \
-  https://services.truphone.com/esim/v1/order \
+  https://services.truphone.com/connect-api/v1/order \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -196,7 +196,7 @@ Order fulfilment is not synchronous, so after placing an order, the API user mus
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/order/3a6acf89-1ccf-4611-9424-453930f57ef1 \
+  https://services.truphone.com/connect-api/v1/order/3a6acf89-1ccf-4611-9424-453930f57ef1 \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \

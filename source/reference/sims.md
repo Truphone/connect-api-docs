@@ -33,7 +33,7 @@ A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile relate
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/sim/8944474600000109251 \
+  https://services.truphone.com/connect-api/v1/sim/8944474600000109251 \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -64,7 +64,7 @@ SIM profiles/subscribers allow configuration of specific preferences which enabl
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/sim/8944474600000109251/preferences \
+  https://services.truphone.com/connect-api/v1/sim/8944474600000109251/preferences \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -107,7 +107,7 @@ Currently, the only form of notification we support is through webhooks. Each SI
 
 ```bash
 curl -X POST \
-  https://services.truphone.com/esim/v1/sim/8944474600000109251/preferences/notifications/SUBSCRIPTION_END \
+  https://services.truphone.com/connect-api/v1/sim/8944474600000109251/preferences/notifications/SUBSCRIPTION_END \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -127,7 +127,7 @@ curl -X POST \
 
 ```bash
 curl -X DELETE \
-  https://services.truphone.com/esim/v1/sim/8944474600000109251/preferences/notifications/SUBSCRIPTION_END \
+  https://services.truphone.com/connect-api/v1/sim/8944474600000109251/preferences/notifications/SUBSCRIPTION_END \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
