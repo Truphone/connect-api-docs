@@ -173,12 +173,12 @@
 <h1>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h1>
 <p>Truphone provides both Production and Staging environments for the Truphone Connect API:</p>
 <ul class="simple">
-<li>Production (Stable):  services.truphone.com</li>
-<li>Staging (Release Candidate):  services-bit.truphone.com</li>
+<li>Production: services.truphone.com</li>
+<li>Staging: services-bit.truphone.com</li>
 </ul>
-<p>Usage examples will work for both Staging and Production environments, however, while the Production environment will always have stable versions, Staging will sometimes contain the latest features, which might be undocumented or unstable. Additionally, Truphone is still making the required adjustments to support the end to end install of an active (connected to the cellular network) eSIM profile.</p>
-<p>We recommend using <em>Staging for testing/developing API calls and integration</em>, but for profile installs and <em>connectivity testing partners will have to use Production</em> until the Staging environment is ready for connectivity tests.</p>
-<p>Please note that both environments are isolated and therefore data such as <em>user and product ids will change from one environment to the other</em>.</p>
+<p>Usage examples will work for both Staging and Production environments. Moreover, in both environments it is possible to install profiles and test connectivity in end devices. However, Staging is intended for developing, integrating and testing against the API and Production to provide service to real-customers at scale.</p>
+<p>Additionally, Staging will also recycle resources in order to optimise usage and reduce storage needs of the environment. As such, every day at 4am GMT the system will clean all resources which have not been used for two or more days.</p>
+<p>Please note that both environments are isolated and therefore data such as user and product ids will change from one environment to the other.</p>
 </div>
 
 
