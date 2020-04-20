@@ -36,7 +36,7 @@ Currently, the product catalog of an API client typically changes by requesting 
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/products?currency=USD \
+  https://services.truphone.com/connect-api/v1/products?currency=USD \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -81,7 +81,7 @@ curl -X GET \
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/products/ZHNhZGFzZGFz/?currency=USD \
+  https://services.truphone.com/connect-api/v1/products/ZHNhZGFzZGFz/?currency=USD \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
