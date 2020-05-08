@@ -36,7 +36,7 @@ A connectivity plan subscription, associated to a Truphone SIM/Subscriber. In or
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/subscription/MzEyMzMwOTIxNzgzZDIK \
+  https://services.truphone.com/connect-api/v1/subscription/MzEyMzMwOTIxNzgzZDIK \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -74,7 +74,7 @@ Orders can be placed for plans with activation dates in the future. The end user
 
 ```bash
 curl -X POST \
-  https://services.truphone.com/esim/v1/subscription/Njc1NzY1NzY1ZDIK/activate \
+  https://services.truphone.com/connect-api/v1/subscription/Njc1NzY1NzY1ZDIK/activate \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -93,7 +93,7 @@ curl -X POST \
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/sim/8944474600000109251/subscriptions \
+  https://services.truphone.com/connect-api/v1/sim/8944474600000109251/subscriptions \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -142,7 +142,7 @@ curl -X GET \
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/subscription?before=2020-04-24T15:39:02.002Z&size=10&page=2 \
+  https://services.truphone.com/connect-api/v1/subscription?before=2020-04-24T15:39:02.002Z&size=10&page=2 \
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \

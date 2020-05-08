@@ -312,14 +312,14 @@
 <div class="section" id="create-a-new-customer">
 <h2>Create a new customer<a class="headerlink" href="#create-a-new-customer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="example-request">
 <h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
-  https://services.truphone.com/esim/v1/customer <span class="se">\</span>
+  https://services.truphone.com/connect-api/v1/customer <span class="se">\</span>
   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -360,9 +360,9 @@
 <div class="section" id="retrieve-customer-details">
 <h2>Retrieve customer details<a class="headerlink" href="#retrieve-customer-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
@@ -385,7 +385,7 @@
 <div class="section" id="id1">
 <h3>Example Request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
-  https://services.truphone.com/esim/v1/customer?email<span class="o">=</span>john@doe.com
+  https://services.truphone.com/connect-api/v1/customer?email<span class="o">=</span>john@doe.com
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -432,9 +432,9 @@
 <div class="section" id="update-customer-details">
 <h2>Update customer details<a class="headerlink" href="#update-customer-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{id}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{id}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">PATCH</span></code></p></li>
 </ul>
 <div class="section" id="id2">
 <h3>Parameters<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -524,11 +524,12 @@
 <div class="section" id="additional-rules-and-validations">
 <h2>Additional rules and validations<a class="headerlink" href="#additional-rules-and-validations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter must have one of the following values: <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code>.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">type</span></code> equals to <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code> then the input parameters are the same as <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> plus:<ul>
-<li>companyName</li>
-<li>companyNumber</li>
-<li>jobTitle</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter must have one of the following values: <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> or <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">type</span></code> equals to <code class="docutils literal notranslate"><span class="pre">BUSINESS</span></code> then the input parameters are the same as <code class="docutils literal notranslate"><span class="pre">PERSONAL</span></code> plus:</p>
+<ul>
+<li><p>companyName</p></li>
+<li><p>companyNumber</p></li>
+<li><p>jobTitle</p></li>
 </ul>
 </li>
 </ul>
@@ -537,7 +538,7 @@
 <div class="section" id="personal">
 <h4>Personal<a class="headerlink" href="#personal" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="se">\</span>
-  https://services.truphone.com/esim/v1/customer?id<span class="o">=</span>a0xM0000004y000 <span class="se">\</span>
+  https://services.truphone.com/connect-api/v1/customer?id<span class="o">=</span>a0xM0000004y000 <span class="se">\</span>
   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -575,7 +576,7 @@
 <div class="section" id="business">
 <h4>Business<a class="headerlink" href="#business" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PATCH <span class="se">\</span>
-  https://services.truphone.com/esim/v1/customer?id<span class="o">=</span>a0xM0000004y000 <span class="se">\</span>
+  https://services.truphone.com/connect-api/v1/customer?id<span class="o">=</span>a0xM0000004y000 <span class="se">\</span>
   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -618,14 +619,14 @@
 <div class="section" id="get-available-payment-methods">
 <h2>Get available payment methods<a class="headerlink" href="#get-available-payment-methods" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="id3">
 <h3>Example Request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
-  https://services.truphone.com/esim/v1/customer/KS27CmTTmaoh7e318ek0CA<span class="o">==</span>/payment-method
+  https://services.truphone.com/connect-api/v1/customer/KS27CmTTmaoh7e318ek0CA<span class="o">==</span>/payment-method
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -653,9 +654,9 @@
 <div class="section" id="add-a-payment-method">
 <h2>Add a Payment Method<a class="headerlink" href="#add-a-payment-method" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="id5">
 <h3>Parameters<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -708,7 +709,7 @@
 <div class="section" id="id6">
 <h3>Example request<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
-  https://services.truphone.com/esim/v1/customer/KS27CmTTmaoh7e318ek0CA<span class="o">==</span>/payment-method
+  https://services.truphone.com/connect-api/v1/customer/KS27CmTTmaoh7e318ek0CA<span class="o">==</span>/payment-method
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -737,14 +738,14 @@
 <div class="section" id="delete-a-payment-method">
 <h2>Delete a Payment Method<a class="headerlink" href="#delete-a-payment-method" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method/{paymenMethodId}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/customer/{customerId}/payment-method/{paymenMethodId}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></li>
 </ul>
 <div class="section" id="id8">
 <h3>Example Request<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="se">\</span>
-  https://services.truphone.com/esim/v1/customer/a0xM0000004yhOV/payment-method/a3jM0000001keW8IAI
+  https://services.truphone.com/connect-api/v1/customer/a0xM0000004yhOV/payment-method/a3jM0000001keW8IAI
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
