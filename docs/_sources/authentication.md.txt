@@ -25,7 +25,7 @@ $ export ACCESS_TOKEN=`curl -s --data \
     
 $ echo $ACCESS_TOKEN        # view the access token
 
-$ curl -H "Authorization: Bearer $ACCESS_TOKEN" https://services.truphone.com/esim/...
+$ curl -H "Authorization: Bearer $ACCESS_TOKEN" https://services.truphone.com/connect-api/...
 ```
 
 ## Refreshing the access token with a refresh token
