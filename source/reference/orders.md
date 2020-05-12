@@ -41,6 +41,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 |           device.id            |        Unique identifier for the device         |     yes      |
 |          device.model          |                  Device Model                   |      no      |
 |          device.make           |                   Device Make                   |      no      |
+|          device.eid            |                   Device EID                    |      no      |         |
 |         subscriptions          |          List of products to purchase           |     yes      |
 |   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |
@@ -76,7 +77,8 @@ curl -X POST \
             "device": {
                 "id": "123456789",
                 "model": "iPhone",
-                "type": "ios"
+                "type": "ios",
+                "eid": "89049032004008882600019002596666"
             },
       	    "subscriptions": [{
       	        "product_id": "a3u3z000000PZBhAAO",
@@ -119,6 +121,7 @@ A Truphone SIM was already provided. Topping up will add connectivity plans to t
 |           device.id            |        Unique identifier for the device         |     yes      |         |
 |          device.model          |                  Device Model                   |      no      |         |
 |          device.make           |                   Device Make                   |      no      |         |
+|          device.eid            |                   Device EID                    |      no      |         |
 |         subscriptions          |          List of products to purchase           |     yes      |         |
 |   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |         |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |         |
@@ -158,7 +161,8 @@ curl -X POST \
             "device": {
                 "id": "123456789",
                 "model": "iPhone",
-                "type": "ios"
+                "type": "ios",
+                "eid": "89049032004008882600019002596666"
             },
             "subscriptions": [{
       	        "product_id": "a3u3z000000PZBhAAO",
@@ -212,7 +216,8 @@ curl -X GET \
   "output": {
     "iccid": "1234567890",
     "matchingId": "M-123DSA-AS",
-    "smdpUrl": "rsp.truphone.com"
+    "smdpUrl": "rsp.truphone.com",
+    "subscription_id": "t_ZJDGpxE48CB2eGo7LDSws4HOIEPJh43G_kRPgcpro="
   }
 }
 ```
