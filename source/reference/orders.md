@@ -145,6 +145,9 @@ In order to call this endpoint, `esim.iccid` node is mandatory, otherwise the to
 - `esim` and `esim.iccid` are mandatory
 - `esim.iccid` - the iccid obtained when the first eSIM was ordered.
 
+There is also a hard limit of 15 **active** subscriptions for the same iccid. This means that if an order for a topup operation for an iccid that already has 15 **active** subscriptions is created, the user will get an error.
+
+
 ### Example Request
 
 ```bash
