@@ -22,7 +22,7 @@ The Pre-Production environment was created to replace the Staging environment. I
 - Resources are Recycled in order to optimise usage and reduce storage needs of the environment. As such, every day at 4am GMT the system will clean all resources which have not been used for two or more days.
 
 
-## Staging [DEPRECATED] - To be decommissioned by June 24th**. 
+## Staging [DEPRECATED] - To be decommissioned by June 24th
 
 Base URL: https://services-bit.truphone.com/connect-api
 Base URL: https://services-bit.truphone.com/esim [DEPRECATED]
