@@ -5,6 +5,7 @@ Truphone provides a Production and a Pre-Production environments for the Connect
 ## Production
 
 Base URL: https://services.truphone.com/connect-api
+
 Base URL: https://services.truphone.com/esim [DEPRECATED]
 
 The main environment. Should only be used for live traffic. Releases on this environment happen on a scheduled basis and will be communicated to partners.
@@ -13,9 +14,8 @@ The main environment. Should only be used for live traffic. Releases on this env
 
 Base URL: https://services.truphone.com/connect-api-preprod
 
-The Pre-Production environment was created to replace the Staging environment. It has production grade support and throughput, but the data created in this environment will be marked as test data, and therefore will not be shared with the production environment. The main goal is to allow App developers to develop and test integration with the Connect API, as well as to execute connectivity tests. A few considerations to have when using Pre-Production:
-- API Version is always the release candidate, with the next big changes to be deployed on the next release
-- SIM, Subscription and Customer Data is isolated from Production and marked as Test Data
+The Pre-Production environment was created to replace the Staging environment. It has production grade support and throughput, but the data will not be shared with the production environment. The main goal is to allow App developers to develop and test integration with the Connect API, as well as to execute connectivity tests. A few considerations to have when using Pre-Production:
+- SIM, Subscription and Customer Data is isolated from Production
 - The product catalogs are shared between Production and Pre-Production
 - Pre-production will still use test sims and the current commercial agreements and rules around resource recycling will be kept
 - In order to access the pre-production environment you can use same the same credentials as production
@@ -25,6 +25,7 @@ The Pre-Production environment was created to replace the Staging environment. I
 ## Staging [DEPRECATED] - To be decommissioned by June 24th
 
 Base URL: https://services-bit.truphone.com/connect-api
+
 Base URL: https://services-bit.truphone.com/esim [DEPRECATED]
 
 The Staging environment was initially intended for development and integration purposes. It is a copy of the production environment but it doesn't share any resource. This environment is currently considered in deprecation stage. We will maintain it up and running for a period of time in order to allow a smooth transition to Pre-Production.
