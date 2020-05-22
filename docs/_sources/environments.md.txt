@@ -19,7 +19,7 @@ The Pre-Production environment was created to replace the Staging environment. I
 - The product catalogs are shared between Production and Pre-Production
 - Pre-production will still use test sims and the current commercial agreements and rules around resource recycling will be kept
 - In order to access the pre-production environment you can use same the same credentials as production
-- Resources are Recycled in order to optimise usage and reduce storage needs of the environment. As such, every day at 4am GMT the system will clean all resources which have not been used for two or more days.
+- Resources are Recycled in order to optimise usage and reduce storage needs of the environment. As such, every day at 4am GMT the system will clean all resources which have not been used for 72 hours.
 
 
 ## Staging [DEPRECATED] - To be decommissioned by June 24th
@@ -31,7 +31,7 @@ Base URL: https://services-bit.truphone.com/esim [DEPRECATED]
 The Staging environment was initially intended for development and integration purposes. It is a copy of the production environment but it doesn't share any resource. This environment is currently considered in deprecation stage. We will maintain it up and running for a period of time in order to allow a smooth transition to Pre-Production.
 
  - Staging environment is isolated and therefore data such as user and product ids will change from one environment to the other.
- - Resources are Recycled in order to optimise usage and reduce storage needs of the environment. As such, every day at 4am GMT the system will clean all resources which have not been used for two or more days.
+ - Resources are Recycled in order to optimise usage and reduce storage needs of the environment. As such, every day at 4am GMT the system will clean all resources which have not been used for 24 hours.
 
 		
 
