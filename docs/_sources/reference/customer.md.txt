@@ -41,7 +41,7 @@ A Truphone connectivity end user. Typically used for profile and personal detail
 
 ```bash
 curl -X POST \
-  https://services.truphone.com/esim/v1/customer \
+  https://services.truphone.com/connect-api/v1/customer \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -93,7 +93,7 @@ curl -X POST \
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/customer?email=john@doe.com
+  https://services.truphone.com/connect-api/v1/customer?email=john@doe.com
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -176,7 +176,7 @@ All fields are optional. Not sending a field will not change its value, and send
 
 ```bash
 curl -X PATCH \
-  https://services.truphone.com/esim/v1/customer?id=a0xM0000004y000 \
+  https://services.truphone.com/connect-api/v1/customer?id=a0xM0000004y000 \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -214,7 +214,7 @@ curl -X PATCH \
 
 ```bash
 curl -X PATCH \
-  https://services.truphone.com/esim/v1/customer?id=a0xM0000004y000 \
+  https://services.truphone.com/connect-api/v1/customer?id=a0xM0000004y000 \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -261,7 +261,7 @@ curl -X PATCH \
 
 ```bash
 curl -X GET \
-  https://services.truphone.com/esim/v1/customer/KS27CmTTmaoh7e318ek0CA==/payment-method
+  https://services.truphone.com/connect-api/v1/customer/KS27CmTTmaoh7e318ek0CA==/payment-method
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -306,7 +306,7 @@ curl -X GET \
 
 ```bash
 curl -X POST \
-  https://services.truphone.com/esim/v1/customer/KS27CmTTmaoh7e318ek0CA==/payment-method
+  https://services.truphone.com/connect-api/v1/customer/KS27CmTTmaoh7e318ek0CA==/payment-method
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
@@ -340,7 +340,7 @@ curl -X POST \
 
 ```bash
 curl -X DELETE \
-  https://services.truphone.com/esim/v1/customer/a0xM0000004yhOV/payment-method/a3jM0000001keW8IAI
+  https://services.truphone.com/connect-api/v1/customer/a0xM0000004yhOV/payment-method/a3jM0000001keW8IAI
    -H "Authorization: Bearer $ACCESS_TOKEN" \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
