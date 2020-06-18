@@ -41,6 +41,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 |           device.id            |        Unique identifier for the device         |     yes      |
 |          device.model          |                  Device Model                   |      no      |
 |          device.make           |                   Device Make                   |      no      |
+|          device.eid            |                   Device Eid                    |      no      |
 |         subscriptions          |          List of products to purchase           |     yes      |
 |   subscriptions[].product_id  |          Id of the product to purchase          |     yes      |
 | subscriptions[].activationDate |     Date when the product can be activated      |      no      |
