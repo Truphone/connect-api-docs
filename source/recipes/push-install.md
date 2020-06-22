@@ -1,4 +1,4 @@
-# Use Cases
+# Push Install
 
 A collection of some use cases and a tutorial on how to achieve them.
 
