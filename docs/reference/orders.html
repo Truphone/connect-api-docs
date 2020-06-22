@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Products" href="products.html" />
-    <link rel="prev" title="Conventions" href="../conventions.html" /> 
+    <link rel="prev" title="Push Install" href="../recipes/push-install.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,6 +91,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../conventions.html">Conventions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/push-install.html">Push Install</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Connectivity Management</span></p>
 <ul class="current">
@@ -248,9 +252,9 @@
 <h2>Purchase a New eSIM<a class="headerlink" href="#purchase-a-new-esim" title="Permalink to this headline">¶</a></h2>
 <p>Customer does not own a Truphone SIM and wants to order one. This operation provisions/activates a SIM for installing on a given device and adds a data plan to it.</p>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
@@ -353,12 +357,12 @@
 <div class="section" id="rules-and-validations">
 <h3>Rules and validations<a class="headerlink" href="#rules-and-validations" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>If the customer does not exist it will be created</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.product_id</span></code> - Needs to be an id that belongs to the product catalog of the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Can vary between the three above specified but must respect the contract</li>
+<li><p>If the customer does not exist it will be created</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.product_id</span></code> - Needs to be an id that belongs to the product catalog of the customer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the customer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Can vary between the three above specified but must respect the contract</p></li>
 </ul>
 </div>
 <div class="section" id="example-request">
@@ -380,7 +384,8 @@
 <span class="s1">            &quot;device&quot;: {</span>
 <span class="s1">                &quot;id&quot;: &quot;123456789&quot;,</span>
 <span class="s1">                &quot;model&quot;: &quot;iPhone&quot;,</span>
-<span class="s1">                &quot;type&quot;: &quot;ios&quot;</span>
+<span class="s1">                &quot;type&quot;: &quot;ios&quot;,</span>
+<span class="s1">                &quot;eid&quot;: &quot;89049032004008882600019002596666&quot;</span>
 <span class="s1">            },</span>
 <span class="s1">      	    &quot;subscriptions&quot;: [{</span>
 <span class="s1">      	        &quot;product_id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
@@ -408,9 +413,9 @@
 <h2>Purchase a Top-Up<a class="headerlink" href="#purchase-a-top-up" title="Permalink to this headline">¶</a></h2>
 <p>A Truphone SIM was already provided. Topping up will add connectivity plans to this SIM</p>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/order</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="id1">
 <h3>Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -525,19 +530,21 @@
 <div class="section" id="id2">
 <h3>Rules and validations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">TOPUP</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">TOPUP_ACTIVATION</span></code> (deprecated)</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.product_id</span></code> - Needs to be an id belonging to the product catalog of the customer</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the client</li>
-<li><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Can vary between the three above specified but must respect the contract</li>
-<li><code class="docutils literal notranslate"><span class="pre">customer</span></code> - Deprecated (Can be sent but it’s not necessary)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operationType</span></code> - Needs to be <code class="docutils literal notranslate"><span class="pre">TOPUP</span></code> (preferred) or <code class="docutils literal notranslate"><span class="pre">TOPUP_ACTIVATION</span></code> (deprecated)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.product_id</span></code> - Needs to be an id belonging to the product catalog of the customer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.activationDate</span></code> - Can not be a date in the past</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions.currency</span></code> - If is sent, it must be sent in pair with <code class="docutils literal notranslate"><span class="pre">subscriptions.price</span></code> and needs to be one of the currencies supported by the client</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.type</span></code> - Can vary between the three above specified but must respect the contract</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">customer</span></code> - Deprecated (Can be sent but it’s not necessary)</p></li>
 </ul>
 <p>In order to call this endpoint, <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> node is mandatory, otherwise the topup won’t be performed:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">esim</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> are mandatory</li>
-<li><code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> - the iccid obtained when the first eSIM was ordered.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">esim</span></code> and <code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> are mandatory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">esim.iccid</span></code> - the iccid obtained when the first eSIM was ordered.</p></li>
 </ul>
+<p>There is also a hard limit of 15 <strong>active</strong> subscriptions for the same iccid. This means that if an order for a topup operation for an iccid that already has 15 <strong>active</strong> subscriptions is created, the user will get an error.</p>
+<p>Be aware that on this scenario, the <code class="docutils literal notranslate"><span class="pre">matchingId</span></code> won’t be returned when the order is completed.</p>
 </div>
 <div class="section" id="id3">
 <h3>Example Request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
@@ -554,7 +561,8 @@
 <span class="s1">            &quot;device&quot;: {</span>
 <span class="s1">                &quot;id&quot;: &quot;123456789&quot;,</span>
 <span class="s1">                &quot;model&quot;: &quot;iPhone&quot;,</span>
-<span class="s1">                &quot;type&quot;: &quot;ios&quot;</span>
+<span class="s1">                &quot;type&quot;: &quot;ios&quot;,</span>
+<span class="s1">                &quot;eid&quot;: &quot;89049032004008882600019002596666&quot;</span>
 <span class="s1">            },</span>
 <span class="s1">            &quot;subscriptions&quot;: [{</span>
 <span class="s1">      	        &quot;product_id&quot;: &quot;a3u3z000000PZBhAAO&quot;,</span>
@@ -585,9 +593,9 @@
 <h2>Check an order’s status<a class="headerlink" href="#check-an-order-s-status" title="Permalink to this headline">¶</a></h2>
 <p>Order fulfilment is not synchronous, so after placing an order, the API user must use the order id to periodically check until the order is complete</p>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/order/{orderId}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/order/{orderId}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="id5">
 <h3>Example Request<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -609,7 +617,8 @@
   <span class="nt">&quot;output&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
     <span class="nt">&quot;matchingId&quot;</span><span class="p">:</span> <span class="s2">&quot;M-123DSA-AS&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;smdpUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;rsp.truphone.com&quot;</span>
+    <span class="nt">&quot;smdpUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;rsp.truphone.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;subscription_id&quot;</span><span class="p">:</span> <span class="s2">&quot;t_ZJDGpxE48CB2eGo7LDSws4HOIEPJh43G_kRPgcpro=&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -629,7 +638,7 @@
         <a href="products.html" class="btn btn-neutral float-right" title="Products" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../conventions.html" class="btn btn-neutral float-left" title="Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../recipes/push-install.html" class="btn btn-neutral float-left" title="Push Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

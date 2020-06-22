@@ -10,9 +10,12 @@ A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile relate
 | :------------: | :-------------------------------------------: |
 |     iccid      |             The SIM profile ICCID             |
 |  matching_id   |    The profile activation code (eSIM only)    |
-| profile_status | The install status of the profile (eSIM only) |
+| status | The install status of the profile (eSIM only) |
+| eid | The EID associated with an eSIM. It's only present if the eSIM was ordered with an EID. Only applicable in iOS (eSIM only) |
+| last_modified | The date of the last status change |
 
-**Possible values for `profile_status`**
+
+**Possible values for `status`**
 
 |   Status    |               Description               |
 | :---------: | :-------------------------------------: |
@@ -46,7 +49,9 @@ curl -X GET \
 {
   "iccid": "8944474600000063847",
   "matching_id": "O-17QF0-MJVBIN",
-  "profile_status": "Released"
+  "status": "Released",
+  "eid": "89001012012341234012345678901224",
+  "last_modified": "2019-08-02T09:09:33Z"
 }
 ```
 

@@ -76,7 +76,8 @@ curl -X POST \
             "device": {
                 "id": "123456789",
                 "model": "iPhone",
-                "type": "ios"
+                "type": "ios",
+                "eid": "89049032004008882600019002596666"
             },
       	    "subscriptions": [{
       	        "product_id": "a3u3z000000PZBhAAO",
@@ -142,6 +143,11 @@ In order to call this endpoint, `esim.iccid` node is mandatory, otherwise the to
 - `esim` and `esim.iccid` are mandatory
 - `esim.iccid` - the iccid obtained when the first eSIM was ordered.
 
+There is also a hard limit of 15 **active** subscriptions for the same iccid. This means that if an order for a topup operation for an iccid that already has 15 **active** subscriptions is created, the user will get an error.
+
+Be aware that on this scenario, the `matchingId` won't be returned when the order is completed.
+
+
 ### Example Request
 
 ```bash
@@ -158,7 +164,8 @@ curl -X POST \
             "device": {
                 "id": "123456789",
                 "model": "iPhone",
-                "type": "ios"
+                "type": "ios",
+                "eid": "89049032004008882600019002596666"
             },
             "subscriptions": [{
       	        "product_id": "a3u3z000000PZBhAAO",
@@ -212,7 +219,8 @@ curl -X GET \
   "output": {
     "iccid": "1234567890",
     "matchingId": "M-123DSA-AS",
-    "smdpUrl": "rsp.truphone.com"
+    "smdpUrl": "rsp.truphone.com",
+    "subscription_id": "t_ZJDGpxE48CB2eGo7LDSws4HOIEPJh43G_kRPgcpro="
   }
 }
 ```

@@ -36,6 +36,14 @@ For more details about each specific role, check the :doc:`roles` page.
 .. toctree::
    :hidden:
    :maxdepth: 4
+   :caption: Recipes
+   :name: recipes
+
+   recipes/push-install
+
+.. toctree::
+   :hidden:
+   :maxdepth: 4
    :caption: Connectivity Management
    :name: connectivity
 
