@@ -1,6 +1,14 @@
 # Release Notes
 
 
+## 5.9.0
+
+- **Production release date**: 29th June 2020
+- **Changes**
+  - The release comes with one big new feature called Push Install. This adds a new profile installation method to our platform which doesn’t require a QRCode nor direct LPA integration with our SDKs. The way it works is that when ordering a new profile you can specify the EID of the target device, with this information Connect is able to send a push notification to the that same device that triggers the profile installation process for the user. At the moment this will only be supported for iOS devices but we are working on adding support for Android in the future. This will be a non-breaking change to the API and will be available in preproduction and production environments for everyone to try and use on the 29th of June. 
+- **Breaking Changes**
+    - Decommissioning of our staging environment: As already announced we are reaching the end of the deprecation  period for the staging environment. This environment has been replaced by preproduction, we advise everyone which hasn’t changed to do so by the 29th of June. If you require support with this change feel free to reach out
+
 ## 5.8.0
 
 - **Staging release date**: 13th April 2020
