@@ -35,6 +35,14 @@ For more details about each specific role, check the :doc:`roles` page.
 .. toctree::
    :hidden:
    :maxdepth: 4
+   :caption: Recipes
+   :name: recipes
+
+   recipes/push-install
+
+.. toctree::
+   :hidden:
+   :maxdepth: 4
    :caption: Connectivity Management
    :name: connectivity
 
@@ -51,11 +59,3 @@ For more details about each specific role, check the :doc:`roles` page.
    :name: customer
 
    reference/customer
-
-.. toctree::
-   :hidden:
-   :maxdepth: 4
-   :caption: Use Cases
-   :name: use-cases
-
-   reference/use-cases

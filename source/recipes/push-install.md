@@ -2,11 +2,11 @@
 
 A collection of some use cases and a tutorial on how to achieve them.
 
-## Ordering an eSIM (with and without ES12 support)
+## Ordering an eSIM (with and without push install support)
 
 More rules and details on the **Order** section.
 
-### Example Request (without ES12 support)
+### Example Request (without push install support)
 
 It's a pretty straightforward request, filling the necessary fields.
 
@@ -40,9 +40,9 @@ curl -X POST \
       }'
 ```
 
-### Example Request (with ES12 support)
+### Example Request (with push install support)
 
-For supporting ES12, the `device.type` must be `ios`. If it is, we simply need to add the EID value on the `device.eid` field.
+For supporting push install, the `device.type` must be `ios`. If it is, we simply need to add the EID value on the `device.eid` field.
 If the `device.type` is not `ios` and the `device.eid` field has a value, it is ignored.
 
 ```bash
