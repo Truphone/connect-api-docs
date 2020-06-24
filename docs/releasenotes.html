@@ -102,7 +102,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Recipes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="recipes/push-install.html">Push Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes/new-esim.html">Getting a new eSIM</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Connectivity Management</span></p>
 <ul>
@@ -186,15 +186,13 @@
 <div class="section" id="id1">
 <h2>5.9.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Production release date</strong>: 29th June 2020</p></li>
-<li><p><strong>Changes</strong></p>
-<ul>
-<li><p>The release comes with one big new feature called Push Install. This adds a new profile installation method to our platform which doesn’t require a QRCode nor direct LPA integration with our SDKs. The way it works is that when ordering a new profile you can specify the EID of the target device, with this information Connect is able to send a push notification to the that same device that triggers the profile installation process for the user. At the moment this will only be supported for iOS devices but we are working on adding support for Android in the future. This will be a non-breaking change to the API and will be available in preproduction and production environments for everyone to try and use on the 29th of June.</p></li>
+<li><strong>Production release date</strong>: 29th June 2020</li>
+<li><strong>Changes</strong><ul>
+<li>The release comes with one big new feature called Push Install. This adds a new profile installation method to our platform which doesn’t require a QRCode nor direct LPA integration with our SDKs. The way it works is that when ordering a new profile you can specify the EID of the target device, with this information Connect is able to send a push notification to the that same device that triggers the profile installation process for the user. At the moment this will only be supported for iOS devices but we are working on adding support for Android in the future. This will be a non-breaking change to the API and will be available in preproduction and production environments for everyone to try and use on the 29th of June.</li>
 </ul>
 </li>
-<li><p><strong>Breaking Changes</strong></p>
-<ul>
-<li><p>Decommissioning of our staging environment: As already announced we are reaching the end of the deprecation  period for the staging environment. This environment has been replaced by preproduction, we advise everyone which hasn’t changed to do so by the 29th of June. If you require support with this change feel free to reach out</p></li>
+<li><strong>Breaking Changes</strong><ul>
+<li>Decommissioning of our staging environment: As already announced we are reaching the end of the deprecation  period for the staging environment. This environment has been replaced by preproduction, we advise everyone which hasn’t changed to do so by the 29th of June. If you require support with this change feel free to reach out</li>
 </ul>
 </li>
 </ul>
@@ -202,28 +200,24 @@
 <div class="section" id="id2">
 <h2>5.8.0<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Staging release date</strong>: 13th April 2020</p></li>
-<li><p><strong>Production release date</strong>: 27th April 2020</p></li>
-<li><p><strong>Changes</strong></p>
-<ul>
-<li><p>Removing and deprecating certain unused parameters in the order API:</p>
-<ul>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">dataValue</span></code> and <code class="docutils literal notranslate"><span class="pre">dataUnit</span></code> from order request – reason: not applicable to current use-cases</p></li>
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">id</span></code> parameter to order response – this parameter will possess the same value as current “externalId” and should be used instead of it</p></li>
-<li><p>Deprecating <code class="docutils literal notranslate"><span class="pre">externalId</span></code> in order response – parameter will still be available in the response but it will be removed in a future release please migrate to the new <code class="docutils literal notranslate"><span class="pre">id</span></code> parameter</p></li>
+<li><strong>Staging release date</strong>: 13th April 2020</li>
+<li><strong>Production release date</strong>: 27th April 2020</li>
+<li><strong>Changes</strong><ul>
+<li>Removing and deprecating certain unused parameters in the order API:<ul>
+<li>Remove <code class="docutils literal notranslate"><span class="pre">dataValue</span></code> and <code class="docutils literal notranslate"><span class="pre">dataUnit</span></code> from order request – reason: not applicable to current use-cases</li>
+<li>Added <code class="docutils literal notranslate"><span class="pre">id</span></code> parameter to order response – this parameter will possess the same value as current “externalId” and should be used instead of it</li>
+<li>Deprecating <code class="docutils literal notranslate"><span class="pre">externalId</span></code> in order response – parameter will still be available in the response but it will be removed in a future release please migrate to the new <code class="docutils literal notranslate"><span class="pre">id</span></code> parameter</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>Breaking Changes</strong></p>
-<ul>
-<li><p>Removing <code class="docutils literal notranslate"><span class="pre">type</span></code> from subscription response – reason: not applicable to current use-cases</p></li>
+<li><strong>Breaking Changes</strong><ul>
+<li>Removing <code class="docutils literal notranslate"><span class="pre">type</span></code> from subscription response – reason: not applicable to current use-cases</li>
 </ul>
 </li>
-<li><p><strong>Docs</strong></p>
-<ul>
-<li><p><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions">Get subscriptions history for a specific esim profile</a></p></li>
-<li><p><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions-by-filtering">Query for subscription history</a></p></li>
+<li><strong>Docs</strong><ul>
+<li><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions">Get subscriptions history for a specific esim profile</a></li>
+<li><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions-by-filtering">Query for subscription history</a></li>
 </ul>
 </li>
 </ul>
@@ -231,22 +225,19 @@
 <div class="section" id="id3">
 <h2>5.7.0<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Staging release date</strong>: 30th March 2020</p></li>
-<li><p><strong>Production release date</strong>: 13th April 2020</p></li>
-<li><p><strong>Changes</strong></p>
-<ul>
-<li><p>API now has the the capability to get subscription history, this can be requested per esim profile or fetching the history for the entire user-base:</p>
-<ul>
-<li><p>Getting subscription history for a specific profile</p></li>
-<li><p>Getting subscription history for the entire user-base using filters (afterDate, beforeDate, iccd, product-id, email, etc)</p></li>
+<li><strong>Staging release date</strong>: 30th March 2020</li>
+<li><strong>Production release date</strong>: 13th April 2020</li>
+<li><strong>Changes</strong><ul>
+<li>API now has the the capability to get subscription history, this can be requested per esim profile or fetching the history for the entire user-base:<ul>
+<li>Getting subscription history for a specific profile</li>
+<li>Getting subscription history for the entire user-base using filters (afterDate, beforeDate, iccd, product-id, email, etc)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>Docs</strong></p>
-<ul>
-<li><p><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions">Get subscriptions history for a specific esim profile</a></p></li>
-<li><p><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions-by-filtering">Query for subscription history</a></p></li>
+<li><strong>Docs</strong><ul>
+<li><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions">Get subscriptions history for a specific esim profile</a></li>
+<li><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/subscriptions.html#get-sim-subscriptions-by-filtering">Query for subscription history</a></li>
 </ul>
 </li>
 </ul>
@@ -254,18 +245,16 @@
 <div class="section" id="id4">
 <h2>5.6.0<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Staging release date</strong>: 3rd March 2020</p></li>
-<li><p><strong>Production release date</strong>: 17h March 2020</p></li>
-<li><p><strong>Changes</strong></p>
-<ul>
-<li><p>API now supports registering/unregistering to received 80% usage threshold and end of plan notifications on subscriptions. This can be used to let customers know their plan is ending or upsell a new plan to customers.</p></li>
+<li><strong>Staging release date</strong>: 3rd March 2020</li>
+<li><strong>Production release date</strong>: 17h March 2020</li>
+<li><strong>Changes</strong><ul>
+<li>API now supports registering/unregistering to received 80% usage threshold and end of plan notifications on subscriptions. This can be used to let customers know their plan is ending or upsell a new plan to customers.</li>
 </ul>
 </li>
-<li><p><strong>Docs</strong></p>
-<ul>
-<li><p><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/sims.html#register-for-notifications">Register for notifications</a></p></li>
-<li><p><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/sims.html#unregister-from-notifications">Unregister from notifications</a></p></li>
-<li><p><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/notifications.html">Receive notifications</a></p></li>
+<li><strong>Docs</strong><ul>
+<li><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/sims.html#register-for-notifications">Register for notifications</a></li>
+<li><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/sims.html#unregister-from-notifications">Unregister from notifications</a></li>
+<li><a class="reference external" href="#https://truphone.github.io/connect-api-docs/reference/notifications.html">Receive notifications</a></li>
 </ul>
 </li>
 </ul>
@@ -273,14 +262,13 @@
 <div class="section" id="id5">
 <h2>5.5.0<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Staging release date</strong>: 3rd March 2020</p></li>
-<li><p><strong>Production release date</strong>: 17h March 2020</p></li>
-<li><p><strong>Changes</strong>:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">product_id</span></code> now accepted instead of the deprecated allowanceId</p></li>
-<li><p>Removed the protocol part from the <code class="docutils literal notranslate"><span class="pre">smdpUrl</span></code> field of the order response</p></li>
-<li><p>Partial support for webhook notifications. It is now possible to register webhook urls per SIM/event type. Notifications are still not being sent though.</p></li>
-<li><p>General API stability improvements and bugfixes</p></li>
+<li><strong>Staging release date</strong>: 3rd March 2020</li>
+<li><strong>Production release date</strong>: 17h March 2020</li>
+<li><strong>Changes</strong>:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">product_id</span></code> now accepted instead of the deprecated allowanceId</li>
+<li>Removed the protocol part from the <code class="docutils literal notranslate"><span class="pre">smdpUrl</span></code> field of the order response</li>
+<li>Partial support for webhook notifications. It is now possible to register webhook urls per SIM/event type. Notifications are still not being sent though.</li>
+<li>General API stability improvements and bugfixes</li>
 </ul>
 </li>
 </ul>
@@ -288,17 +276,15 @@
 <div class="section" id="id6">
 <h2>5.4.0<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Staging release date</strong>: 4th February 2020</p></li>
-<li><p><strong>Production release date</strong>: 13th February 2020</p></li>
-<li><p><strong>Changes</strong>:</p>
-<ul>
-<li><p>New product footprint will be added to some partners</p></li>
-<li><p>Existing products will be removed</p></li>
+<li><strong>Staging release date</strong>: 4th February 2020</li>
+<li><strong>Production release date</strong>: 13th February 2020</li>
+<li><strong>Changes</strong>:<ul>
+<li>New product footprint will be added to some partners</li>
+<li>Existing products will be removed</li>
 </ul>
 </li>
-<li><p><strong>Notes</strong>:</p>
-<ul>
-<li><p>Product ids have changed. Please ensure product catalogues are not cached, or if so the catalogue is refreshed frequently</p></li>
+<li><strong>Notes</strong>:<ul>
+<li>Product ids have changed. Please ensure product catalogues are not cached, or if so the catalogue is refreshed frequently</li>
 </ul>
 </li>
 </ul>

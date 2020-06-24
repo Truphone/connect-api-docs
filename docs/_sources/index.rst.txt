@@ -39,7 +39,7 @@ For more details about each specific role, check the :doc:`roles` page.
    :caption: Recipes
    :name: recipes
 
-   recipes/push-install
+   recipes/new-esim
 
 .. toctree::
    :hidden:

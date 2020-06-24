@@ -125,7 +125,7 @@ curl -X POST \
 ## Unregister from notifications
 
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
-- URL: `v1/sim/{iccid}/notification_preferences/{type}`
+- URL: `v1/sim/{iccid}/preferences/notifications/{type}`
 - METHOD: `DELETE`
 
 ### Example request
