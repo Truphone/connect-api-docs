@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting a new eSIM &mdash; Connect API 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Orders" href="../reference/orders.html" />
+    <link rel="prev" title="Conventions" href="../conventions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+        <a href="../index.html">
+            <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+        </a>
+    
+
+    
+        <a href="../index.html">Connect API</a>
+    
+    
+
+    
+    
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ratelimits.html">Rate limits and quotas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roles.html">Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conventions.html">Conventions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Recipes</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting a new eSIM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#placing-the-order">Placing the Order</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-request">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-response">Example Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-esim">Installing the eSIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qrcode">QRCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#push-install-ios-only">Push Install (iOS only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-sdk-or-direct-install">Connect SDK or Direct Install</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Connectivity Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/orders.html">Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/products.html">Products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/sims.html">SIM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/subscriptions.html">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/notifications.html">Notifications</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Customer Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/customer.html">Customer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Connect API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting a new eSIM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/Truphone/connect-api-docs/blob/master/source/recipes/new-esim.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-a-new-esim">
+<h1>Getting a new eSIM<a class="headerlink" href="#getting-a-new-esim" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="placing-the-order">
+<h2>Placing the Order<a class="headerlink" href="#placing-the-order" title="Permalink to this headline">¶</a></h2>
+<p>The first step you need to do in order to get a fresh new eSIM is to place an order (Head over to the <a class="reference internal" href="../reference/orders.html"><span class="doc">Order</span></a> for the full API reference). It is a pretty straightforward request as described in the example below.</p>
+<blockquote>
+<div>Note: If you have an iOS device and wish to use the push install feature (More details below), you need to specify <code class="docutils literal notranslate"><span class="pre">device.eid</span></code> field. If the <code class="docutils literal notranslate"><span class="pre">device.type</span></code> is not <code class="docutils literal notranslate"><span class="pre">ios</span></code>, the <code class="docutils literal notranslate"><span class="pre">device.eid</span></code> field is ignored.</div></blockquote>
+<div class="section" id="example-request">
+<h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
+  https://services.truphone.com/connect-api/v1/order <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span> <span class="se">\</span>
+  -d <span class="s1">&#39;{</span>
+<span class="s1">      	&quot;input&quot;: {</span>
+<span class="s1">            &quot;operationType&quot;: &quot;NEW_ESIM&quot;,</span>
+<span class="s1">            &quot;countryCode&quot;: &quot;PT&quot;,</span>
+<span class="s1">            &quot;customer&quot;: {</span>
+<span class="s1">                &quot;email&quot;: &quot;john@doe.com&quot;,</span>
+<span class="s1">                &quot;countryOfResidence&quot;: &quot;US&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;device&quot;: {</span>
+<span class="s1">                &quot;id&quot;: &quot;123456789&quot;,</span>
+<span class="s1">                &quot;model&quot;: &quot;iPhone&quot;,</span>
+<span class="s1">                &quot;type&quot;: &quot;ios&quot;</span>
+<span class="s1">                # Include EID Parameter for Push Install</span>
+<span class="s1">                &quot;eid&quot;: &quot;89001012012341234012345678901224&quot;**</span>
+<span class="s1">            },</span>
+<span class="s1">      	    &quot;subscriptions&quot;: [{</span>
+<span class="s1">      	        &quot;product_id&quot;: &quot;cm9kIiwiY2xpZW50QWRkcmVzcyI&quot;,</span>
+<span class="s1">      	        &quot;activationDate&quot;: &quot;2019-09-13T12:00:00Z&quot;,</span>
+<span class="s1">      	        &quot;price&quot;: 10,</span>
+<span class="s1">      	        &quot;currency&quot;: &quot;USD&quot;</span>
+<span class="s1">      	    }]</span>
+<span class="s1">      	}</span>
+<span class="s1">      }&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-response">
+<h3>Example Response<a class="headerlink" href="#example-response" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;externalId&quot;</span><span class="p">:</span> <span class="s2">&quot;3a6acf89-1ccf-4611-9424-453930f57ef1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACCEPTED&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-the-esim">
+<h2>Installing the eSIM<a class="headerlink" href="#installing-the-esim" title="Permalink to this headline">¶</a></h2>
+<p>As soon as the order is complete (Head over to the <a class="reference internal" href="../reference/orders.html"><span class="doc">Order</span></a> for info on how to check order state), you have 3 options for installing the eSIM:</p>
+</div>
+<div class="section" id="qrcode">
+<h2>QRCode<a class="headerlink" href="#qrcode" title="Permalink to this headline">¶</a></h2>
+<p>Using the smdp url (always <code class="docutils literal notranslate"><span class="pre">rsp.truphone.com</span></code>) and the matching id (you can get it either from the <a class="reference internal" href="../reference/orders.html"><span class="doc">Order</span></a> or <a class="reference internal" href="../reference/sims.html"><span class="doc">Sim</span></a> status endpoints) you can generate a QRCode that is recognizable by the target device to start the installation proccess. The QRCode format should be as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>LPA:1$rsp.truphone.com${MATCHINGID}&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="push-install-ios-only">
+<h2>Push Install (iOS only)<a class="headerlink" href="#push-install-ios-only" title="Permalink to this headline">¶</a></h2>
+<p>By providing the EID of the target device as described in the example request, Connect is able to trigger a request which will display a push notification in the target device to trigger the installation.</p>
+</div>
+<div class="section" id="connect-sdk-or-direct-install">
+<h2>Connect SDK or Direct Install<a class="headerlink" href="#connect-sdk-or-direct-install" title="Permalink to this headline">¶</a></h2>
+<p>Either using our SDKs or via direct eUICC API integration you can use the API information to trigger a local install. Just like in the QRCode method, you need the smdp url and the matching id values to trigger the installation process</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference/orders.html" class="btn btn-neutral float-right" title="Orders" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../conventions.html" class="btn btn-neutral float-left" title="Conventions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Truphone
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
