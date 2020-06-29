@@ -6,14 +6,14 @@ A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile relate
 
 ### Properties
 
-| Property Name  |                  Description                  |
-| :------------: | :-------------------------------------------: |
-|     iccid      |             The SIM profile ICCID             |
-|  matching_id   |    The profile activation code (eSIM only)    |
-| status | The install status of the profile (eSIM only) |
-| eid | The EID associated with an eSIM. It's only present if the eSIM was ordered with an EID. Only applicable in iOS (eSIM only) |
-| last_modified | The date of the last status change |
-
+| Property Name |                                                    Description                                                     |
+| :-----------: | :----------------------------------------------------------------------------------------------------------------: |
+|     iccid     |                                               The SIM profile ICCID                                                |
+|  matching_id  |                                      The profile activation code (eSIM only)                                       |
+|    status     |                                   The install status of the profile (eSIM only)                                    |
+|      eid      | The EID associated with an eSIM. It's only present if the eSIM<br />was ordered with an EID or if it is installed. |
+|    lpa_url    |                                          LPA URL for generating a QRCode                                           |
+| last_modified |                                         The date of the last status change                                         |
 
 **Possible values for `status`**
 
@@ -29,7 +29,6 @@ A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile relate
 - Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
 - URL:
   - `v1/sim/{iccid}`
-  - `v1/status/sim?iccid={iccid}` [Deprecated]
 - METHOD: `GET`
 
 ### Example Request
@@ -51,7 +50,41 @@ curl -X GET \
   "matching_id": "O-17QF0-MJVBIN",
   "status": "Released",
   "eid": "89001012012341234012345678901224",
-  "last_modified": "2019-08-02T09:09:33Z"
+  "last_modified": "2019-08-02T09:09:33Z",
+  "lpa_url": "LPA:1$rsp.truphone.com$O-17QF0-MJVBIN"
+}
+```
+
+## Update EID
+
+If an eSIM was deleted from the phone, or never got to be installed (i.e. the state is `Released`), it is possible to change the EID it was previopusly associated with.
+
+- Allowed roles: `RESELLER`, `ACCOUNT_MANAGER`
+- URL:
+  - `v1/sim/{iccid}`
+- METHOD: `PUT`
+
+### Example Request
+
+```bash
+curl -X PUT \
+  https://services.truphone.com/connect-api/v1/sim/8944474600000109251 \
+   -H "Authorization: Bearer $ACCESS_TOKEN" \
+   -H 'Cache-Control: no-cache' \
+   -H 'Content-Type: application/json' \
+   -H 'X-Correlation-ID: unique-id-from-requester-123'
+```
+
+### Example Response
+
+```json
+{
+  "iccid": "8944474600000063847",
+  "matching_id": "O-17QF0-MJVBIN",
+  "status": "Released",
+  "eid": "89001012012341234012345678901224",
+  "last_modified": "2019-08-02T09:09:33Z",
+  "lpa_url": "LPA:1$rsp.truphone.com$O-17QF0-MJVBIN"
 }
 ```
 
@@ -74,6 +107,9 @@ curl -X GET \
    -H 'Cache-Control: no-cache' \
    -H 'Content-Type: application/json' \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
+   -d '{
+       "eid": "89238765176357612536712567352176"
+   }'
 ```
 
 ### Example Response
@@ -118,7 +154,7 @@ curl -X POST \
    -H 'Content-Type: application/json' \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
    -d '{
-       "webhook_url": http://acme-flights.com/notifications/handler
+       "webhook_url": "http://acme-flights.com/notifications/handler"
    }'
 ```
 

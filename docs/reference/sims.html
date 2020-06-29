@@ -110,19 +110,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#example-response">Example Response</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#sim-preferences-resource">SIM Preferences Resource</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-sim-preferences">Get SIM Preferences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#update-eid">Update EID</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Example Request</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Example Response</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#sim-preferences-resource">SIM Preferences Resource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-sim-preferences">Get SIM Preferences</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Example Response</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#register-for-notifications">Register for notifications</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Example request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Example request</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#unregister-from-notifications">Unregister from notifications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Example request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Example request</a></li>
 </ul>
 </li>
 </ul>
@@ -228,7 +233,11 @@
 </tr>
 <tr>
 <td align="center">eid</td>
-<td align="center">The EID associated with an eSIM. It's only present if the eSIM was ordered with an EID. Only applicable in iOS (eSIM only)</td>
+<td align="center">The EID associated with an eSIM. It's only present if the eSIM<br />was ordered with an EID or if it is installed.</td>
+</tr>
+<tr>
+<td align="center">lpa_url</td>
+<td align="center">LPA URL for generating a QRCode</td>
 </tr>
 <tr>
 <td align="center">last_modified</td>
@@ -269,7 +278,6 @@
 <li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
 <li>URL:<ul>
 <li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">v1/status/sim?iccid={iccid}</span></code> [Deprecated]</li>
 </ul>
 </li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
@@ -292,7 +300,44 @@
   <span class="nt">&quot;matching_id&quot;</span><span class="p">:</span> <span class="s2">&quot;O-17QF0-MJVBIN&quot;</span><span class="p">,</span>
   <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Released&quot;</span><span class="p">,</span>
   <span class="nt">&quot;eid&quot;</span><span class="p">:</span> <span class="s2">&quot;89001012012341234012345678901224&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-02T09:09:33Z&quot;</span>
+  <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-02T09:09:33Z&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;lpa_url&quot;</span><span class="p">:</span> <span class="s2">&quot;LPA:1$rsp.truphone.com$O-17QF0-MJVBIN&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="update-eid">
+<h2>Update EID<a class="headerlink" href="#update-eid" title="Permalink to this headline">¶</a></h2>
+<p>If an eSIM was deleted from the phone, or never got to be installed (i.e. the state is <code class="docutils literal notranslate"><span class="pre">Released</span></code>), it is possible to change the EID it was previopusly associated with.</p>
+<ul class="simple">
+<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
+<li>URL:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></li>
+</ul>
+</li>
+<li>METHOD: <code class="docutils literal notranslate"><span class="pre">PUT</span></code></li>
+</ul>
+<div class="section" id="id1">
+<h3>Example Request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X PUT <span class="se">\</span>
+  https://services.truphone.com/connect-api/v1/sim/8944474600000109251 <span class="se">\</span>
+   -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+   -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Example Response<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8944474600000063847&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;matching_id&quot;</span><span class="p">:</span> <span class="s2">&quot;O-17QF0-MJVBIN&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Released&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;eid&quot;</span><span class="p">:</span> <span class="s2">&quot;89001012012341234012345678901224&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;last_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-02T09:09:33Z&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;lpa_url&quot;</span><span class="p">:</span> <span class="s2">&quot;LPA:1$rsp.truphone.com$O-17QF0-MJVBIN&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -309,19 +354,22 @@
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
 </ul>
-<div class="section" id="id1">
-<h3>Example Request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Example Request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
   https://services.truphone.com/connect-api/v1/sim/8944474600000109251/preferences <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
+   -d <span class="s1">&#39;{</span>
+<span class="s1">       &quot;eid&quot;: &quot;89238765176357612536712567352176&quot;</span>
+<span class="s1">   }&#39;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>Example Response<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Example Response<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;notifications&quot;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -372,8 +420,8 @@
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="id3">
-<h3>Example request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Example request<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
   https://services.truphone.com/connect-api/v1/sim/8944474600000109251/preferences/notifications/SUBSCRIPTION_END <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -381,7 +429,7 @@
    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
    -H <span class="s1">&#39;X-Correlation-ID: unique-id-from-requester-123&#39;</span>
    -d <span class="s1">&#39;{</span>
-<span class="s1">       &quot;webhook_url&quot;: http://acme-flights.com/notifications/handler</span>
+<span class="s1">       &quot;webhook_url&quot;: &quot;http://acme-flights.com/notifications/handler&quot;</span>
 <span class="s1">   }&#39;</span>
 </pre></div>
 </div>
@@ -394,8 +442,8 @@
 <li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></li>
 <li>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></li>
 </ul>
-<div class="section" id="id4">
-<h3>Example request<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>Example request<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X DELETE <span class="se">\</span>
   https://services.truphone.com/connect-api/v1/sim/8944474600000109251/preferences/notifications/SUBSCRIPTION_END <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>

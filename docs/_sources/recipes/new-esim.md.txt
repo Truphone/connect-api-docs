@@ -59,7 +59,7 @@ As soon as the order is complete (Head over to the [Order](../reference/orders.m
 Using the smdp url (always `rsp.truphone.com`) and the matching id (you can get it either from the [Order](../reference/orders.md) or [Sim](../reference/sims.md) status endpoints) you can generate a QRCode that is recognizable by the target device to start the installation proccess. The QRCode format should be as follows:
 
 ``` 
-LPA:1$rsp.truphone.com${MATCHINGID}"
+LPA:1$rsp.truphone.com${MATCHINGID}
 ```
 
 ## Push Install (iOS only) 
