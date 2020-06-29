@@ -3,9 +3,16 @@
 
 ## 5.9.0
 
+The release comes with one big new feature called Push Install. This adds a new profile installation method to our platform which doesn’t require a QRCode nor direct LPA integration with our SDKs. The way it works is that when ordering a new profile you can specify the EID of the target device, with this information Connect is able to send a push notification to the that same device that triggers the profile installation process for the user. At the moment this will only be supported for iOS devices but we are working on adding support for Android in the future. 
+
 - **Production release date**: 29th June 2020
 - **Changes**
-  - The release comes with one big new feature called Push Install. This adds a new profile installation method to our platform which doesn’t require a QRCode nor direct LPA integration with our SDKs. The way it works is that when ordering a new profile you can specify the EID of the target device, with this information Connect is able to send a push notification to the that same device that triggers the profile installation process for the user. At the moment this will only be supported for iOS devices but we are working on adding support for Android in the future. This will be a non-breaking change to the API and will be available in preproduction and production environments for everyone to try and use on the 29th of June.
+  - Support for push install via order endpoint (link)
+	- EID validation in order request
+	- Added new update endpoint for updating an EID for push install (link)
+	- Added LPA string to order and sim endpoints (link)
+	- General performance improvements and bug fixing
+
 
 ## 5.8.0
 
