@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Subscriptions" href="subscriptions.html" />
@@ -76,6 +77,7 @@
 
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -143,6 +145,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -181,7 +184,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>SIM</li>
     
@@ -275,12 +278,13 @@
 <div class="section" id="get-sim-details">
 <h2>Get SIM details<a class="headerlink" href="#get-sim-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></p></li>
 </ul>
 </li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="example-request">
 <h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
@@ -311,12 +315,13 @@
 <h2>Update EID<a class="headerlink" href="#update-eid" title="Permalink to this headline">¶</a></h2>
 <p>If an eSIM was deleted from the phone, or never got to be installed (i.e. the state is <code class="docutils literal notranslate"><span class="pre">Released</span></code>), it is possible to change the EID it was previopusly associated with.</p>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}</span></code></p></li>
 </ul>
 </li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">PUT</span></code></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">PUT</span></code></p></li>
 </ul>
 <div class="section" id="id1">
 <h3>Example Request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -350,9 +355,9 @@
 <div class="section" id="get-sim-preferences">
 <h2>Get SIM Preferences<a class="headerlink" href="#get-sim-preferences" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="id3">
 <h3>Example Request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
@@ -390,9 +395,9 @@
 <h2>Register for notifications<a class="headerlink" href="#register-for-notifications" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the only form of notification we support is through webhooks. Each SIM can be registerd for receiving the different types of notifications individually. For information on the notification format, check the <a class="reference internal" href="notifications.html"><span class="doc">notifications</span></a> document</p>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
@@ -438,9 +443,9 @@
 <div class="section" id="unregister-from-notifications">
 <h2>Unregister from notifications<a class="headerlink" href="#unregister-from-notifications" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/preferences/notifications/{type}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">DELETE</span></code></p></li>
 </ul>
 <div class="section" id="id6">
 <h3>Example request<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -476,11 +481,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Truphone
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -491,7 +504,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

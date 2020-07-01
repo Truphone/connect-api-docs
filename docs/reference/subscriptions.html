@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Notifications" href="notifications.html" />
@@ -76,6 +77,7 @@
 
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -137,6 +139,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -175,7 +178,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Subscriptions</li>
     
@@ -277,9 +280,9 @@
 <div class="section" id="get-the-subscription-details">
 <h2>Get the Subscription Details<a class="headerlink" href="#get-the-subscription-details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL: <code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}</span></code></p></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="example-request">
 <h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
@@ -314,13 +317,14 @@
 <h2>Activate Subscriptions<a class="headerlink" href="#activate-subscriptions" title="Permalink to this headline">¶</a></h2>
 <p>Orders can be placed for plans with activation dates in the future. The end user has the option to override those dates by activating a plan. This will change the activation date to now() and the plan will become active shortly after this endpoint being called</p>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">v1/status/subscription/{subscriptionId}/activate</span></code> [Deprecated]</li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1/subscription/{subscriptionId}/activate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1/status/subscription/{subscriptionId}/activate</span></code> [Deprecated]</p></li>
 </ul>
 </li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p></li>
 </ul>
 <div class="section" id="id1">
 <h3>Example request<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -337,13 +341,14 @@
 <div class="section" id="get-sim-subscriptions">
 <h2>Get SIM Subscriptions<a class="headerlink" href="#get-sim-subscriptions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/subscriptions</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">v1/status/subscriptions?iccid={iccid}</span></code> [Deprecated]</li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1/sim/{iccid}/subscriptions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1/status/subscriptions?iccid={iccid}</span></code> [Deprecated]</p></li>
 </ul>
 </li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
 </ul>
 <div class="section" id="id2">
 <h3>Example Request<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -379,25 +384,28 @@
 <div class="section" id="get-sim-subscriptions-by-filtering">
 <h2>Get SIM Subscriptions by filtering<a class="headerlink" href="#get-sim-subscriptions-by-filtering" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></li>
-<li>URL:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">v1/subscription</span></code></li>
+<li><p>Allowed roles: <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code></p></li>
+<li><p>URL:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">v1/subscription</span></code></p></li>
 </ul>
 </li>
-<li>Allowed filters (in the form of query parameters):<ul>
-<li><code class="docutils literal notranslate"><span class="pre">iccid</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">email</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">product-id</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">before</span></code> (date in the format yyyy-MM-dd’T’HH:mm:ssZ)</li>
-<li><code class="docutils literal notranslate"><span class="pre">after</span></code> (date in the format yyyy-MM-dd’T’HH:mm:ssZ)</li>
-<li><code class="docutils literal notranslate"><span class="pre">size</span></code> (for pagination purposes)</li>
-<li><code class="docutils literal notranslate"><span class="pre">page</span></code> (for pagination purposes)</li>
+<li><p>Allowed filters (in the form of query parameters):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">iccid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">product-id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">before</span></code> (date in the format yyyy-MM-dd’T’HH:mm:ssZ)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">after</span></code> (date in the format yyyy-MM-dd’T’HH:mm:ssZ)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code> (for pagination purposes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">page</span></code> (for pagination purposes)</p></li>
 </ul>
 </li>
-<li>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></li>
-<li>Response might have the following headers:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">X-Previous-Page</span></code> (url of the previous page. Only present if there is a previous page)</li>
-<li><code class="docutils literal notranslate"><span class="pre">X-Next-Page</span></code> (url of the next page. Only present if there is a next page)</li>
+<li><p>METHOD: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p></li>
+<li><p>Response might have the following headers:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">X-Previous-Page</span></code> (url of the previous page. Only present if there is a previous page)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X-Next-Page</span></code> (url of the next page. Only present if there is a next page)</p></li>
 </ul>
 </li>
 </ul>
@@ -540,11 +548,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Truphone
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -555,7 +571,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting a new eSIM" href="recipes/new-esim.html" />
@@ -76,6 +77,7 @@
 
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -117,6 +119,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -155,7 +158,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Conventions</li>
     
@@ -184,7 +187,7 @@
 <div class="section" id="headers">
 <h2>Headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>X-Correlation-ID</strong>: In order to easily identify a request on all of Truphone’s subsystems, we require that requesters create a unique identifier that will be sent on every request headers when (<code class="docutils literal notranslate"><span class="pre">X-Correlation-ID</span></code>) using the api. This way we can easily identify a request or a sequence of events between both Truphone and the requester.</li>
+<li><p><strong>X-Correlation-ID</strong>: In order to easily identify a request on all of Truphone’s subsystems, we require that requesters create a unique identifier that will be sent on every request headers when (<code class="docutils literal notranslate"><span class="pre">X-Correlation-ID</span></code>) using the api. This way we can easily identify a request or a sequence of events between both Truphone and the requester.</p></li>
 </ul>
 </div>
 <div class="section" id="dates">
@@ -207,11 +210,11 @@
 <p><strong>Shared error types</strong></p>
 <p>Common error types, shared by all endpoints</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">INVALID_HTTP_MESSAGE</span></code> (400) - Parsing of the HTTP request has failed. Usually there’s a syntax error in either the JSON body or one of the JSON fields such as dates.</li>
-<li><code class="docutils literal notranslate"><span class="pre">INVALID_REQUEST_PARAMS</span></code> (400) - Request was parsed successfully but it contains semantic errors like missing required fields or invalid content like non existing currencies or countries.</li>
-<li><code class="docutils literal notranslate"><span class="pre">UNAUTHORISED</span></code> (401) - OAuth2 token is missing invalid.</li>
-<li><code class="docutils literal notranslate"><span class="pre">ACCESS_DENIED</span></code> (403) - Client is trying to access a resource that it doesn’t own like esim profiles or customer accounts from other clients.</li>
-<li><code class="docutils literal notranslate"><span class="pre">INTERNAL_ERROR</span></code> (500) - Something went wrong with the request and the API can’t recover. These should not happen on normal circumstances, and partners are advised to report back to Truphone, with the correlation id that generated such error.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INVALID_HTTP_MESSAGE</span></code> (400) - Parsing of the HTTP request has failed. Usually there’s a syntax error in either the JSON body or one of the JSON fields such as dates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INVALID_REQUEST_PARAMS</span></code> (400) - Request was parsed successfully but it contains semantic errors like missing required fields or invalid content like non existing currencies or countries.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UNAUTHORISED</span></code> (401) - OAuth2 token is missing invalid.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ACCESS_DENIED</span></code> (403) - Client is trying to access a resource that it doesn’t own like esim profiles or customer accounts from other clients.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INTERNAL_ERROR</span></code> (500) - Something went wrong with the request and the API can’t recover. These should not happen on normal circumstances, and partners are advised to report back to Truphone, with the correlation id that generated such error.</p></li>
 </ul>
 </div>
 </div>
@@ -236,11 +239,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Truphone
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -251,7 +262,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
