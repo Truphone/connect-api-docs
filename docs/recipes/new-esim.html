@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -26,10 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -193,8 +193,7 @@
 <h2>Placing the Order<a class="headerlink" href="#placing-the-order" title="Permalink to this headline">¶</a></h2>
 <p>The first step you need to do in order to get a fresh new eSIM is to place an order (Head over to the <a class="reference internal" href="../reference/orders.html"><span class="doc">Order</span></a> for the full API reference). It is a pretty straightforward request as described in the example below.</p>
 <blockquote>
-<div><p>Note: If you have an iOS device and wish to use the push install feature (More details below), you need to specify <code class="docutils literal notranslate"><span class="pre">device.eid</span></code> field. If the <code class="docutils literal notranslate"><span class="pre">device.type</span></code> is not <code class="docutils literal notranslate"><span class="pre">ios</span></code>, the <code class="docutils literal notranslate"><span class="pre">device.eid</span></code> field is ignored.</p>
-</div></blockquote>
+<div>Note: If you have an iOS device and wish to use the push install feature (More details below), you need to specify <code class="docutils literal notranslate"><span class="pre">device.eid</span></code> field. If the <code class="docutils literal notranslate"><span class="pre">device.type</span></code> is not <code class="docutils literal notranslate"><span class="pre">ios</span></code>, the <code class="docutils literal notranslate"><span class="pre">device.eid</span></code> field is ignored.</div></blockquote>
 <div class="section" id="example-request">
 <h3>Example Request<a class="headerlink" href="#example-request" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
