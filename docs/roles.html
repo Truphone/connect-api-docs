@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Environments" href="environments.html" />
@@ -76,6 +77,7 @@
 
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -116,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -154,7 +157,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Roles</li>
     
@@ -184,11 +187,11 @@
 <p>An API client application <strong>outside the context of an end customer</strong>, which resells Truphone connectivity. This role is restricted to connectivity related operations like listing available products, submitting new orders and checking sim subscription/usage data. Clients with a <code class="docutils literal notranslate"><span class="pre">RESELLER</span></code> role will typically use the API to connectivity store/management pages in contexts not exclusive to connectivity.</p>
 <p><strong>Entitled API resources</strong>:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">order</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">products</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">sim</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">notifications</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">products</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sim</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notifications</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="account-manager">
@@ -196,12 +199,12 @@
 <p>An API client application, which can authenticate <strong>on behalf of an end customer</strong>, This role allows the application to manage connectivity and customer related data. Clients with an <code class="docutils literal notranslate"><span class="pre">ACCOUNT_MANAGER</span></code> role typically will develop applications where users can purchase connectivity and register their accounts with Truphone, for managing their profile information like email, name, billing address etc.</p>
 <p><strong>Entitled API resources</strong>:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">order</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">products</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">sim</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">customer</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">notifications</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">products</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sim</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">customer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notifications</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -226,11 +229,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Truphone
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -241,7 +252,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
