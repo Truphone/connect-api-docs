@@ -12,7 +12,7 @@ The release comes with one big new feature called Push Install. This adds a new 
   - [Added new update endpoint for updating an EID for push install](#https://truphone.github.io/connect-api-docs/reference/sims.html#update-eid)
   - [Added LPA string to order endpoint](#https://truphone.github.io/connect-api-docs/reference/orders.html#properties)
   - [Added LPA string to sim endpoint](#https://truphone.github.io/connect-api-docs/reference/sims.html#properties)
-  - General performance improvements and bug fixing 
+  - General performance improvements and bug fixing  
 
 
 ## 5.8.0
