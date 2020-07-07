@@ -33,5 +33,5 @@ Generated documentation will be stored under build/docs/html/index.html
 make github
 ```
 
-Same as make html but also copies the files to the `docs/` folder for github to serve them
+Same as make html but also copies the files to the `docs/` folder for github to serve them.  
 
