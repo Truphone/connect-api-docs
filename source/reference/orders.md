@@ -125,7 +125,7 @@ A Truphone SIM was already provided. Topping up will add connectivity plans to t
 |         subscriptions          | List of products to purchase. <br />Each SIM can only have up to 15 active subscriptions |     yes      |         |
 |   subscriptions[].product_id   |                              Id of the product to purchase                               |     yes      |         |
 | subscriptions[].activationDate |                          Date when the product can be activated                          |      no      |         |
-|     subscriptions[].price      |                           Price for which the product was sold                           |      no      |         |
+|     subscriptions[].price      |       Price for which the product was sold net of sales tax (remove the sales tax)       |      no      |         |
 |    subscriptions[].currency    |                         Currency for which the product was sold                          |      no      |         |
 |              esim              |                          The eSIM to which add the subscription                          |     yes      |         |
 |           esim.iccid           |                        The iccid corresponding to the subscriber                         |     yes      |         |
