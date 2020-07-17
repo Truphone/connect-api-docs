@@ -18,6 +18,15 @@ SIM's and connectivity plans are purchased by creating orders. Order fulfilment 
 |     output.lpa_url     |                                                   LPA URL for generating a QR Code                                                   |
 | output.subscription_id |                                           The id of the subscription that was just created                                           |
 
+**Possible values for `status`**
+
+| Property Name |                     Description                     |
+| :-----------: | :-------------------------------------------------: |
+|   FAILED    |     The order failed provisioning the product    |
+|    COMPLETED     |            The order was finished with success           |
+|    FULFILLING    | The order is still being processed |
+|    ACCEPTED    | The order is waiting to be processed         |
+
 ## Purchase a New eSIM
 
 Customer does not own a Truphone SIM and wants to order one. This operation provisions/activates a SIM for installing on a given device and adds a data plan to it.
@@ -46,7 +55,7 @@ Customer does not own a Truphone SIM and wants to order one. This operation prov
 |         subscriptions          | List of products to purchase. <br />Each SIM can only have up to 15 active subscriptions |   yes    |
 |   subscriptions[].product_id   |                              Id of the product to purchase                               |   yes    |
 | subscriptions[].activationDate |                          Date when the product can be activated                          |    no    |
-|     subscriptions[].price      |                           Price for which the product was sold                           |    no    |
+|     subscriptions[].price      |                           Price for which the product was sold net of sales tax (remove the sales tax)                           |    no    |
 |    subscriptions[].currency    |                         Currency for which the product was sold                          |    no    |
 
 ### Rules and validations
