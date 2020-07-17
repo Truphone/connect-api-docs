@@ -83,7 +83,9 @@ curl -X PUT \
 {
   "iccid": "8944474600000063847",
   "matching_id": "O-17QF0-MJVBIN",
+  "matchingId": "O-17QF0-MJVBIN",
   "status": "Released",
+  "profileStatus": "Released",
   "eid": "89001012012341234012345678901224",
   "last_modified": "2019-08-02T09:09:33Z",
   "lpa_url": "LPA:1$rsp.truphone.com$O-17QF0-MJVBIN"

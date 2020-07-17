@@ -44,26 +44,6 @@ curl -X GET \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
 ```
 
-### Example Response for a `DEPLETED` subscrtiption
-
-```json
-{
-  "status": "DEPLETED",
-  "id": "Njc1NzY1NzY1ZDIK",
-  "activationDate": "2019-08-01T09:09:33Z",
-  "expirationDate": "2019-08-02T09:09:33Z",
-  "product": {
-    "id": "MzA5MjE3ODMwOTEyCg==",
-    "name": "Prepaid data 30GB",    
-    "period": 0,
-    "period_unit": "DAYS"
-  },
-  "iccid": "8932673628198237",
-  "device_id": "12345657",
-  "auto_renew": "false"
-}
-```
-
 ### Example Response for a `ACTIVE` subscrtiption
 
 ```json

@@ -52,6 +52,7 @@ curl -X GET \
     "name": "PrePaid Data 3GB 30-Day",
     "description": "PrePaid Data 3GB 30-Day",
     "period": 30,
+    "period_unit": "DAYS",
     "data": {
       "value": 3,
       "unit": "GB"
@@ -60,7 +61,8 @@ curl -X GET \
     "activeCountries": ["ALL"],
     "pricing": {
       "USD": 42.0
-    }
+    },
+    "region": "TIER1"
   }
 ]
 ```
@@ -96,6 +98,7 @@ curl -X GET \
   "name": "PrePaid Data 3GB 30-Day",
   "description": "PrePaid Data 3GB 30-Day",
   "period": 30,
+  "period_unit": "DAYS",
   "data": {
     "value": 3,
     "unit": "GB"
@@ -104,6 +107,7 @@ curl -X GET \
   "activeCountries": ["ALL"],
   "pricing": {
     "USD": 42.0
-  }
+  },
+  "region": "TIER1"
 }
 ```
