@@ -110,7 +110,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#get-the-subscription-details">Get the Subscription Details</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-request">Example Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example-response">Example Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-response-for-a-depleted-subscrtiption">Example Response for a <code class="docutils literal notranslate"><span class="pre">DEPLETED</span></code> subscrtiption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-response-for-a-active-subscrtiption">Example Response for a <code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code> subscrtiption</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#activate-subscriptions">Activate Subscriptions</a><ul>
@@ -119,12 +120,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#get-sim-subscriptions">Get SIM Subscriptions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Example Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Example Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-response">Example Response</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#get-sim-subscriptions-by-filtering">Get SIM Subscriptions by filtering</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Example Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Example Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Example Response</a></li>
 </ul>
 </li>
 </ul>
@@ -264,7 +265,7 @@
 <tbody>
 <tr>
 <td align="center">DEPLETED</td>
-<td align="center">Subscription ednded because data is used up</td>
+<td align="center">Subscription ended because data is used up</td>
 </tr>
 <tr>
 <td align="center">ACTIVE</td>
@@ -273,6 +274,10 @@
 <tr>
 <td align="center">EXPIRED</td>
 <td align="center">Subscription expired because expiry date has passed</td>
+</tr>
+<tr>
+<td align="center">PENDING</td>
+<td align="center">Subscription is yet waiting to be activated</td>
 </tr>
 </tbody>
 </table></div>
@@ -295,10 +300,30 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="example-response">
-<h3>Example Response<a class="headerlink" href="#example-response" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-response-for-a-depleted-subscrtiption">
+<h3>Example Response for a <code class="docutils literal notranslate"><span class="pre">DEPLETED</span></code> subscrtiption<a class="headerlink" href="#example-response-for-a-depleted-subscrtiption" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Njc1NzY1NzY1ZDIK&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-01T09:09:33Z&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-02T09:09:33Z&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;MzA5MjE3ODMwOTEyCg==&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span><span class="p">,</span>    
+    <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8932673628198237&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345657&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-response-for-a-active-subscrtiption">
+<h3>Example Response for a <code class="docutils literal notranslate"><span class="pre">ACTIVE</span></code> subscrtiption<a class="headerlink" href="#example-response-for-a-active-subscrtiption" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Njc1NzY1NzY1ZDIK&quot;</span><span class="p">,</span>
   <span class="nt">&quot;initialBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;314572800&quot;</span><span class="p">,</span>
   <span class="nt">&quot;spentBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;314572800&quot;</span><span class="p">,</span>
@@ -306,8 +331,13 @@
   <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-02T09:09:33Z&quot;</span><span class="p">,</span>
   <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;MzA5MjE3ODMwOTEyCg==&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span>
-  <span class="p">}</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8932673628198237&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345657&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -361,8 +391,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Example Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-response">
+<h3>Example Response<a class="headerlink" href="#example-response" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
@@ -371,10 +401,16 @@
     <span class="nt">&quot;spentBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;314572800&quot;</span><span class="p">,</span>
     <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-01T09:09:33Z&quot;</span><span class="p">,</span>
     <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-02T09:09:33Z&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-19T15:51:41Z&quot;</span><span class="p">,</span>
     <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;MzA5MjE3ODMwOTEyCg==&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span>
-    <span class="p">}</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prepaid data 30GB&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8932673628198237&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345657&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
   <span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
@@ -409,8 +445,8 @@
 </ul>
 </li>
 </ul>
-<div class="section" id="id4">
-<h3>Example Request<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Example Request<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="se">\</span>
   https://services.truphone.com/connect-api/v1/subscription?before<span class="o">=</span><span class="m">2020</span>-04-24T15:39:02.002Z<span class="p">&amp;</span><span class="nv">size</span><span class="o">=</span><span class="m">10</span><span class="p">&amp;</span><span class="nv">page</span><span class="o">=</span><span class="m">2</span> <span class="se">\</span>
    -H <span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ACCESS_TOKEN</span><span class="s2">&quot;</span> <span class="se">\</span>
@@ -420,11 +456,12 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>Example Response<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Example Response<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
     <span class="p">{</span>
             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;xoCdHNs78yvyOSmdn0eaD6FHRIO572_lPNyUxDGgLnI=&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
             <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-01T12:00:00Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-16T12:00:00Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-19T15:51:41Z&quot;</span><span class="p">,</span>
@@ -434,11 +471,13 @@
                 <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
             <span class="p">},</span>
+            <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8912782347382323&quot;</span><span class="p">,</span>
             <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345657&quot;</span><span class="p">,</span>
             <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;mEbXDbnruRowxX1ybirQK-adwS0edrvcUs4VKW9QWlM=&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
             <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:55:46Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-08T12:55:46Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:55:54Z&quot;</span><span class="p">,</span>
@@ -448,11 +487,13 @@
                 <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
             <span class="p">},</span>
+            <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8912782347382323&quot;</span><span class="p">,</span>
             <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
             <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;tl_6a2eO00tBm67k5l-HAqX1Oswd0gaSC-ucQRcTpcw=&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
             <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:58:17Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-08T12:58:17Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T12:58:21Z&quot;</span><span class="p">,</span>
@@ -462,11 +503,13 @@
                 <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
             <span class="p">},</span>
+            <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8912782347382323&quot;</span><span class="p">,</span>
             <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
             <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;eJWIyFew88qMPz7ymEJ1fQh6LnlniH3ixbPG0VynPYA=&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
             <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T13:00:07Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-08T13:00:07Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-24T13:00:09Z&quot;</span><span class="p">,</span>
@@ -476,6 +519,7 @@
                 <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
             <span class="p">},</span>
+            <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8912782347382323&quot;</span><span class="p">,</span>
             <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
             <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
         <span class="p">},</span>
@@ -490,11 +534,13 @@
                 <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
             <span class="p">},</span>
+            <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8912782347382323&quot;</span><span class="p">,</span>
             <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
             <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;p5N_LjvSxfdtVv9Rfi7nDi8zc_QPiVus6L-k6kk6lNQ=&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
             <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-25T17:46:09Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-09T17:46:09Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-25T17:46:13Z&quot;</span><span class="p">,</span>
@@ -504,11 +550,13 @@
                 <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
             <span class="p">},</span>
+            <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8912782347382323&quot;</span><span class="p">,</span>
             <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
             <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;yLCLVb967QI3TrCTL4vDlAes8TGQD9AFlwL6JfGVQP8=&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;DEPLETED&quot;</span><span class="p">,</span>
             <span class="nt">&quot;activationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-26T16:26:05Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;expirationDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-10T16:26:05Z&quot;</span><span class="p">,</span>
             <span class="nt">&quot;createdDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-03-26T16:26:09Z&quot;</span><span class="p">,</span>
@@ -518,6 +566,7 @@
                 <span class="nt">&quot;period&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
                 <span class="nt">&quot;period_unit&quot;</span><span class="p">:</span> <span class="s2">&quot;DAYS&quot;</span>
             <span class="p">},</span>
+            <span class="nt">&quot;iccid&quot;</span><span class="p">:</span> <span class="s2">&quot;8912782347382323&quot;</span><span class="p">,</span>
             <span class="nt">&quot;device_id&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789&quot;</span><span class="p">,</span>
             <span class="nt">&quot;auto_renew&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span>
         <span class="p">}</span>

@@ -9,8 +9,8 @@ A Truphone subscriber. Can be a physical SIM or eSIM and it holds profile relate
 | Property Name |                                                    Description                                                     |
 | :-----------: | :----------------------------------------------------------------------------------------------------------------: |
 |     iccid     |                                               The SIM profile ICCID                                                |
-|  matching_id  |                                      The profile activation code (eSIM only)                                       |
-|    status     |                                   The install status of the profile (eSIM only)                                    |
+|  matching_id  or matchingId|                                      The profile activation code (eSIM only)                                       |
+|    status or profileStatus  |                                   The install status of the profile (eSIM only)                                    |
 |      eid      | The EID associated with an eSIM. It's only present if the eSIM<br />was ordered with an EID or if it is installed. |
 |    lpa_url    |                                          LPA URL for generating a QRCode                                           |
 | last_modified |                                         The date of the last status change                                         |
@@ -48,7 +48,9 @@ curl -X GET \
 {
   "iccid": "8944474600000063847",
   "matching_id": "O-17QF0-MJVBIN",
+  "matchingId": "O-17QF0-MJVBIN",
   "status": "Released",
+  "profileStatus": "Released",
   "eid": "89001012012341234012345678901224",
   "last_modified": "2019-08-02T09:09:33Z",
   "lpa_url": "LPA:1$rsp.truphone.com$O-17QF0-MJVBIN"

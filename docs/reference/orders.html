@@ -253,6 +253,32 @@
 <td align="center">The id of the subscription that was just created</td>
 </tr>
 </tbody>
+</table><p><strong>Possible values for <code class="docutils literal notranslate"><span class="pre">status</span></code></strong></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Property Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">FAILED</td>
+<td align="center">The order failed provisioning the product</td>
+</tr>
+<tr>
+<td align="center">COMPLETED</td>
+<td align="center">The order was finished with success</td>
+</tr>
+<tr>
+<td align="center">FULFILLING</td>
+<td align="center">The order is still being processed</td>
+</tr>
+<tr>
+<td align="center">ACCEPTED</td>
+<td align="center">The order is waiting to be processed</td>
+</tr>
+</tbody>
 </table></div>
 </div>
 <div class="section" id="purchase-a-new-esim">
@@ -356,7 +382,7 @@
 </tr>
 <tr>
 <td align="center">subscriptions[].price</td>
-<td align="center">Price for which the product was sold</td>
+<td align="center">Price for which the product was sold net of sales tax (remove the sales tax)</td>
 <td align="center">no</td>
 </tr>
 <tr>
@@ -515,7 +541,7 @@
 </tr>
 <tr>
 <td align="center">subscriptions[].price</td>
-<td align="center">Price for which the product was sold</td>
+<td align="center">Price for which the product was sold net of sales tax (remove the sales tax)</td>
 <td align="center">no</td>
 <td align="center"></td>
 </tr>

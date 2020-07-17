@@ -22,9 +22,10 @@ A connectivity plan subscription, associated to a Truphone SIM/Subscriber. In or
 
 | Property Name |                     Description                     |
 | :-----------: | :-------------------------------------------------: |
-|   DEPLETED    |     Subscription ednded because data is used up     |
+|   DEPLETED    |     Subscription ended because data is used up     |
 |    ACTIVE     |            Subscription is still active             |
 |    EXPIRED    | Subscription expired because expiry date has passed |
+|    PENDING    | Subscription is yet waiting to be activated         |
 
 ## Get the Subscription Details
 
@@ -43,11 +44,31 @@ curl -X GET \
    -H 'X-Correlation-ID: unique-id-from-requester-123'
 ```
 
-### Example Response
+### Example Response for a `DEPLETED` subscrtiption
 
 ```json
 {
   "status": "DEPLETED",
+  "id": "Njc1NzY1NzY1ZDIK",
+  "activationDate": "2019-08-01T09:09:33Z",
+  "expirationDate": "2019-08-02T09:09:33Z",
+  "product": {
+    "id": "MzA5MjE3ODMwOTEyCg==",
+    "name": "Prepaid data 30GB",    
+    "period": 0,
+    "period_unit": "DAYS"
+  },
+  "iccid": "8932673628198237",
+  "device_id": "12345657",
+  "auto_renew": "false"
+}
+```
+
+### Example Response for a `ACTIVE` subscrtiption
+
+```json
+{
+  "status": "ACTIVE",
   "id": "Njc1NzY1NzY1ZDIK",
   "initialBalance": "314572800",
   "spentBalance": "314572800",
@@ -55,10 +76,16 @@ curl -X GET \
   "expirationDate": "2019-08-02T09:09:33Z",
   "product": {
     "id": "MzA5MjE3ODMwOTEyCg==",
-    "name": "Prepaid data 30GB"
-  }
+    "name": "Prepaid data 30GB",
+    "period": 0,
+    "period_unit": "DAYS"
+  },
+  "iccid": "8932673628198237",
+  "device_id": "12345657",
+  "auto_renew": "false"
 }
 ```
+
 
 ## Activate Subscriptions
 
@@ -111,10 +138,16 @@ curl -X GET \
     "spentBalance": "314572800",
     "activationDate": "2019-08-01T09:09:33Z",
     "expirationDate": "2019-08-02T09:09:33Z",
+    "createdDate": "2020-03-19T15:51:41Z",
     "product": {
       "id": "MzA5MjE3ODMwOTEyCg==",
-      "name": "Prepaid data 30GB"
-    }
+      "name": "Prepaid data 30GB",
+      "period": 0,
+      "period_unit": "DAYS"
+    },
+    "iccid": "8932673628198237",
+    "device_id": "12345657",
+    "auto_renew": "false"
   }
 ]
 ```
@@ -155,6 +188,7 @@ curl -X GET \
 [
     {
             "id": "xoCdHNs78yvyOSmdn0eaD6FHRIO572_lPNyUxDGgLnI=",
+            "status": "DEPLETED",
             "activationDate": "2020-04-01T12:00:00Z",
             "expirationDate": "2020-04-16T12:00:00Z",
             "createdDate": "2020-03-19T15:51:41Z",
@@ -164,11 +198,13 @@ curl -X GET \
                 "period": 0,
                 "period_unit": "DAYS"
             },
+            "iccid": "8912782347382323",
             "device_id": "12345657",
             "auto_renew": "false"
         },
         {
             "id": "mEbXDbnruRowxX1ybirQK-adwS0edrvcUs4VKW9QWlM=",
+            "status": "DEPLETED",
             "activationDate": "2020-03-24T12:55:46Z",
             "expirationDate": "2020-04-08T12:55:46Z",
             "createdDate": "2020-03-24T12:55:54Z",
@@ -178,11 +214,13 @@ curl -X GET \
                 "period": 0,
                 "period_unit": "DAYS"
             },
+            "iccid": "8912782347382323",
             "device_id": "123456789",
             "auto_renew": "false"
         },
         {
             "id": "tl_6a2eO00tBm67k5l-HAqX1Oswd0gaSC-ucQRcTpcw=",
+            "status": "DEPLETED",
             "activationDate": "2020-03-24T12:58:17Z",
             "expirationDate": "2020-04-08T12:58:17Z",
             "createdDate": "2020-03-24T12:58:21Z",
@@ -192,11 +230,13 @@ curl -X GET \
                 "period": 0,
                 "period_unit": "DAYS"
             },
+            "iccid": "8912782347382323",
             "device_id": "123456789",
             "auto_renew": "false"
         },
         {
             "id": "eJWIyFew88qMPz7ymEJ1fQh6LnlniH3ixbPG0VynPYA=",
+            "status": "DEPLETED",
             "activationDate": "2020-03-24T13:00:07Z",
             "expirationDate": "2020-04-08T13:00:07Z",
             "createdDate": "2020-03-24T13:00:09Z",
@@ -206,6 +246,7 @@ curl -X GET \
                 "period": 0,
                 "period_unit": "DAYS"
             },
+            "iccid": "8912782347382323",
             "device_id": "123456789",
             "auto_renew": "false"
         },
@@ -220,11 +261,13 @@ curl -X GET \
                 "period": 0,
                 "period_unit": "DAYS"
             },
+            "iccid": "8912782347382323",
             "device_id": "123456789",
             "auto_renew": "false"
         },
         {
             "id": "p5N_LjvSxfdtVv9Rfi7nDi8zc_QPiVus6L-k6kk6lNQ=",
+            "status": "DEPLETED",
             "activationDate": "2020-03-25T17:46:09Z",
             "expirationDate": "2020-04-09T17:46:09Z",
             "createdDate": "2020-03-25T17:46:13Z",
@@ -234,11 +277,13 @@ curl -X GET \
                 "period": 0,
                 "period_unit": "DAYS"
             },
+            "iccid": "8912782347382323",
             "device_id": "123456789",
             "auto_renew": "false"
         },
         {
             "id": "yLCLVb967QI3TrCTL4vDlAes8TGQD9AFlwL6JfGVQP8=",
+            "status": "DEPLETED",
             "activationDate": "2020-03-26T16:26:05Z",
             "expirationDate": "2020-04-10T16:26:05Z",
             "createdDate": "2020-03-26T16:26:09Z",
@@ -248,6 +293,7 @@ curl -X GET \
                 "period": 0,
                 "period_unit": "DAYS"
             },
+            "iccid": "8912782347382323",
             "device_id": "123456789",
             "auto_renew": "false"
         }
