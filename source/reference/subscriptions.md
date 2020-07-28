@@ -17,6 +17,7 @@ A connectivity plan subscription, associated to a Truphone SIM/Subscriber. In or
 |         createdDate          |   The date whe the subscription was first created (ISO 8601)    |
 |          product.id          |                     The original product id                     |
 |         product.name         |                    The original product name                    |
+|         product.plan_id         |                    The product plan id                  |
 
 **Possible values for `status`**
 
@@ -58,7 +59,8 @@ curl -X GET \
     "id": "MzA5MjE3ODMwOTEyCg==",
     "name": "Prepaid data 30GB",
     "period": 0,
-    "period_unit": "DAYS"
+    "period_unit": "DAYS",
+    "plan_id": "TruphoneinternalPlan_Id"
   },
   "iccid": "8932673628198237",
   "device_id": "12345657",
@@ -123,7 +125,8 @@ curl -X GET \
       "id": "MzA5MjE3ODMwOTEyCg==",
       "name": "Prepaid data 30GB",
       "period": 0,
-      "period_unit": "DAYS"
+      "period_unit": "DAYS",
+      "plan_id": "TruphoneinternalPlan_Id"
     },
     "iccid": "8932673628198237",
     "device_id": "12345657",
@@ -176,7 +179,8 @@ curl -X GET \
                 "id": "Q-hzHc6EErZPQcgw2L02_nDdruGtr6lDrM-jmja_xuE=",
                 "name": "1GB 15-Day - Truphoneinternal - Tier2 Data Bundle",
                 "period": 0,
-                "period_unit": "DAYS"
+                "period_unit": "DAYS",
+                "plan_id": "TruphoneinternalPlan_Id"
             },
             "iccid": "8912782347382323",
             "device_id": "12345657",
@@ -192,7 +196,8 @@ curl -X GET \
                 "id": "Q-hzHc6EErZPQcgw2L02_nDdruGtr6lDrM-jmja_xuE=",
                 "name": "1GB 15-Day - Truphoneinternal - Tier2 Data Bundle",
                 "period": 0,
-                "period_unit": "DAYS"
+                "period_unit": "DAYS",
+                "plan_id": "TruphoneinternalPlan_Id"
             },
             "iccid": "8912782347382323",
             "device_id": "123456789",
@@ -208,7 +213,8 @@ curl -X GET \
                 "id": "Q-hzHc6EErZPQcgw2L02_nDdruGtr6lDrM-jmja_xuE=",
                 "name": "1GB 15-Day - Truphoneinternal - Tier2 Data Bundle",
                 "period": 0,
-                "period_unit": "DAYS"
+                "period_unit": "DAYS",
+                "plan_id": "TruphoneinternalPlan_Id"
             },
             "iccid": "8912782347382323",
             "device_id": "123456789",
@@ -224,7 +230,8 @@ curl -X GET \
                 "id": "Q-hzHc6EErZPQcgw2L02_nDdruGtr6lDrM-jmja_xuE=",
                 "name": "1GB 15-Day - Truphoneinternal - Tier2 Data Bundle",
                 "period": 0,
-                "period_unit": "DAYS"
+                "period_unit": "DAYS",
+                "plan_id": "TruphoneinternalPlan_Id"
             },
             "iccid": "8912782347382323",
             "device_id": "123456789",
@@ -239,7 +246,8 @@ curl -X GET \
                 "id": "Q-hzHc6EErZPQcgw2L02_nDdruGtr6lDrM-jmja_xuE=",
                 "name": "1GB 15-Day - Truphoneinternal - Tier2 Data Bundle",
                 "period": 0,
-                "period_unit": "DAYS"
+                "period_unit": "DAYS",
+                "plan_id": "TruphoneinternalPlan_Id"
             },
             "iccid": "8912782347382323",
             "device_id": "123456789",
@@ -255,7 +263,8 @@ curl -X GET \
                 "id": "Q-hzHc6EErZPQcgw2L02_nDdruGtr6lDrM-jmja_xuE=",
                 "name": "1GB 15-Day - Truphoneinternal - Tier2 Data Bundle",
                 "period": 0,
-                "period_unit": "DAYS"
+                "period_unit": "DAYS",
+                "plan_id": "TruphoneinternalPlan_Id"
             },
             "iccid": "8912782347382323",
             "device_id": "123456789",
@@ -271,7 +280,8 @@ curl -X GET \
                 "id": "Q-hzHc6EErZPQcgw2L02_nDdruGtr6lDrM-jmja_xuE=",
                 "name": "1GB 15-Day - Truphoneinternal - Tier2 Data Bundle",
                 "period": 0,
-                "period_unit": "DAYS"
+                "period_unit": "DAYS",
+                "plan_id": "TruphoneinternalPlan_Id"
             },
             "iccid": "8912782347382323",
             "device_id": "123456789",

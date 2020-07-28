@@ -30,7 +30,8 @@ Currently, the product catalog of an API client typically changes by requesting 
 
 | Parameter Name |                 Description                  | Required | Default |
 | :------------: | :------------------------------------------: | :------: | :-----: |
-|    currency    | The currency in which the price is presented |    no    |   EUR   |
+|    targetCurrency    | The currency in which the price is presented |    no    |   EUR   |
+|    plan_id    | The plan id correspondent to the catalog that the client want to retrieve |    no    |   all   |
 
 ### Example Request
 
