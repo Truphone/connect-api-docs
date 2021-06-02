@@ -23,4 +23,4 @@ sphinx-markdown-tables==0.0.14
 sphinx-rtd-theme==0.5.0
 sphinxcontrib-websupport==1.1.2
 typing==3.7.4.1
-urllib3==1.25.9
+urllib3==1.26.5
